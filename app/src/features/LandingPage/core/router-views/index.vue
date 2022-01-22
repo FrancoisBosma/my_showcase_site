@@ -4,6 +4,13 @@ meta:
   layout: HomeLayout
 </route>
 
+<script setup lang="ts">
+  import { Contact, Introduction, Playground, Skills } from '../components'
+</script>
+
 <template>
-  <div> HEY </div>
+  <Introduction />
+  <Skills />
+  <Playground />
+  <Contact />
 </template>
