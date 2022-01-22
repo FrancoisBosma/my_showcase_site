@@ -10,6 +10,6 @@ meta:
 
 <template>
   <div>
-    {{ t('Not found') }}
+    {{ t('Page not found') }}
   </div>
 </template>
