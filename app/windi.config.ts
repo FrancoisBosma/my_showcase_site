@@ -9,4 +9,12 @@ export default defineConfig({
   },
   safelist: [range(20, 2).map((i) => `w-1/${i}`)],
   plugins: [],
+  theme: {
+    extend: {
+      zIndex: {
+        hiddenBehind: -1,
+        fixed: 5000,
+      },
+    },
+  },
 })
