@@ -12,7 +12,11 @@ meta:
 </script>
 
 <template>
-  <BurgerButton v-show="!bScreenXl" class="fixed top-10px right-10px" :action="() => (bMenuToggle = !bMenuToggle)" />
+  <BurgerButton
+    v-show="!bScreenXl"
+    class="fixed top-10px right-10px z-fixed"
+    :action="() => (bMenuToggle = !bMenuToggle)"
+  />
   <menu v-show="bScreenXl || bMenuToggle" class="fixed left-0 h-screen m-0 w-full xl:w-52" w:border="1 solid red-800">
     {{ bScreenXl }}
   </menu>
