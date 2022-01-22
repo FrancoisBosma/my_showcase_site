@@ -4,8 +4,8 @@
 </script>
 
 <template>
-  <div w:display="inline" w:m="3 t-8" w:children="table-cell w-1/2 p-4 children:(flex w-full)">
-    <span v-for="index in slotNb" :key="index">
+  <div w:display="inline" w:m="3 t-8">
+    <span v-for="index in slotNb" :key="index" :class="`table-cell w-1/${slotNb} p-4 children:(flex w-full)`">
       <slot :name="index"></slot>
     </span>
   </div>

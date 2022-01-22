@@ -1,6 +1,7 @@
 import { defineConfig } from 'windicss/helpers'
 import colors from 'windicss/colors'
 import typography from 'windicss/plugin/typography'
+import { range } from './src/global/functions/numbers'
 
 export default defineConfig({
   darkMode: 'class',
@@ -8,7 +9,7 @@ export default defineConfig({
   attributify: {
     prefix: 'w:',
   },
-
+  safelist: [range(20, 2).map((i) => `w-1/${i}`)],
   plugins: [typography()],
   theme: {
     extend: {
