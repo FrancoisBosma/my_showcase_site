@@ -1,3 +1,3 @@
 <template>
-  <section w:border="1 solid light-50">Skills</section>
+  <section id="skills" w:border="1 solid light-50">Skills</section>
 </template>
