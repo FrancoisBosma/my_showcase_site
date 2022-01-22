@@ -6,9 +6,9 @@ meta:
 
 <script setup lang="ts">
   import { Contact, Introduction, Playground, Skills } from '../components'
+  import { bScreenXl } from '@GLOBAL/functions/reactified'
 
   const bMenuToggle = ref(false)
-  const bScreenXl = useMediaQuery('(min-width: 1280px)')
 </script>
 
 <template>
