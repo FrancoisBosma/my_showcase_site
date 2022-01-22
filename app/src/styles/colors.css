@@ -1,0 +1,13 @@
+:root {
+  --background: #222222;
+  --background-darker: #121212;
+  --background-lighter: #323232;
+  --foreground: #2c3e50;
+  --red: #d41413;
+  --green: #50f148;
+}
+
+
+html.dark {
+  background: var(--background);
+}
