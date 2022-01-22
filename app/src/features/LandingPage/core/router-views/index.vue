@@ -13,6 +13,7 @@ meta:
 <template>
   <menu class="fixed left-0 h-screen m-0 w-52" w:border="1 solid red-800">{{ isMenuVisible }}</menu>
   <div class="pl-52">
+    <BurgerButton class="fixed top-10px right-10px" :action="() => (isMenuVisible = !isMenuVisible)" />
     <Introduction />
     <Skills />
     <Playground />
