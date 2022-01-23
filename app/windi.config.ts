@@ -11,6 +11,10 @@ export default defineConfig({
   plugins: [],
   theme: {
     extend: {
+      animation: {
+        'bounce-left': 'bounceLeft 1s infinite',
+        'bounce-right': 'bounceRight 1s infinite',
+      },
       zIndex: {
         hiddenBehind: -1,
         fixed: 5000,
