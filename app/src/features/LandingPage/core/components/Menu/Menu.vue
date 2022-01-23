@@ -24,6 +24,29 @@
       <a href="#playground" rel="Playground">{{ t('Playground') }}</a>
       <a href="#contact" rel="Contact">{{ t('Contact') }}</a>
     </nav>
-    <ul></ul>
+    <ul class="flex justify-center gap-x-4">
+      <li>
+        <a
+          href="https://github.com/FrancoisBosma"
+          target="_blank"
+          rel="noopener noreferrer"
+          w:animate="bounce delay-75"
+          w:display="inline-block"
+        >
+          <zmdi-github-alt class="icon-btn" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://linkedin.com/in/francois-bosma-1051849b/"
+          target="_blank"
+          rel="noopener noreferrer"
+          w:animate="bounce delay-150"
+          w:display="inline-block"
+        >
+          <fontisto-linkedin class="icon-btn" />
+        </a>
+      </li>
+    </ul>
   </menu>
 </template>
