@@ -1,0 +1,7 @@
+html {
+  @apply text-center;
+}
+
+h1 {
+  @apply text-6xl md:text-7xl lg:text-8xl;
+}
