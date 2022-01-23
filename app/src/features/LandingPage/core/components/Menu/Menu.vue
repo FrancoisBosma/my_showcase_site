@@ -13,13 +13,17 @@
   />
   <menu
     v-show="bScreenXl || bMenuToggle"
-    class="fixed left-0 h-screen m-0 w-full bg-[var(--background-darker)] xl:w-52"
+    class="fixed left-0 h-screen m-0 p-0 w-full bg-[var(--background-darker)] xl:w-52"
     w:flex="~ col"
     w:justify="between"
     w:border="1 solid red-800"
   >
     <p>FB</p>
-    <nav>
+    <nav
+      w:flex="~ col"
+      w:border="[var(--background)] t-1"
+      w:children="border-[var(--background)] border-b-1 leading-20"
+    >
       <a href="#skills" rel="Skills">{{ t('Skills') }}</a>
       <a href="#playground" rel="Playground">{{ t('Playground') }}</a>
       <a href="#contact" rel="Contact">{{ t('Contact') }}</a>
