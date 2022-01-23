@@ -13,12 +13,10 @@
   />
   <menu
     v-show="bScreenXl || bMenuToggle"
-    class="fixed left-0 h-screen m-0 p-0 w-full bg-[var(--background-darker)] xl:w-52"
-    w:flex="~ col"
-    w:justify="between"
+    class="fixed left-0 h-screen m-0 p-0 w-full bg-[var(--background-darker)] grid grid-rows-[1fr,auto,1fr] xl:w-52"
     w:border="1 solid red-800"
   >
-    <p>FB</p>
+    <p class="p-4 text-6xl">FB</p>
     <nav
       w:flex="~ col"
       w:border="[var(--background)] t-1"
@@ -28,17 +26,19 @@
       <a href="#playground" rel="Playground">{{ t('Playground') }}</a>
       <a href="#contact" rel="Contact">{{ t('Contact') }}</a>
     </nav>
-    <ul class="flex justify-center gap-x-2">
-      <li>
-        <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer">
-          <zmdi-github-alt class="icon-btn animate-bounce-left" />
-        </a>
-      </li>
-      <li>
-        <a href="https://linkedin.com/in/francois-bosma-1051849b/" target="_blank" rel="noopener noreferrer">
-          <fontisto-linkedin class="icon-btn animate-bounce-right" />
-        </a>
-      </li>
-    </ul>
+    <div w:flex="~ col" class="justify-center">
+      <ul class="flex justify-center gap-x-2 py-4">
+        <li>
+          <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer">
+            <zmdi-github-alt class="icon-btn animate-bounce-left" />
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/francois-bosma-1051849b/" target="_blank" rel="noopener noreferrer">
+            <fontisto-linkedin class="icon-btn animate-bounce-right" />
+          </a>
+        </li>
+      </ul>
+    </div>
   </menu>
 </template>
