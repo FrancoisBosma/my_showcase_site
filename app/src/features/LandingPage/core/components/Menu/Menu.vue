@@ -26,25 +26,13 @@
     </nav>
     <ul class="flex justify-center gap-x-4">
       <li>
-        <a
-          href="https://github.com/FrancoisBosma"
-          target="_blank"
-          rel="noopener noreferrer"
-          w:display="inline-block"
-          w:animate="bounce-left"
-        >
-          <zmdi-github-alt class="icon-btn" />
+        <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer">
+          <zmdi-github-alt class="icon-btn animate-bounce-left" />
         </a>
       </li>
       <li>
-        <a
-          href="https://linkedin.com/in/francois-bosma-1051849b/"
-          target="_blank"
-          rel="noopener noreferrer"
-          w:display="inline-block"
-          w:animate="bounce-right"
-        >
-          <fontisto-linkedin class="icon-btn" />
+        <a href="https://linkedin.com/in/francois-bosma-1051849b/" target="_blank" rel="noopener noreferrer">
+          <fontisto-linkedin class="icon-btn animate-bounce-right" />
         </a>
       </li>
     </ul>
