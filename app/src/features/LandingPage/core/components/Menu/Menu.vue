@@ -24,7 +24,7 @@
       <a href="#playground" rel="Playground">{{ t('Playground') }}</a>
       <a href="#contact" rel="Contact">{{ t('Contact') }}</a>
     </nav>
-    <ul class="flex justify-center gap-x-4">
+    <ul class="flex justify-center gap-x-2">
       <li>
         <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer">
           <zmdi-github-alt class="icon-btn animate-bounce-left" />
