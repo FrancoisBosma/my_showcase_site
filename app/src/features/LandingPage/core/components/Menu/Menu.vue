@@ -30,8 +30,8 @@
           href="https://github.com/FrancoisBosma"
           target="_blank"
           rel="noopener noreferrer"
-          w:animate="bounce delay-75"
           w:display="inline-block"
+          w:animate="bounce-left"
         >
           <zmdi-github-alt class="icon-btn" />
         </a>
@@ -41,8 +41,8 @@
           href="https://linkedin.com/in/francois-bosma-1051849b/"
           target="_blank"
           rel="noopener noreferrer"
-          w:animate="bounce delay-150"
           w:display="inline-block"
+          w:animate="bounce-right"
         >
           <fontisto-linkedin class="icon-btn" />
         </a>
