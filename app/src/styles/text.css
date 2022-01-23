@@ -1,7 +1,10 @@
 html {
   @apply text-center;
 }
-
 h1 {
-  @apply text-6xl md:text-7xl lg:text-8xl;
+  @apply text-5xl md:text-7xl lg:text-8xl;
 }
+p {
+  @apply tracking-1px text-sm md:(tracking-4px text-base) lg:text-lg;
+}
+
