@@ -28,15 +28,15 @@ body,
 }
 
 .btn {
-  @apply px-4 py-1 rounded inline-block
-    bg-teal-600 text-white cursor-pointer
-    hover:bg-teal-700
-    disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50;
+  @apply px-4 py-1 rounded inline-block bg-lime-600 cursor-pointer
+    hover:(bg-lime-700 text-lime-900)
+    disabled:(cursor-default bg-gray-600 opacity-50);
+  box-shadow: 1px 1px 3px rgba(0, 50, 0, 0.5);
 }
 
 .icon-btn {
   @apply inline-block cursor-pointer select-none
     opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-teal-600;
+    hover:opacity-100 hover:text-lime-600;
   font-size: 0.9em;
 }
