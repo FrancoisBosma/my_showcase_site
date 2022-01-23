@@ -1,6 +1,8 @@
 :root {
   --red: #d41413;
   --green: #50f148;
+  --emphasis: #d97706;
+  --info: #fcd34d;
 }
 
 :root.dark {
