@@ -7,8 +7,8 @@
     <ul class="playground-tile">
       <li>
         <div>
-          {{ t('I18n') }}
-          <div w:text="xs">{{ t('Internationalization') }}</div>
+          I18n
+          <div class="text-xs italic opacity-50">{{ t('Internationalization') }}</div>
         </div>
         <div>AAA</div>
       </li>
@@ -21,11 +21,14 @@
         <div>AAA</div>
       </li>
       <li>
-        <div>({{ t('NavGuards') }})</div>
+        <div>{{ t('Navigation guards') }}</div>
         <div>AAA</div>
       </li>
       <li>
-        <div>{{ t('PWA') }}</div>
+        <div>
+          PWA
+          <div class="text-xs italic opacity-50">{{ t('Progressive Web App') }}</div>
+        </div>
         <div>AAA <br />aaa</div>
       </li>
       <li>
