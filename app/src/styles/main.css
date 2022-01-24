@@ -20,10 +20,6 @@ body,
   @apply bg-lime-600 opacity-75 fixed z-fixed top-0 left-0 w-full h-2px;
 }
 
-.link {
-  @apply hover:(text-[var(--emphasis)]);
-}
-
 .btn {
   @apply px-4 py-1 rounded inline-block bg-lime-600 cursor-pointer
     hover:(bg-lime-700 text-lime-900)
@@ -32,8 +28,8 @@ body,
 }
 
 .icon-btn {
-  @apply inline-block cursor-pointer select-none opacity-75 text-[var(--green)]
+  @apply link inline-block cursor-pointer select-none opacity-75 text-[var(--green)]
     transition duration-200 ease-in-out
-    hover:(opacity-100 text-[var(--emphasis)]);
+    hover:(opacity-100);
   font-size: 0.9em;
 }

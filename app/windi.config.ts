@@ -21,4 +21,7 @@ export default defineConfig({
       },
     },
   },
+  shortcuts: {
+    link: 'hover:(text-[var(--emphasis)])',
+  },
 })
