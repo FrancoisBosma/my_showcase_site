@@ -1,5 +1,5 @@
 <template>
-  <section id="skills" w:p="0" class="min-h-screen" w:border="1 solid light-50">
+  <section id="skills" w:p="0" class="relative min-h-screen flex flex-col justify-center" w:border="1 solid light-50">
     <h2>Skills</h2>
     <ul class="grid grid-flow-col grid-cols-4 grid-rows-2 toto">
       <li><fa-diamond /></li>
@@ -16,7 +16,7 @@
 <style scoped lang="postcss">
   .toto {
     li {
-      @apply flex justify-center items-center aspect-square bg-[var(--background)] text-[var(--foreground)] text-4xl;
+      @apply p-8 flex justify-center items-center aspect-square text-[var(--foreground)] text-4xl;
     }
     li:nth-child(4n),
     li:nth-child(4n + 1) {
