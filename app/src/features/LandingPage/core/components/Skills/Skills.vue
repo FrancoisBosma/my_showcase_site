@@ -1,7 +1,7 @@
 <template>
   <section id="skills" w:p="0" class="relative min-h-screen flex flex-col justify-center" w:border="1 solid light-50">
     <h2>Skills</h2>
-    <ul class="grid grid-flow-col grid-cols-4 grid-rows-2 toto">
+    <ul class="checker-board grid grid-flow-col grid-cols-4 grid-rows-2">
       <li><fa-diamond /></li>
       <li>World-Class Apps</li>
       <li>Tailored To Your Needs</li>
@@ -14,7 +14,7 @@
   </section>
 </template>
 <style scoped lang="postcss">
-  .toto {
+  .checker-board {
     li {
       @apply p-8 flex justify-center items-center aspect-square text-[var(--foreground)] text-4xl;
     }
