@@ -1,14 +1,17 @@
+<script setup lang="ts">
+  const { t } = useI18n()
+</script>
 <template>
   <section id="skills" w:p="0" class="relative min-h-screen flex flex-col justify-center" w:border="1 solid light-50">
-    <h2>Skills</h2>
+    <h2>{{ t('Skills') }}</h2>
     <ul class="checker-board grid grid-flow-col grid-cols-4 grid-rows-2">
       <li><fa-diamond /></li>
-      <li>World-Class Apps</li>
-      <li>Tailored To Your Needs</li>
+      <li>{{ t('World-Class Apps') }}</li>
+      <li>{{ t('Tailored To Your Needs') }}</li>
       <li><ant-design-format-painter-outlined /></li>
       <li><clarity-ruler-pencil-line /></li>
-      <li>Pixel-Perfect Code</li>
-      <li>Made With Passion</li>
+      <li>{{ t('Pixel-Perfect Code') }}</li>
+      <li>{{ t('Made With Passion') }}</li>
       <li><gg-heart /></li>
     </ul>
   </section>
