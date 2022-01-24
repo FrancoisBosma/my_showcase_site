@@ -8,7 +8,7 @@
       <li>
         <div>
           I18n
-          <div class="text-xs italic opacity-50">{{ t('Internationalization') }}</div>
+          <div class="text-xs italic discreet">{{ t('Internationalization') }}</div>
         </div>
         <div>AAA</div>
       </li>
@@ -27,7 +27,7 @@
       <li>
         <div>
           PWA
-          <div class="text-xs italic opacity-50">{{ t('Progressive Web App') }}</div>
+          <div class="text-xs italic discreet">{{ t('Progressive Web App') }}</div>
         </div>
         <div>AAA <br />aaa</div>
       </li>
