@@ -16,7 +16,7 @@ export default defineConfig({
         'bounce-right': 'bounceRight 1s infinite',
       },
       zIndex: {
-        hiddenBehind: -1,
+        behind: -1,
         fixed: 5000,
       },
     },
