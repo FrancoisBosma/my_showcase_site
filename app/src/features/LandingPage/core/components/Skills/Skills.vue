@@ -2,7 +2,7 @@
   const { t } = useI18n()
 </script>
 <template>
-  <section id="skills" w:p="0" class="min-h-screen flex flex-col justify-center" w:border="1 solid light-50">
+  <section id="skills" w:p="0" w:border="1 solid light-50">
     <h2>{{ t('Skills') }}</h2>
     <ul class="checker-board grid grid-flow-col grid-cols-4 grid-rows-2">
       <li><fa-diamond /></li>
