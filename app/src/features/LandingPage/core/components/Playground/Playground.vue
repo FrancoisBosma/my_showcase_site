@@ -47,7 +47,8 @@
         @apply p-4;
       }
       & > div:nth-child(1) {
-        @apply text-right border-r border-[var(--foreground)];
+        @apply text-right border-r border-[var(--foreground)]
+          hover:(text-[var(--emphasis)] border-[var(--emphasis)]);
       }
       & > div:nth-child(2) {
         @apply pl-12 text-left flex flex-col justify-center;
