@@ -1,8 +1,6 @@
 <template>
   <section id="skills" w:p="0" class="min-h-screen" w:border="1 solid light-50">
     <h2>Skills</h2>
-    <!-- <ul class="grid grid-cols-2 grid-rows-4 text-50px
-    children:(border-1 border-solid border-light-50 aspect-square)"> -->
     <ul class="grid grid-flow-col grid-cols-4 grid-rows-2 toto">
       <li><fa-diamond /></li>
       <li>World-Class Apps</li>
