@@ -5,7 +5,7 @@
   <section
     id="introduction"
     w:flex="~ col"
-    class="p-12 h-screen items-start justify-center text-left"
+    class="h-screen items-start justify-center text-left"
     w:border="1 solid light-50"
   >
     <h1>{{ t('Hi,') }}<br />{{ t("I'm Francois,") }}<br />{{ t('web developer') }}</h1>

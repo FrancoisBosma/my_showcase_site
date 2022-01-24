@@ -10,7 +10,7 @@ meta:
 
 <template>
   <Menu />
-  <div class="xl:pl-52">
+  <div class="xl:pl-52 children:(p-12)">
     <Introduction />
     <Skills />
     <Playground />
