@@ -6,14 +6,11 @@
 </script>
 
 <template>
-  <BurgerButton
-    v-show="!bScreenXl"
-    class="fixed top-10px right-10px z-fixed"
-    :action="() => (bMenuToggle = !bMenuToggle)"
-  />
+  <BurgerButton v-show="!bScreenXl" class="burger-button" :action="() => (bMenuToggle = !bMenuToggle)" />
   <menu
     v-show="bScreenXl || bMenuToggle"
-    class="fixed left-0 h-screen m-0 p-0 w-full bg-[var(--background-darker)] grid grid-rows-[1fr,auto,1fr] xl:w-52"
+    class="fixed left-0 h-screen m-0 p-0 w-full z-fixed bg-[var(--background-darker)] grid grid-rows-[1fr,auto,1fr]"
+    w:xl="w-52"
     w:border="1 solid red-800"
   >
     <p class="p-4 text-6xl">FB</p>
@@ -42,3 +39,9 @@
     </div>
   </menu>
 </template>
+<style scoped>
+  .burger-button {
+    @apply fixed top-10px right-10px;
+    z-index: calc(theme('zIndex.fixed') + 1);
+  }
+</style>
