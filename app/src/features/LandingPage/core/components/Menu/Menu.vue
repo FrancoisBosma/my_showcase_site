@@ -22,9 +22,9 @@
       w:border="[var(--background)] t-1"
       w:children="border-[var(--background)] border-b-1 leading-20"
     >
-      <a class="link" href="#playground" rel="Playground">{{ t('Playground') }}</a>
-      <a class="link" href="#skills" rel="Skills">{{ t('Skills') }}</a>
-      <a class="link" href="#contact" rel="Contact">{{ t('Contact') }}</a>
+      <a class="link" href="#playground" rel="">{{ t('Playground') }}</a>
+      <a class="link" href="#skills" rel="">{{ t('Skills') }}</a>
+      <a class="link" href="#contact" rel="">{{ t('Contact') }}</a>
     </nav>
     <div w:flex="~ col" class="justify-center">
       <ul class="flex justify-center gap-x-2 py-4">
