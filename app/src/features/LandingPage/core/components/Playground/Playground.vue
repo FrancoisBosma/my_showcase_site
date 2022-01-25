@@ -13,7 +13,7 @@
           I18n
           <div class="text-xs italic discreet">{{ t('Internationalization') }}</div>
         </div>
-        <div>AAA</div>
+        <div> <LanguageSelector /> </div>
       </li>
       <li>
         <div>{{ t('Dark Mode') }}</div>
@@ -50,6 +50,7 @@
     @apply text-4xl;
     li {
       @apply grid grid-cols-[1fr,2fr] grid-rows-1;
+
       & > div {
         @apply p-4;
       }
