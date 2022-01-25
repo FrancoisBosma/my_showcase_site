@@ -4,6 +4,9 @@
 <template>
   <section id="playground" w:border="1 solid light-50">
     <h2>{{ t('Playground') }}</h2>
+    <h3 class="py-30 relative">
+      {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-18 text-[100%]" />
+    </h3>
     <ul class="playground-tile">
       <li>
         <div>
@@ -23,7 +26,7 @@
       <li class="incoming">
         <div>{{ t('Navigation Guards') }}</div>
         <div>
-          <span class="flex gap-x-2">{{ t('Still brewing') }} <icon-park-outline-teapot /></span>
+          <span class="flex gap-x-2"> {{ t('Still brewing') }} <icon-park-outline-teapot /> </span>
         </div>
       </li>
       <li>
