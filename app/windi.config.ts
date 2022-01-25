@@ -22,7 +22,7 @@ export default defineConfig({
     },
   },
   shortcuts: {
-    link: 'hover:(text-[var(--emphasis)])',
+    'hover-emphasis': 'hover:(text-[var(--emphasis)] border-[var(--emphasis)])',
     discreet: 'opacity-50',
   },
 })

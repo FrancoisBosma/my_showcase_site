@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <BurgerButton v-show="!bScreenXl" class="burger-button" :action="toggleMenu" />
+  <BurgerButton v-show="!bScreenXl" class="menu-button" :action="toggleMenu" />
   <menu
     v-show="bScreenXl || bMenuToggle"
     class="fixed left-0 h-screen m-0 p-0 w-full z-fixed bg-[var(--background-darker)] grid grid-rows-[1fr,auto,1fr]"
@@ -20,12 +20,12 @@
       w:border="[var(--background)] t-1"
       w:children="border-[var(--background)] border-b-1 leading-20"
     >
-      <a class="link" href="#playground" rel="" @click="toggleMenu()">{{ t('Playground') }}</a>
-      <a class="link" href="#skills" rel="" @click="toggleMenu()">{{ t('Skills') }}</a>
-      <a class="link" href="#contact" rel="" @click="toggleMenu()">{{ t('Contact') }}</a>
+      <a class="hover-emphasis" href="#playground" rel="" @click="toggleMenu()">{{ t('Playground') }}</a>
+      <a class="hover-emphasis" href="#skills" rel="" @click="toggleMenu()">{{ t('Skills') }}</a>
+      <a class="hover-emphasis" href="#contact" rel="" @click="toggleMenu()">{{ t('Contact') }}</a>
     </nav>
     <div w:flex="~ col" class="justify-center">
-      <ul class="flex justify-center gap-x-2 py-4">
+      <ul class="flex justify-center gap-x-2 py-4 children:children:cursor-default">
         <li>
           <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer">
             <zmdi-github-alt class="icon-btn animate-bounce-left" />
@@ -41,7 +41,7 @@
   </menu>
 </template>
 <style scoped>
-  .burger-button {
+  .menu-button {
     @apply fixed top-10px right-10px;
     z-index: calc(theme('zIndex.fixed') + 1);
   }
