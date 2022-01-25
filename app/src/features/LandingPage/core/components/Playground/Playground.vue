@@ -5,7 +5,7 @@
   <section id="playground" w:border="1 solid light-50">
     <h2>{{ t('Playground') }}</h2>
     <h3 class="py-30 relative">
-      {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-18 text-[100%]" />
+      {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" />
     </h3>
     <ul class="playground-tile">
       <li>
