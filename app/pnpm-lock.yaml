@@ -12,6 +12,7 @@ specifiers:
   '@iconify-json/fa': ^1.0.1
   '@iconify-json/fontisto': ^1.0.1
   '@iconify-json/gg': ^1.0.1
+  '@iconify-json/icon-park-outline': ^1.0.2
   '@iconify-json/mdi': ^1.0.12
   '@intlify/vite-plugin-vue-i18n': ^2.5.0
   '@types/markdown-it-link-attributes': ^3.0.1
@@ -102,6 +103,7 @@ devDependencies:
   '@iconify-json/fa': 1.0.1
   '@iconify-json/fontisto': 1.0.1
   '@iconify-json/gg': 1.0.1
+  '@iconify-json/icon-park-outline': 1.0.2
   '@iconify-json/mdi': 1.0.12
   '@intlify/vite-plugin-vue-i18n': 2.5.0
   '@types/markdown-it-link-attributes': 3.0.1
@@ -1713,6 +1715,12 @@ packages:
 
   /@iconify-json/gg/1.0.1:
     resolution: {integrity: sha512-kIxAZ9NX1+qOuLZDnKnnR5BvblPkHzPE7O7sAObg6BFVXHb2JGwV/ldJOmrrAvUy+FYii3TP2KR8pKb0kVnstg==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/icon-park-outline/1.0.2:
+    resolution: {integrity: sha512-2g+TAqeP2mXR6oaQehFHYwbqXQMT23ksWRD3Ez9q4xpvGUSU++UR7d6Hxaj9F9QG4H31OZLnNmTeSsfPEmeHPw==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: true
