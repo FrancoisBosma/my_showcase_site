@@ -20,20 +20,24 @@
         <div>{{ t('Responsive Design') }}</div>
         <div>AAA</div>
       </li>
-      <li>
-        <div>{{ t('Navigation guards') }}</div>
-        <div>AAA</div>
+      <li class="incoming">
+        <div>{{ t('Navigation Guards') }}</div>
+        <div>
+          <span class="flex gap-x-2">{{ t('Still brewing') }} <icon-park-outline-teapot /></span>
+        </div>
       </li>
       <li>
         <div>
           PWA
-          <div class="text-xs italic discreet">{{ t('Progressive Web App') }}</div>
+          <div class="text-xs italic discreet">{{ t('Progressive Web App') }} </div>
         </div>
         <div>AAA <br />aaa</div>
       </li>
-      <li>
-        <div>({{ t('Secret') }})</div>
-        <div>AAA</div>
+      <li class="incoming">
+        <div>{{ t('Secret') }}</div>
+        <div>
+          <span class="flex gap-x-2">{{ t('Still cooking') }} <icon-park-outline-hot-pot /></span>
+        </div>
       </li>
     </ul>
   </section>
@@ -52,6 +56,12 @@
       }
       & > div:nth-child(2) {
         @apply pl-12 text-left flex flex-col justify-center;
+      }
+      &.incoming {
+        @apply discreet italic;
+        & > div:nth-child(1) {
+          @apply hover:(text-[var(--foreground)] border-[var(--foreground)]);
+        }
       }
     }
   }
