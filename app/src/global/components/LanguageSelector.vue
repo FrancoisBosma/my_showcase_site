@@ -14,9 +14,6 @@
       </template>
     </Popper>
   </div>
-  <!-- <button class="language-selector-btn">
-    <clarity-language-solid />
-  </button> -->
 </template>
 <style scoped lang="postcss">
   .language-selector-btn {
