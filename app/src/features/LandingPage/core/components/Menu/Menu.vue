@@ -3,11 +3,11 @@
 
   const { t } = useI18n()
   const bMenuToggle = ref(false)
-  const toggleMenu = () => (bMenuToggle.value = !bMenuToggle.value)
+  const fnToggleMenu = () => (bMenuToggle.value = !bMenuToggle.value)
 </script>
 
 <template>
-  <BurgerButton v-show="!bScreenXl" class="menu-button" :action="toggleMenu" />
+  <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" />
   <menu
     v-show="bScreenXl || bMenuToggle"
     class="fixed left-0 h-screen m-0 p-0 w-full z-fixed bg-[var(--background-darker)] grid grid-rows-[1fr,auto,1fr]"
@@ -20,9 +20,9 @@
       w:border="[var(--background)] t-1"
       w:children="border-[var(--background)] border-b-1 leading-20"
     >
-      <a class="hover-emphasis" href="#playground" rel="" @click="toggleMenu()">{{ t('Playground') }}</a>
-      <a class="hover-emphasis" href="#skills" rel="" @click="toggleMenu()">{{ t('Skills') }}</a>
-      <a class="hover-emphasis" href="#contact" rel="" @click="toggleMenu()">{{ t('Contact') }}</a>
+      <a class="hover-emphasis" href="#playground" rel="" @click="fnToggleMenu()">{{ t('Playground') }}</a>
+      <a class="hover-emphasis" href="#skills" rel="" @click="fnToggleMenu()">{{ t('Skills') }}</a>
+      <a class="hover-emphasis" href="#contact" rel="" @click="fnToggleMenu()">{{ t('Contact') }}</a>
     </nav>
     <div w:flex="~ col" class="justify-center">
       <ul class="flex justify-center gap-x-2 py-4 children:children:cursor-default">
