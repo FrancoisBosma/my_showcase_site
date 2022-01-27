@@ -1,8 +1,6 @@
 <script setup lang="ts">
   const bActive = ref(false)
   const fnToggleSelector = () => (bActive.value = !bActive.value)
-  const contextColor = computed(() => (bActive.value ? 'var(--emphasis)' : 'var(--cta)'))
-  // const toggleSpeed = computed(() => (bActive.value ? '0ms' : '350ms'))
 </script>
 
 <template>
@@ -23,31 +21,32 @@
 <style scoped lang="postcss">
   .language-selector-btn {
     @apply relative flex justify-center items-center w-13 h-13
-      bg-[var(--foreground)] text-[var(--background)] rounded-[20%]
-      duration-350 ease-in;
-    /* FIXME: DURATION TO BE FLEXIBLE HEREEEEEEEEEEE VVV */
+      bg-[var(--background)] text-[var(--foreground)] rounded-1/2
+      duration-500 ease-out;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     & > svg {
-      @apply relative top-0.5 transition duration-700 ease-out;
+      @apply relative top-0.5 text-3xl transition-transform duration-250 ease-in;
     }
     &::before {
-      @apply absolute top-0 left-0 w-full h-full z-behind rounded-[20%]
-        transform scale-90 duration-350 ease-in;
+      @apply absolute top-0 left-0 w-full h-full z-behind rounded-1/2
+        transform scale-90 duration-500 ease-out bg-[var(--emphasis)];
       content: '';
-      background-color: v-bind('contextColor');
     }
-  }
-  .language-selector-btn:hover,
-  [is-active='true'] {
-    @apply bg-[var(--background)];
-    color: v-bind('contextColor');
-    box-shadow: 0 0 5px v-bind('contextColor');
-    text-shadow: 0 0 5px v-bind('contextColor');
-    & > svg {
-      @apply transform rotate-y-360;
+
+    &:hover,
+    &[is-active='true'] {
+      @apply text-[var(--emphasis)];
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0);
+      &::before {
+        @apply transform scale-110 ease-out;
+        box-shadow: 0 0 15px var(--emphasis);
+      }
     }
-    &::before {
-      @apply transform scale-110 ease-out;
-      box-shadow: 0 0 15px v-bind('contextColor');
+
+    &[is-active='true'] {
+      & > svg {
+        @apply transform rotate-y-180 duration-250 ease-out;
+      }
     }
   }
 </style>
