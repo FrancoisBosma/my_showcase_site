@@ -12,7 +12,7 @@
     @apply relative flex justify-center items-center w-13 h-13
       bg-[var(--background)] text-[var(--foreground)] rounded-1/2
       duration-500 ease-out;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
     & > :slotted(svg) {
       @apply relative top-0.5 text-3xl transition-transform duration-250 ease-in;
     }
