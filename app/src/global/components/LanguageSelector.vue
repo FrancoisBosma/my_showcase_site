@@ -22,9 +22,6 @@
   </div>
 </template>
 <style scoped lang="postcss">
-  :deep(.popper #arrow) {
-    @apply z-behind;
-  }
   .selector-line {
     @apply children:(px-8 py-2 w-full text-left);
     &:hover {

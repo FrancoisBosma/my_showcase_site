@@ -24,3 +24,8 @@
       0 1px 10px 0 rgb(0 0 0 / 12%);
   }
 </style>
+<style scoped lang="postcss">
+  :deep(.popper #arrow) {
+    @apply z-behind;
+  }
+</style>
