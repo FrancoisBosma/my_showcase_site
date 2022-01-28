@@ -28,12 +28,12 @@
       <ul class="flex justify-center gap-x-2 py-4 children:children:cursor-default">
         <li>
           <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer">
-            <zmdi-github-alt class="icon-btn animate-bounce-left" />
+            <zmdi-github-alt class="icon-link animate-bounce-left" />
           </a>
         </li>
         <li>
           <a href="https://linkedin.com/in/francois-bosma-1051849b/" target="_blank" rel="noopener noreferrer">
-            <fontisto-linkedin class="icon-btn animate-bounce-right" />
+            <fontisto-linkedin class="icon-link animate-bounce-right" />
           </a>
         </li>
       </ul>

@@ -27,7 +27,7 @@ body,
   box-shadow: 1px 1px 3px rgba(0, 50, 0, 0.5);
 }
 
-.icon-btn {
+.icon-link {
   @apply hover-emphasis inline-block cursor-pointer select-none opacity-75 text-[var(--cta)]
     transition duration-200 ease-in-out
     hover:(opacity-100);
