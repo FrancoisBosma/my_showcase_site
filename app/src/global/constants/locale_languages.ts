@@ -1,4 +1,4 @@
-export const locales = {
+export const localeLanguages = {
   en: 'English',
   fr: 'Français',
 }
