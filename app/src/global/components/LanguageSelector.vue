@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import localeLanguages from '@GLOBAL/constants/locale_languages'
+
   const bActive = ref(false)
   const fnToggleSelector = () => (bActive.value = !bActive.value)
 </script>
@@ -10,8 +12,23 @@
         <clarity-language-solid />
       </IconButton>
       <template #content>
-        <div> Hello there </div>
+        <ul class="py-4 max-h-50 overflow-y-auto">
+          <li v-for="(name, locale) in localeLanguages" :key="locale" class="selector-line">
+            <button>{{ name }}</button>
+          </li>
+        </ul>
       </template>
     </Popper>
   </div>
 </template>
+<style scoped lang="postcss">
+  :deep(.popper #arrow) {
+    @apply z-behind;
+  }
+  .selector-line {
+    @apply children:(px-8 py-2 w-full text-left);
+    &:hover {
+      background-color: rgba(0, 0, 0, 20%);
+    }
+  }
+</style>
