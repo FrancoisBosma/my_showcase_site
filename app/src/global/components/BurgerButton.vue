@@ -20,11 +20,11 @@
 </template>
 <style scoped lang="postcss">
   .hamburger {
-    padding: 15px;
+    padding: 15px 10px;
     cursor: pointer;
     display: inline-block;
-    overflow: hidden;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10%;
     text-align: initial;
     .hamburger__container {
       width: 36px;
