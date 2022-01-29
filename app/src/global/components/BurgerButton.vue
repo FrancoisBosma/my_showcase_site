@@ -11,19 +11,17 @@
   }
 </script>
 <template>
-  <div class="hamburger" :is-active="isActive" @click="clickAction()">
+  <button class="hamburger" :is-active="isActive" @click="clickAction()">
     <div class="hamburger__container">
       <div class="hamburger__inner"></div>
       <div class="hamburger__hidden"></div>
     </div>
-  </div>
+  </button>
 </template>
 <style scoped lang="postcss">
   .hamburger {
+    @apply bg-[var(--background-darker-seethrough)];
     padding: 15px 10px;
-    cursor: pointer;
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10%;
     text-align: initial;
     .hamburger__container {
