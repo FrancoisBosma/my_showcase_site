@@ -4,9 +4,9 @@
 
 <template>
   <Popper placement="top" arrow>
-    <slot name="default" />
-    <template #content>
-      <slot name="content" />
+    <slot />
+    <template #content="{ close, isOpen }">
+      <slot name="content" :close="close" :isOpen="isOpen" />
     </template>
   </Popper>
 </template>
