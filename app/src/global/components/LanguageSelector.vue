@@ -3,6 +3,11 @@
 
   const bActive = ref(false)
   const fnToggleSelector = () => (bActive.value = !bActive.value)
+  const { locale } = useI18n()
+  const fnClosePopper = (localeName: string, closeFn: Function = () => undefined) => {
+    locale.value = localeName
+    closeFn()
+  }
 </script>
 
 <template>
@@ -11,10 +16,10 @@
       <IconButton :is-active="bActive">
         <clarity-language-solid />
       </IconButton>
-      <template #content>
+      <template #content="{ close }">
         <ul class="py-4 max-h-50 overflow-y-auto">
-          <li v-for="(name, locale) in localeLanguages" :key="locale" class="selector-line">
-            <button>{{ name }}</button>
+          <li v-for="(language, localeName) in localeLanguages" :key="localeName" class="selector-line">
+            <button @click="fnClosePopper(localeName, close)">{{ language }}</button>
           </li>
         </ul>
       </template>
