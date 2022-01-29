@@ -1,15 +1,17 @@
 <script setup lang="ts">
-  const props = withDefaults(defineProps<{ action?: Function }>(), { action: () => () => undefined })
+  const props = withDefaults(defineProps<{ action?: Function; isActive?: boolean }>(), {
+    action: () => () => undefined,
+    isActive: false,
+  })
 
-  const bActive = ref(false)
-  const fnToggleSelector = () => (bActive.value = !bActive.value)
+  const isActive = toRef(props, 'isActive')
   const clickAction = () => {
+    isActive.value = !isActive.value
     props.action()
-    fnToggleSelector()
   }
 </script>
 <template>
-  <div class="hamburger" :is-active="bActive" @click="clickAction()">
+  <div class="hamburger" :is-active="isActive" @click="clickAction()">
     <div class="hamburger__container">
       <div class="hamburger__inner"></div>
       <div class="hamburger__hidden"></div>

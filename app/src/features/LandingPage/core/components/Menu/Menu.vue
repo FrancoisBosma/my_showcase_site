@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" />
+  <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" :is-active="bMenuActive" />
   <menu
     v-show="bScreenXl || bMenuActive"
     class="fixed left-0 h-screen m-0 p-0 w-full z-fixed bg-[var(--background-darker)] grid grid-rows-[1fr,auto,1fr]"
