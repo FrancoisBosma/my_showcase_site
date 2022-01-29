@@ -99,7 +99,8 @@
       }
     }
 
-    &:hover {
+    &:hover,
+    &[is-active='true'] {
       .hamburger__inner {
         transform: translate(-51px, 50%);
         opacity: 0;
@@ -121,11 +122,7 @@
     }
 
     &[is-active='true'] {
-      .hamburger__inner {
-        display: none;
-      }
       .hamburger__hidden {
-        opacity: 1;
         transform: rotate(45deg);
         &::before {
           transform-origin: center;
