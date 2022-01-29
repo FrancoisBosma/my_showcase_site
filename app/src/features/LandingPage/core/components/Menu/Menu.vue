@@ -2,14 +2,14 @@
   import { bScreenXl } from '@GLOBAL/functions/reactified'
 
   const { t } = useI18n()
-  const bMenuToggle = ref(false)
-  const fnToggleMenu = () => (bMenuToggle.value = !bMenuToggle.value)
+  const bMenuActive = ref(false)
+  const fnToggleMenu = () => (bMenuActive.value = !bMenuActive.value)
 </script>
 
 <template>
   <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" />
   <menu
-    v-show="bScreenXl || bMenuToggle"
+    v-show="bScreenXl || bMenuActive"
     class="fixed left-0 h-screen m-0 p-0 w-full z-fixed bg-[var(--background-darker)] grid grid-rows-[1fr,auto,1fr]"
     w:xl="w-52"
     w:border="1 solid red-800"
@@ -42,7 +42,7 @@
 </template>
 <style scoped>
   .menu-button {
-    @apply fixed top-10px right-10px;
+    @apply fixed top-30px right-30px;
     z-index: calc(theme('zIndex.fixed') + 1);
   }
 </style>
