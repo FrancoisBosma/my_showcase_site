@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  withDefaults(defineProps<{ bActive: boolean }>(), { bActive: false })
+  withDefaults(defineProps<{ bActive?: boolean }>(), { bActive: false })
 </script>
 
 <template>
