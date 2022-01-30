@@ -2,7 +2,7 @@
   const { t } = useI18n()
 </script>
 <template>
-  <section id="playground" w:border="1 solid light-50">
+  <section id="playground" w:border="1 solid light-50" class="block">
     <h2>{{ t('Playground') }}</h2>
     <h3 class="py-30 relative">
       {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" />
