@@ -17,7 +17,7 @@ body,
 }
 
 #nprogress .bar {
-  @apply bg-lime-600 opacity-75 fixed z-fixed top-0 left-0 w-full h-2px;
+  @apply bg-[var(--info)] opacity-75 fixed z-fixed top-0 left-0 w-full h-2px;
 }
 
 .btn {
