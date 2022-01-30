@@ -3,10 +3,10 @@
 </script>
 <template>
   <section id="playground" w:border="1 solid light-50" class="!block">
-    <h2>{{ t('Playground') }}</h2>
-    <h3 class="py-30 relative">
+    <h3>{{ t('Playground') }}</h3>
+    <h2 class="py-30 relative">
       {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" />
-    </h3>
+    </h2>
     <ul class="playground-tile">
       <li>
         <div>
@@ -34,7 +34,7 @@
           PWA
           <div class="text-xs italic discreet">{{ t('Progressive Web App') }} </div>
         </div>
-        <div>AAA <br />aaa</div>
+        <div>AAA <br />aaa<br />aaa<br />aaa<br />aaa<br />aaa<br />aaa<br />aaa<br />aaa<br />aaa</div>
       </li>
       <li class="incoming">
         <div>{{ t('Secret') }}</div>

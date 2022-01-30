@@ -10,10 +10,21 @@ meta:
 
 <template>
   <Menu />
-  <div class="xl:pl-52" w:children="relative p-12 h-max overflow-x-hidden flex flex-col justify-center">
+  <div class="main-content">
     <Introduction />
     <Playground />
     <Skills />
     <Contact />
   </div>
 </template>
+<style scoped lang="postcss">
+  .main-content {
+    @screen xl {
+      @apply pl-52;
+    }
+    & > * {
+      @apply relative p-12 h-max overflow-y-visible flex flex-col justify-center;
+      overflow-x: clip;
+    }
+  }
+</style>

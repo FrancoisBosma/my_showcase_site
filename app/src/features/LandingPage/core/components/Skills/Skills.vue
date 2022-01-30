@@ -3,7 +3,7 @@
 </script>
 <template>
   <section id="skills" w:p="0" w:border="1 solid light-50">
-    <h2>{{ t('Skills') }}</h2>
+    <h3>{{ t('Skills') }}</h3>
     <ul class="checker-board grid grid-flow-col grid-cols-4 grid-rows-2">
       <li><fa-diamond /></li>
       <li>{{ t('World-Class Apps') }}</li>

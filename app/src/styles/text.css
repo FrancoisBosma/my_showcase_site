@@ -5,11 +5,11 @@ h1 {
   @apply text-5xl md:text-7xl lg:text-8xl;
 }
 h2 {
-  @apply text-19xl md:text-25xl lg:text-30xl absolute z-behind top-1/2 left-0 transform -translate-y-7/12;
-  white-space: nowrap;
+  @apply text-6xl;
 }
 h3 {
-  @apply text-6xl;
+  @apply text-19xl md:text-25xl lg:text-30xl absolute z-behind top-0 left-1/2 transform -translate-x-1/12 -translate-y-1/6;
+  white-space: nowrap;
 }
 p {
   @apply tracking-1px text-sm md:(tracking-4px text-base) lg:text-lg;
