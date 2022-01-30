@@ -2,7 +2,7 @@
   const { t } = useI18n()
 </script>
 <template>
-  <section id="introduction" class="items-start text-left" w:border="1 solid light-50">
+  <section id="introduction" class="!h-screen items-start text-left" w:border="1 solid light-50">
     <h1>{{ t('Hi,') }}<br />{{ t("I'm Francois,") }}<br />{{ t('web developer') }}</h1>
     <p class="py-4 discreet">Vue.js enthusiast | full-stack dev | Freelancer</p>
   </section>
