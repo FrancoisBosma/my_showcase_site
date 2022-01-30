@@ -10,9 +10,10 @@
 <style scoped lang="postcss">
   .icon-button {
     @apply relative flex justify-center items-center w-13 h-13
-      bg-[var(--background-darker)] text-[var(--foreground)] rounded-1/2
+      bg-[var(--foreground-dark)] text-[var(--foreground)] rounded-1/2
       duration-500 ease-out;
     box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+    border: 2px solid #202020;
     & > :slotted(svg) {
       @apply relative top-0.5 text-3xl transition-transform duration-250 ease-out;
     }
@@ -26,6 +27,7 @@
     &[is-active='true'] {
       @apply text-[var(--emphasis)];
       box-shadow: 0 0 15px rgba(0, 0, 0, 0);
+      border: 0px;
       &::before {
         @apply transform scale-110 ease-out;
         box-shadow: 0 0 15px var(--emphasis);
