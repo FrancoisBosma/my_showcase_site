@@ -43,14 +43,15 @@
       @apply px-8 py-2 w-full text-left flex;
     }
     &[is-selected='true'] {
-      background-color: rgba(0, 0, 0, 60%);
+      background-color: var(--background-darker);
+      opacity: 60%;
       color: var(--foreground);
       button {
         cursor: default;
       }
     }
     &:hover[is-selected='false'] {
-      background-color: rgba(0, 0, 0, 20%);
+      background-color: var(--background-darker-seethrough-2);
     }
   }
 </style>
