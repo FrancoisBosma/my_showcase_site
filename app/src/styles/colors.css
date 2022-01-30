@@ -10,6 +10,8 @@
   --background-darker: #121212;
   --background-darker-seethrough: #12121211;
   --background-lighter: #282828;
+  --background-lighter: #282828;
+  --foreground-dark: #484848;
   --foreground: #f8f8f8;
 }
 
