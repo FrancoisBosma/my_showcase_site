@@ -17,7 +17,7 @@
       </li>
       <li>
         <div>{{ t('Dark Mode') }}</div>
-        <div>AAA</div>
+        <div> <DarkModeSwitcher /> </div>
       </li>
       <li>
         <div>{{ t('Responsive Design') }}</div>
