@@ -1,12 +1,15 @@
 <script setup lang="ts">
   import localeLanguages from '@GLOBAL/constants/locale_languages'
+  import nProgress from 'nprogress'
 
   const bActive = ref(false)
   const fnToggleSelector = () => (bActive.value = !bActive.value)
   const { locale } = useI18n()
   const fnClosePopper = (localeName: string, closeFn: Function = () => undefined) => {
+    nProgress.start()
     locale.value = localeName
     closeFn()
+    nProgress.done()
   }
 </script>
 
