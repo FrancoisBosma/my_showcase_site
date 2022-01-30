@@ -35,15 +35,12 @@
     &[is-dark='true'] ~ .toggle-switch {
       @apply ml-0 border-[#dee1c5] bg-[#fffdf2];
     }
-
     &[is-dark='true'] ~ .toggle-bg {
       @apply bg-[var(--foreground-dark)] border-[#202020];
     }
-
     &[is-dark='true'] ~ .toggle-switch .toggle-switch-figure {
       @apply ml-40px opacity-0 transform scale-10;
     }
-
     &[is-dark='true'] ~ .toggle-switch .toggle-switch-figureAlt {
       @apply transform scale-75;
     }
