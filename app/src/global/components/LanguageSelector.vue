@@ -5,12 +5,12 @@
   const bActive = ref(false)
   const fnToggleSelector = () => (bActive.value = !bActive.value)
   const { locale } = useI18n()
-  const fnClosePopper = (localeName: string, closeFn: Function = () => undefined) => {
+  const fnChangeLocale = (localeName: string) => {
     nProgress.start()
     locale.value = localeName
-    closeFn()
     nProgress.done()
   }
+  const fnIsSelectedLocale = (localeName: string) => locale.value === localeName
 </script>
 
 <template>
@@ -19,10 +19,18 @@
       <IconButton :is-active="bActive">
         <clarity-language-solid />
       </IconButton>
-      <template #content="{ close }">
-        <ul class="py-4 max-h-50 overflow-y-auto">
-          <li v-for="(language, localeName) in localeLanguages" :key="localeName" class="selector-line">
-            <button @click="fnClosePopper(localeName, close)">{{ language }}</button>
+      <template #content>
+        <ul class="py-2 max-h-50 overflow-y-auto">
+          <li
+            v-for="(language, localeName) in localeLanguages"
+            :key="localeName"
+            :is-selected="fnIsSelectedLocale(localeName)"
+            class="selector-line"
+          >
+            <button @click="!fnIsSelectedLocale(localeName) && fnChangeLocale(localeName)">
+              <mdi-check v-if="fnIsSelectedLocale(localeName)" />
+              {{ language }}
+            </button>
           </li>
         </ul>
       </template>
@@ -31,8 +39,17 @@
 </template>
 <style scoped lang="postcss">
   .selector-line {
-    @apply children:(px-8 py-2 w-full text-left);
-    &:hover {
+    button {
+      @apply px-8 py-2 w-full text-left flex;
+    }
+    &[is-selected='true'] {
+      background-color: rgba(0, 0, 0, 60%);
+      color: var(--foreground);
+      button {
+        cursor: default;
+      }
+    }
+    &:hover[is-selected='false'] {
       background-color: rgba(0, 0, 0, 20%);
     }
   }
