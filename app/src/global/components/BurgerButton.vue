@@ -32,7 +32,7 @@
     .hamburger__inner {
       width: 100%;
       height: 2px;
-      background-color: #fff;
+      background-color: var(--foreground);
       border-radius: 4px;
       position: absolute;
       transition-property: transform, opacity;
@@ -45,7 +45,7 @@
       &::after {
         width: 100%;
         height: 2px;
-        background-color: #fff;
+        background-color: var(--foreground);
         border-radius: 4px;
         position: absolute;
         transition-property: transform, opacity;
@@ -66,7 +66,7 @@
       opacity: 0;
       width: 100%;
       height: 2px;
-      background-color: #fff;
+      background-color: var(--foreground);
       border-radius: 4px;
       position: absolute;
       transition-property: transform, opacity;
@@ -79,7 +79,7 @@
       &::after {
         width: 100%;
         height: 2px;
-        background-color: #fff;
+        background-color: var(--foreground);
         border-radius: 4px;
         position: absolute;
         transition-property: transform, opacity;
