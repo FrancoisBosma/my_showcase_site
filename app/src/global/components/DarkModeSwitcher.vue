@@ -18,15 +18,17 @@
     @apply box-content;
   }
   .toggle {
-    @apply relative inline-block w-80px p-1 rounded-40px;
-    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
-    &:before,
-    &:after {
+    @apply relative inline-block w-80px p-1 rounded-40px transition-shadow duration-250 ease-out;
+    &::before,
+    &::after {
       content: '';
       display: table;
     }
-    &:after {
+    &::after {
       clear: both;
+    }
+    &:hover {
+      box-shadow: 0 0 15px var(--emphasis);
     }
   }
 
@@ -58,14 +60,14 @@
       @apply absolute block -bottom-14px -left-44px w-70px h-25px rounded-20px bg-white transform scale-35
         transition-all duration-300 ease-out;
       border: 8px solid #d4d4d2;
-      &:before {
+      &::before {
         @apply relative block -top-25px -right-10px w-30px h-30px rounded-full bg-white transform rotate-z-30;
         content: '';
         border: 8px solid #d4d4d2;
         border-right-color: transparent;
         border-bottom-color: transparent;
       }
-      &:after {
+      &::after {
         @apply relative block -top-65px -right-37px w-13px h-13px rounded-full bg-white transform rotate-z-80;
         content: '';
         border: 8px solid #d4d4d2;
@@ -80,13 +82,13 @@
       border: 4px solid #dee1c5;
       box-shadow: 42px -7px 0 -3px #fcfcfc, 75px -10px 0 -3px #fcfcfc, 54px 4px 0 -4px #fcfcfc, 83px 7px 0 -2px #fcfcfc,
         63px 18px 0 -4px #fcfcfc, 44px 28px 0 -2px #fcfcfc, 78px 23px 0 -3px #fcfcfc;
-      &:before {
+      &::before {
         @apply absolute -top-6px left-18px w-7px h-7px bg-[#efeeda] rounded-full;
         content: '';
         border: 2px solid #dee1c5;
       }
 
-      &:after {
+      &::after {
         @apply absolute top-19px left-15px w-2px h-2px bg-[#efeeda] rounded-full;
         content: '';
         border: 2px solid #dee1c5;
