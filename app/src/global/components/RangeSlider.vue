@@ -1,12 +1,15 @@
 <script setup lang="ts">
-  const screenWidth = ref(0)
-  const toto = () => console.log('DELETE ME') // DELETEMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE !!!!!!!!!!!
+  const props = withDefaults(defineProps<{ value?: number; onSet?: Function }>(), {
+    value: 0,
+    onSet: () => undefined,
+  })
+  const { value: sliderValue, onSet } = useVModels(props)
 </script>
 
 <template>
   <div class="slider">
-    <span class="slider-value"> {{ screenWidth }}px </span>
-    <input v-model="screenWidth" class="range" type="range" min="0" max="1000" @change="toto()" />
+    <span class="slider-value"> {{ sliderValue }}px </span>
+    <input v-model="sliderValue" class="range" type="range" min="0" max="1000" @change="onSet()" />
   </div>
 </template>
 <style scoped lang="postcss">
