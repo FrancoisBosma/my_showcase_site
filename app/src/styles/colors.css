@@ -8,8 +8,8 @@
   --background-darker-seethrough: #ededed11;
   --background-darker-seethrough-2: #ededed33;
   --background-lighter: #fdfdfd;
-  --foreground-light-contrast: #ececec;
-  --foreground: #222;
+  --foreground-light-contrast: #c7c7c7;
+  --foreground: #1d1d1f;
 }
 
 :root.dark {
