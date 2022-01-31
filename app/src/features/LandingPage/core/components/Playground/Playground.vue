@@ -1,12 +1,12 @@
 <script setup lang="ts">
   const { t } = useI18n()
+  const toto = ref(42)
+  const tata = () => console.log('rrrr')
 </script>
 <template>
   <section id="playground" w:border="1 solid light-50" class="!block">
     <h3>{{ t('Playground') }}</h3>
-    <h2 class="py-30 relative">
-      {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" />
-    </h2>
+    <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2>
     <ul class="playground-tile">
       <li>
         <div>
@@ -21,7 +21,10 @@
       </li>
       <li>
         <div>{{ t('Responsive Design') }}</div>
-        <div>AAA</div>
+        <div>
+          <RangeSlider v-model:value.number="toto" /> <br />
+          parent: {{ toto }}
+        </div>
       </li>
       <li class="incoming">
         <div>{{ t('Navigation Guards') }}</div>
