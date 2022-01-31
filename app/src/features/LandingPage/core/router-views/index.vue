@@ -23,7 +23,7 @@ meta:
       @apply pl-52;
     }
     & > * {
-      @apply relative p-12 h-max overflow-y-visible flex flex-col justify-center;
+      @apply relative px-12 py-28 h-max overflow-y-visible flex flex-col justify-center;
       overflow-x: clip;
     }
   }
