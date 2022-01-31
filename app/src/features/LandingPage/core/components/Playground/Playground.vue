@@ -1,7 +1,6 @@
 <script setup lang="ts">
   const { t } = useI18n()
   const toto = ref(42)
-  const tata = () => console.log('rrrr')
 </script>
 <template>
   <section id="playground" w:border="1 solid light-50" class="!block">
