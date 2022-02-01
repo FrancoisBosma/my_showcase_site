@@ -1,11 +1,19 @@
 <script setup lang="ts">
   const { t } = useI18n()
-  const toto = ref(42)
+  const { width: windowWidth } = useWindowSize()
+  const maxWidth = computed(() => windowWidth.value * 2)
+  const contentWidthModifier = ref(0)
+  const contentWidth = computed(() => windowWidth.value + contentWidthModifier.value)
+  const updateCWM = (newContentWidth: string) =>
+    (contentWidthModifier.value = Number(newContentWidth) - windowWidth.value)
+  const resetCWM = () => (contentWidthModifier.value = 0)
+  watch(windowWidth, () => resetCWM())
 </script>
 <template>
   <section id="playground" w:border="1 solid light-50" class="!block">
     <h3>{{ t('Playground') }}</h3>
-    <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2>
+    <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
+    <h2> {{ t('Go ahead click around') }} </h2>
     <ul class="playground-tile">
       <li>
         <div>
@@ -21,8 +29,13 @@
       <li>
         <div>{{ t('Responsive Design') }}</div>
         <div>
-          <RangeSlider v-model:value.number="toto" /> <br />
-          parent: {{ toto }}
+          <RangeSlider :value="contentWidth" :value-max="maxWidth" @update:value="updateCWM($event)" />
+          <div class="p-4">
+            <!-- <button class="btn" @click="resetCWM()">
+              {{ t('Reset') }}
+            </button> -->
+            <Button @click="resetCWM()"> <fluent-arrow-reset-24-filled /> {{ t('Reset') }} </Button>
+          </div>
         </div>
       </li>
       <li class="incoming">
