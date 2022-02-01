@@ -20,12 +20,12 @@ body,
   @apply bg-[var(--info)] opacity-75 fixed z-fixed top-0 left-0 w-full h-2px;
 }
 
-.btn {
-  @apply px-4 py-1 rounded inline-block bg-lime-600 cursor-pointer
+/* .btn {
+  @apply px-4 py-1 rounded inline-block bg-[var(--cta)] text-[var(--background)] cursor-pointer
     hover:(bg-lime-700 text-lime-900)
     disabled:(cursor-default bg-gray-600 opacity-50);
   box-shadow: 1px 1px 3px rgba(0, 50, 0, 0.5);
-}
+} */
 
 .icon-link {
   @apply hover-emphasis inline-block cursor-pointer select-none opacity-75 text-[var(--cta)]
