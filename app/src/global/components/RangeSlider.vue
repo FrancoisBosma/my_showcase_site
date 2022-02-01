@@ -1,15 +1,21 @@
 <script setup lang="ts">
-  const props = withDefaults(defineProps<{ value?: number; onSet?: Function }>(), {
-    value: 0,
-    onSet: () => undefined,
-  })
+  const props = withDefaults(
+    defineProps<{ value?: number; valueMin?: number; valueMax?: number; onSet?: Function }>(),
+    {
+      value: 0,
+      valueMin: 0,
+      valueMax: 1000,
+      onSet: () => undefined,
+    }
+  )
   const { value: sliderValue, onSet } = useVModels(props)
+  const { valueMin, valueMax } = toRefs(props) // regular props; don't want to emit updates to those
 </script>
 
 <template>
   <div class="slider">
     <span class="slider-value"> {{ sliderValue }}px </span>
-    <input v-model="sliderValue" class="range" type="range" min="0" max="1000" @change="onSet()" />
+    <input v-model="sliderValue" class="range" type="range" :min="valueMin" :max="valueMax" @change="onSet()" />
   </div>
 </template>
 <style scoped lang="postcss">
