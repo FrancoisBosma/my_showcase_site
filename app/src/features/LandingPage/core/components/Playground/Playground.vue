@@ -10,7 +10,7 @@
   watch(windowWidth, () => resetCWM())
 </script>
 <template>
-  <section id="playground" w:border="1 solid light-50" class="!block">
+  <section id="playground" class="!block">
     <h3>{{ t('Playground') }}</h3>
     <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
     <h2> {{ t('Go ahead click around') }} </h2>

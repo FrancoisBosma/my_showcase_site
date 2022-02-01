@@ -12,7 +12,6 @@
     v-show="bScreenXl || bMenuActive"
     class="fixed left-0 h-screen m-0 p-0 w-full z-fixed bg-[var(--background-darker)] grid grid-rows-[1fr,auto,1fr]"
     w:xl="w-52"
-    w:border="1 solid red-800"
   >
     <p class="p-4 text-6xl">FB</p>
     <nav
