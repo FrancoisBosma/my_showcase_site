@@ -52,7 +52,7 @@
           box-shadow: -415px 0 0 400px var(--bar-color);
         }
         &::-moz-range-thumb {
-          @apply w-12px h-12px;
+          @apply w-22px h-22px;
           box-shadow: -415px 0 0 400px var(--bar-color);
         }
       }
