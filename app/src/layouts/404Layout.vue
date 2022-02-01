@@ -9,16 +9,11 @@
     <router-view />
     <!-- <SameSizeSiblings>
       <template #1>
-        <button class="btn" @click="router.push('/')">
-          <mdi-home w:text="2xl" />
-        </button>
       </template>
       <template #2>
-        <button class="btn" @click="router.back()">
-          <mdi-arrow-left-thick w:text="2xl" />
-        </button>
       </template>
     </SameSizeSiblings> -->
-    <Button @click="router.push('/')"> <mdi-home /> {{ t('Home') }} </Button>
+    <Button @click="router.push('/')"> {{ t('Home') }} </Button>
+    <Button @click="router.push('/')"> {{ t('Back') }} </Button>
   </main>
 </template>

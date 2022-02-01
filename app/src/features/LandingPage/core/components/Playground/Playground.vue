@@ -34,7 +34,7 @@
             <!-- <button class="btn" @click="resetCWM()">
               {{ t('Reset') }}
             </button> -->
-            <Button @click="resetCWM()"> <fluent-arrow-reset-24-filled /> {{ t('Reset') }} </Button>
+            <Button @click="resetCWM()"> {{ t('Reset') }} </Button>
           </div>
         </div>
       </li>
