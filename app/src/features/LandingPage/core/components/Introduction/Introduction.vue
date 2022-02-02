@@ -1,5 +1,6 @@
 <script setup lang="ts">
   const { t } = useI18n()
+  const { counter, pause, resume } = useInterval(200, { controls: true })
 </script>
 <template>
   <section id="introduction" class="!h-screen items-start text-left">
