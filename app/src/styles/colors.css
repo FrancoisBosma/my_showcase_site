@@ -4,11 +4,11 @@
   --emphasis: #2997fe;
   --info: #7fdbff;
   --background: #fbfbfd;
-  --background-darker: #ededed;
-  --background-darker-seethrough: #ededed11;
-  --background-darker-seethrough-2: #ededed33;
+  --background-stronger: #ededed;
+  --background-stronger-seethrough: #ededed11;
+  --background-stronger-seethrough-2: #ededed33;
   --background-extreme: #fff;
-  --foreground-light-contrast: #c7c7c7;
+  --foreground-contrast: #c7c7c7;
   --foreground: #1d1d1f;
 }
 
@@ -18,11 +18,11 @@
   --emphasis: #d97706;
   --info: #fcd34d;
   --background: #222;
-  --background-darker: #121212;
-  --background-darker-seethrough: #12121211;
-  --background-darker-seethrough-2: #12121233;
+  --background-stronger: #121212;
+  --background-stronger-seethrough: #12121211;
+  --background-stronger-seethrough-2: #12121233;
   --background-extreme: #1d1d1b;
-  --foreground-light-contrast: #484848;
+  --foreground-contrast: #484848;
   --foreground: #f8f8f8;
 }
 

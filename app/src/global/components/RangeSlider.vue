@@ -27,17 +27,17 @@
       appearance: none;
       -webkit-appearance: none;
       outline: none;
-      box-shadow: inset 0 0 3px var(--background-darker);
+      box-shadow: inset 0 0 3px var(--background-stronger);
       &::-webkit-slider-thumb {
         @apply w-4 h-4 rounded-1/2 bg-[var(--bar-color)] cursor-pointer transition-all duration-300 ease-in;
         -webkit-appearance: none;
-        border: 5px solid var(--foreground-light-contrast);
+        border: 5px solid var(--foreground-contrast);
         box-shadow: -407px 0 0 400px var(--bar-color);
       }
       &::-moz-range-thumb {
         @apply w-6px h-6px rounded-1/2 bg-[var(--bar-color)] cursor-pointer transition-all duration-300 ease-in;
         appearance: none;
-        border: 5px solid var(--foreground-light-contrast);
+        border: 5px solid var(--foreground-contrast);
         box-shadow: -407px 0 0 400px var(--bar-color);
       }
 

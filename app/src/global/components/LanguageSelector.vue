@@ -43,7 +43,7 @@
       @apply px-8 py-2 w-full text-left flex;
     }
     &[is-selected='true'] {
-      background-color: var(--background-darker);
+      background-color: var(--background-stronger);
       opacity: 60%;
       color: var(--foreground);
       button {
@@ -51,7 +51,7 @@
       }
     }
     &:hover[is-selected='false'] {
-      background-color: var(--background-darker-seethrough-2);
+      background-color: var(--background-stronger-seethrough-2);
     }
   }
 </style>

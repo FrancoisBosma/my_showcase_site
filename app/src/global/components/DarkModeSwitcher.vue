@@ -38,7 +38,7 @@
       @apply ml-0 border-[#dee1c5] bg-[#fffdf2];
     }
     &[is-dark='true'] ~ .toggle-bg {
-      @apply bg-[var(--foreground-light-contrast)] border-[#202020];
+      @apply bg-[var(--foreground-contrast)] border-[#202020];
     }
     &[is-dark='true'] ~ .toggle-switch .toggle-switch-figure {
       @apply ml-40px opacity-0 transform scale-10;

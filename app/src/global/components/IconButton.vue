@@ -10,7 +10,7 @@
 <style scoped lang="postcss">
   .icon-button {
     @apply relative flex justify-center items-center w-13 h-13
-      bg-[var(--foreground-light-contrast)] text-[var(--foreground)] rounded-1/2
+      bg-[var(--foreground-contrast)] text-[var(--foreground)] rounded-1/2
       duration-250 ease-out;
     & > :slotted(svg) {
       @apply relative top-0.5 text-3xl transition-transform duration-250 ease-out;

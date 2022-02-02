@@ -21,7 +21,7 @@
       stroke-linejoin: round;
     }
     &:before {
-      @apply absolute rounded-4xl w-14 h-14 bg-[var(--foreground-light-contrast)]
+      @apply absolute rounded-4xl w-14 h-14 bg-[var(--foreground-contrast)]
         transition-all duration-250 ease-in-out;
       content: '';
     }
