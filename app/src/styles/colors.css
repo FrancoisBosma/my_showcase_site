@@ -3,10 +3,17 @@
   --cta: #b10dc9;
   --emphasis: #2997fe;
   --info: #7fdbff;
-  --background: #fbfbfd;
+  /* --background: #fbfbfd;
   --background-stronger: #ededed;
   --background-stronger-seethrough: #ededed11;
   --background-stronger-seethrough-2: #ededed33;
+  --background-extreme: #fff;
+  --foreground-contrast: #c7c7c7;
+  --foreground: #1d1d1f; */
+  --background: #e3f5ff;
+  --background-stronger: #a9e0ff;
+  --background-stronger-seethrough: #a9e0ff10;
+  --background-stronger-seethrough-2: #a9e0ff30;
   --background-extreme: #fff;
   --foreground-contrast: #c7c7c7;
   --foreground: #1d1d1f;
