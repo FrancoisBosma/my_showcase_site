@@ -1,13 +1,8 @@
 <script setup lang="ts">
+  import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
   const { t } = useI18n()
-  const { width: windowWidth } = useWindowSize()
-  const maxWidth = computed(() => windowWidth.value * 2)
-  const contentWidthModifier = ref(0)
-  const contentWidth = computed(() => windowWidth.value + contentWidthModifier.value)
-  const updateCWM = (newContentWidth: string) =>
-    (contentWidthModifier.value = Number(newContentWidth) - windowWidth.value)
-  const resetCWM = () => (contentWidthModifier.value = 0)
-  watch(windowWidth, () => resetCWM())
+  const { maxWidth, windowWidth, contentWidth, updateCWM, resetCWM } = toRefs(useLPStore())
+  watch(windowWidth, () => resetCWM.value())
 </script>
 <template>
   <section id="playground" class="!block">
