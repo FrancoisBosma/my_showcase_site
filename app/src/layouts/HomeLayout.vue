@@ -15,7 +15,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     shape-rendering="geometricPrecision"
     text-rendering="geometricPrecision"
-    class="fixed w-full h-full z-behind"
+    class="fixed w-full h-full -z-9999"
   >
     <defs>
       <pattern id="checker-bg" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -23,14 +23,15 @@
         <rect width="16" height="16" rx="0" ry="0" transform="translate(16 16)" :fill="strokeColor" stroke-width="0" />
       </pattern>
     </defs>
-    <rect width="100%" height="100%" fill="url(#checker-bg)" />
+    <rect fill="url(#checker-bg)" class="relative w-full h-full -z-9999" />
   </svg>
-  <main class="bg-[var(--background)]">
+  <main>
     <router-view />
   </main>
 </template>
 <style scoped lang="postcss">
   main {
+    @apply bg-[var(--background)];
     margin: 0 v-bind('contentXMargin');
   }
 </style>
