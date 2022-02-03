@@ -1,4 +1,11 @@
 <script setup lang="ts">
+  import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
+
+  const { contentWidthModifier } = toRefs(useLPStore())
+  const contentXMargin = computed(() => {
+    if (contentWidthModifier.value >= 0) return '0px'
+    return `${(-1 * contentWidthModifier.value) / 2}px`
+  })
   const strokeColor = '#808080'
 </script>
 <template>
@@ -18,7 +25,12 @@
     </defs>
     <rect width="100%" height="100%" fill="url(#checker-bg)" />
   </svg>
-  <main class="mx-16 bg-[var(--background)]">
+  <main class="bg-[var(--background)]">
     <router-view />
   </main>
 </template>
+<style scoped lang="postcss">
+  main {
+    margin: 0 v-bind('contentXMargin');
+  }
+</style>
