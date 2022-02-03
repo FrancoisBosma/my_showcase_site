@@ -31,9 +31,6 @@
         <div>
           <RangeSlider :value="contentWidth" :value-max="maxWidth" @update:value="updateCWM($event)" />
           <div class="p-4">
-            <!-- <button class="btn" @click="resetCWM()">
-              {{ t('Reset') }}
-            </button> -->
             <Button @click="resetCWM()"> {{ t('Reset') }} </Button>
           </div>
         </div>
