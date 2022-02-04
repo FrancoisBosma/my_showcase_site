@@ -2,7 +2,13 @@
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
   const { t } = useI18n()
   const { maxWidth, windowWidth, contentWidth, updateCWM, resetCWM } = toRefs(useLPStore())
-  watch(windowWidth, () => resetCWM.value())
+  const sliderValue = ref(contentWidth.value)
+  const resetSlider = () => {
+    sliderValue.value = contentWidth.value
+    resetCWM.value()
+  }
+  watch(windowWidth, () => resetSlider())
+  // const toto = (v: number) => console.log(v)
 </script>
 <template>
   <section id="playground" class="!block">
@@ -24,9 +30,15 @@
       <li>
         <div>{{ t('Responsive Design') }}</div>
         <div>
-          <RangeSlider :value="contentWidth" :value-max="maxWidth" @update:value="updateCWM($event)" />
+          <span> {{ sliderValue }}px </span>
+          <RangeSlider
+            :value="sliderValue"
+            :value-max="maxWidth"
+            :on-set="() => updateCWM(sliderValue)"
+            @update:value="sliderValue = Number($event)"
+          />
           <div class="p-4">
-            <Button @click="resetCWM()"> {{ t('Reset') }} </Button>
+            <Button @click="resetSlider()"> {{ t('Reset') }} </Button>
           </div>
         </div>
       </li>

@@ -8,13 +8,12 @@
       onSet: () => undefined,
     }
   )
-  const { value: sliderValue, onSet } = useVModels(props)
-  const { valueMin, valueMax } = toRefs(props) // regular props; don't want to emit updates to those
+  const { onSet, valueMin, valueMax } = toRefs(props)
+  const sliderValue = useVModel(props, 'value')
 </script>
 
 <template>
   <div class="slider">
-    <span class="slider-value"> {{ sliderValue }}px </span>
     <input v-model="sliderValue" class="range" type="range" :min="valueMin" :max="valueMax" @change="onSet()" />
   </div>
 </template>
