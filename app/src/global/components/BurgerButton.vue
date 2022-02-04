@@ -20,7 +20,7 @@
 </template>
 <style scoped lang="postcss">
   .hamburger {
-    @apply bg-[var(--background-stronger-seethrough)];
+    @apply bg-[var(--background-stronger-seethrough)] overflow-hidden;
     padding: 15px 10px;
     border-radius: 10%;
     text-align: initial;
