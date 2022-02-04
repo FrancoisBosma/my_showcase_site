@@ -10,8 +10,8 @@
 </script>
 
 <template>
-  <BurgerButton v-if="!bScreenXl" class="menu-button" :action="fnToggleMenu" :is-active="bMenuActive" />
-  <menu v-if="bScreenXl || bMenuActive">
+  <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" :is-active="bMenuActive" />
+  <menu v-show="bScreenXl || bMenuActive">
     <p class="p-4 text-6xl">FB</p>
     <nav
       w:flex="~ col"
