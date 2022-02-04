@@ -25,7 +25,7 @@
     <router-view />
   </main>
 </template>
-<style scoped lang="postcss">
+<style lang="postcss">
   main {
     @apply relative;
     margin: 0 v-bind('contentXMargin');

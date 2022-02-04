@@ -8,7 +8,8 @@ meta:
   import { Contact, Introduction, Menu, Playground, Skills } from '../components'
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
-  const { contentXMargin } = toRefs(useLPStore())
+  const { contentXMargin, bScreenXl } = toRefs(useLPStore())
+  const responsiveContentPadding = computed(() => (bScreenXl.value ? `calc(13rem + ${contentXMargin.value})` : '0'))
 </script>
 
 <template>
@@ -22,9 +23,7 @@ meta:
 </template>
 <style scoped lang="postcss">
   .main-content {
-    @screen xl {
-      padding-left: calc(13rem + v-bind('contentXMargin'));
-    }
+    padding-left: v-bind('responsiveContentPadding');
     & > * {
       @apply relative px-12 py-28 h-max overflow-y-visible flex flex-col justify-center;
       overflow-x: clip;

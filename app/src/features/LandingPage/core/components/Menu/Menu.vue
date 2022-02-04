@@ -2,6 +2,7 @@
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
   const { contentXMargin, bScreenXl } = toRefs(useLPStore())
+  const responsiveMenuWidth = computed(() => (bScreenXl.value ? '13rem' : `calc(100% - 2 * ${contentXMargin.value})`))
 
   const { t } = useI18n()
   const bMenuActive = ref(false)
@@ -9,8 +10,8 @@
 </script>
 
 <template>
-  <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" :is-active="bMenuActive" />
-  <menu v-show="bScreenXl || bMenuActive">
+  <BurgerButton v-if="!bScreenXl" class="menu-button" :action="fnToggleMenu" :is-active="bMenuActive" />
+  <menu v-if="bScreenXl || bMenuActive">
     <p class="p-4 text-6xl">FB</p>
     <nav
       w:flex="~ col"
@@ -45,10 +46,7 @@
   }
   menu {
     @apply fixed h-screen m-0 p-0 z-fixed bg-[var(--background-stronger)] grid grid-rows-[1fr,auto,1fr];
-    width: calc(100% - 2 * v-bind('contentXMargin'));
-    @screen xl {
-      @apply w-52;
-      left: v-bind('contentXMargin');
-    }
+    left: v-bind('contentXMargin');
+    width: v-bind('responsiveMenuWidth');
   }
 </style>
