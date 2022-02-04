@@ -1,8 +1,7 @@
 <script setup lang="ts">
-  import { bScreenXl } from '@GLOBAL/functions/reactified'
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
-  const { contentXMargin } = toRefs(useLPStore())
+  const { contentXMargin, bScreenXl } = toRefs(useLPStore())
 
   const { t } = useI18n()
   const bMenuActive = ref(false)
