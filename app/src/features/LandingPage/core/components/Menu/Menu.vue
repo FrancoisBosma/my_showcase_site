@@ -11,11 +11,7 @@
 
 <template>
   <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" :is-active="bMenuActive" />
-  <menu
-    v-show="bScreenXl || bMenuActive"
-    class="fixed h-screen m-0 p-0 w-full z-fixed bg-[var(--background-stronger)] grid grid-rows-[1fr,auto,1fr]"
-    w:xl="w-52"
-  >
+  <menu v-show="bScreenXl || bMenuActive">
     <p class="p-4 text-6xl">FB</p>
     <nav
       w:flex="~ col"
@@ -49,7 +45,10 @@
     right: calc(30px + v-bind('contentXMargin'));
   }
   menu {
+    @apply fixed h-screen m-0 p-0 z-fixed bg-[var(--background-stronger)] grid grid-rows-[1fr,auto,1fr];
+    width: calc(100% - 2 * v-bind('contentXMargin'));
     @screen xl {
+      @apply w-52;
       left: v-bind('contentXMargin');
     }
   }
