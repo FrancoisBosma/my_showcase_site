@@ -10,16 +10,14 @@
   const { t } = useI18n()
 </script>
 <template>
-  <div>
-    <span> {{ sliderValue }}px </span>
-    <RangeSlider
-      :value="sliderValue"
-      :value-max="maxWidth"
-      :on-set="(v: number) => updateCWM(v)"
-      @update:value="sliderValue = Number($event)"
-    />
-    <div class="p-4">
-      <Button @click="resetSlider()"> {{ t('Reset') }} </Button>
-    </div>
+  <span> {{ sliderValue }}px </span>
+  <RangeSlider
+    :value="sliderValue"
+    :value-max="maxWidth"
+    :on-set="(v: number) => updateCWM(v)"
+    @update:value="sliderValue = Number($event)"
+  />
+  <div class="p-4">
+    <Button @click="resetSlider()"> {{ t('Reset') }} </Button>
   </div>
 </template>
