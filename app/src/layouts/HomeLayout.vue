@@ -1,11 +1,7 @@
 <script setup lang="ts">
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
-  const { contentWidthModifier } = toRefs(useLPStore())
-  const contentXMargin = computed(() => {
-    if (contentWidthModifier.value >= 0) return '0px'
-    return `${(-1 * contentWidthModifier.value) / 2}px`
-  })
+  const { contentXMargin } = toRefs(useLPStore())
   const strokeColor = '#808080'
 </script>
 <template>
