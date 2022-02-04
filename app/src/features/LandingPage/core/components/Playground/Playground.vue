@@ -1,14 +1,6 @@
 <script setup lang="ts">
-  import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
+  import PageWidthModifier from './PageWidthModifier'
   const { t } = useI18n()
-  const { maxWidth, windowWidth, contentWidth, updateCWM, resetCWM } = toRefs(useLPStore())
-  const sliderValue = ref(contentWidth.value)
-  const resetSlider = () => {
-    sliderValue.value = contentWidth.value
-    resetCWM.value()
-  }
-  watch(windowWidth, () => resetSlider())
-  // const toto = (v: number) => console.log(v)
 </script>
 <template>
   <section id="playground" class="!block">
@@ -30,16 +22,7 @@
       <li>
         <div>{{ t('Responsive Design') }}</div>
         <div>
-          <span> {{ sliderValue }}px </span>
-          <RangeSlider
-            :value="sliderValue"
-            :value-max="maxWidth"
-            :on-set="() => updateCWM(sliderValue)"
-            @update:value="sliderValue = Number($event)"
-          />
-          <div class="p-4">
-            <Button @click="resetSlider()"> {{ t('Reset') }} </Button>
-          </div>
+          <PageWidthModifier />
         </div>
       </li>
       <li class="incoming">

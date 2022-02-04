@@ -14,7 +14,14 @@
 
 <template>
   <div class="slider">
-    <input v-model="sliderValue" class="range" type="range" :min="valueMin" :max="valueMax" @change="onSet()" />
+    <input
+      v-model="sliderValue"
+      class="range"
+      type="range"
+      :min="valueMin"
+      :max="valueMax"
+      @change="onSet(sliderValue)"
+    />
   </div>
 </template>
 <style scoped lang="postcss">
