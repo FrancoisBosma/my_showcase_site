@@ -1,5 +1,8 @@
 <script setup lang="ts">
   import { bScreenXl } from '@GLOBAL/functions/reactified'
+  import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
+
+  const { contentXMargin } = toRefs(useLPStore())
 
   const { t } = useI18n()
   const bMenuActive = ref(false)
@@ -10,7 +13,7 @@
   <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" :is-active="bMenuActive" />
   <menu
     v-show="bScreenXl || bMenuActive"
-    class="fixed left-0 h-screen m-0 p-0 w-full z-fixed bg-[var(--background-stronger)] grid grid-rows-[1fr,auto,1fr]"
+    class="fixed h-screen m-0 p-0 w-full z-fixed bg-[var(--background-stronger)] grid grid-rows-[1fr,auto,1fr]"
     w:xl="w-52"
   >
     <p class="p-4 text-6xl">FB</p>
@@ -39,9 +42,15 @@
     </div>
   </menu>
 </template>
-<style scoped>
+<style scoped lang="postcss">
   .menu-button {
-    @apply fixed top-30px right-30px;
+    @apply fixed top-30px;
     z-index: calc(theme('zIndex.fixed') + 1);
+    right: calc(30px + v-bind('contentXMargin'));
+  }
+  menu {
+    @screen xl {
+      left: v-bind('contentXMargin');
+    }
   }
 </style>
