@@ -41,7 +41,7 @@
     }
   }
   .responsive-fixed {
-    @apply absolute top-0 left-0 w-full;
+    @apply absolute top-0 left-0 w-full transition-all duration-300 ease-in;
     margin-top: v-bind('responsiveFixedTagTop');
     height: v-bind('responsiveFixedTagHeight');
   }
