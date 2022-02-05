@@ -9,6 +9,10 @@ export const useLPStore = defineStore('landing-page', () => {
     return `${(-1 * contentWidthModifier.value) / 2}px`
   })
   const contentWidth = computed(() => windowWidth.value + contentWidthModifier.value)
+  const contentTransform = computed(() => {
+    if (contentWidthModifier.value <= 0) return 1
+    return windowWidth.value / (windowWidth.value + contentWidthModifier.value)
+  })
   const updateCWM = (newContentWidth: string | number) =>
     (contentWidthModifier.value = Number(newContentWidth) - windowWidth.value)
   const resetCWM = () => (contentWidthModifier.value = 0)
@@ -25,6 +29,7 @@ export const useLPStore = defineStore('landing-page', () => {
     contentWidthModifier,
     contentXMargin,
     contentWidth,
+    contentTransform,
     updateCWM,
     resetCWM,
     bScreenMd,
