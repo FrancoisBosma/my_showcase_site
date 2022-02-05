@@ -13,6 +13,7 @@
   <span> {{ sliderValue }}px </span>
   <RangeSlider
     :value="sliderValue"
+    :value-min="400"
     :value-max="maxWidth"
     :on-set="(v: number) => updateCWM(v)"
     @update:value="sliderValue = Number($event)"
