@@ -14,7 +14,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     shape-rendering="geometricPrecision"
     text-rendering="geometricPrecision"
-    class="fixed w-full h-full z-behind"
+    class="fixed w-screen h-screen z-behind"
   >
     <defs>
       <pattern id="checker-bg" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -30,7 +30,7 @@
 </template>
 <style lang="postcss">
   main {
-    @apply relative;
+    @apply relative transition-all duration-300 ease-in;
     margin: 0 v-bind('contentXMargin');
     transform: scale(v-bind('contentTransform'));
     transform-origin: top left;

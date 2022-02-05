@@ -7,7 +7,9 @@
   const { t } = useI18n()
   const bMenuActive = ref(false)
   const fnToggleMenu = () => (bMenuActive.value = !bMenuActive.value)
-  const menuXOffset = computed(() => `${bScreenXl.value || bMenuActive.value ? '0%' : '-200%'}`)
+  const bMenuShowing = computed(() => bScreenXl.value || bMenuActive.value)
+  const menuXOffset = computed(() => (bMenuShowing.value ? '0%' : '-100%'))
+  const menuOpacity = computed(() => (bMenuShowing.value ? '1' : '0'))
 </script>
 
 <template>
@@ -51,5 +53,6 @@
       transition-all duration-300 ease-in-out;
     width: v-bind('responsiveMenuWidth');
     transform: translateX(v-bind('menuXOffset'));
+    opacity: v-bind('menuOpacity');
   }
 </style>
