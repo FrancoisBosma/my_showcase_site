@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import PageWidthModifier from './PageWidthModifier'
+  import PwaExplanations from './PwaExplanations'
   const { t } = useI18n()
 </script>
 <template>
@@ -36,7 +37,7 @@
           PWA
           <div class="text-xs italic discreet">{{ t('Progressive Web App') }} </div>
         </div>
-        <div>AAA <br />aaa<br />aaa<br />aaa<br />aaa<br />aaa<br />aaa<br />aaa<br />aaa<br />aaa</div>
+        <div> <PwaExplanations /> </div>
       </li>
       <li class="incoming">
         <div>{{ t('Secret') }}</div>
