@@ -2,9 +2,8 @@
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
   const { contentXMargin, contentTransform } = toRefs(useLPStore())
-  const contentWidth = computed(() =>
-    contentTransform.value === 1 ? 'auto' : `calc(${100 / contentTransform.value}%)`
-  )
+  const contentWidth = computed(() => (contentTransform.value === 1 ? 'auto' : `${100 / contentTransform.value}%`))
+  const responsiveFixedTagHeight = computed(() => `${100 / contentTransform.value}vh`)
   const responsiveFixedTagTop = computed(() => `${useWindowScroll().y.value / contentTransform.value}px`)
   const strokeColor = '#808080'
 </script>
@@ -42,7 +41,8 @@
     }
   }
   .responsive-fixed {
-    @apply absolute top-0 left-0 w-full h-screen;
+    @apply absolute top-0 left-0 w-full;
     margin-top: v-bind('responsiveFixedTagTop');
+    height: v-bind('responsiveFixedTagHeight');
   }
 </style>
