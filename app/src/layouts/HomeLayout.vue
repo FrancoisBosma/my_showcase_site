@@ -2,6 +2,9 @@
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
   const { contentXMargin, contentTransform } = toRefs(useLPStore())
+  const contentWidth = computed(() =>
+    contentTransform.value === 1 ? 'auto' : `calc(${100 / contentTransform.value}%)`
+  )
   const strokeColor = '#808080'
 </script>
 <template>
@@ -31,7 +34,7 @@
     margin: 0 v-bind('contentXMargin');
     transform: scale(v-bind('contentTransform'));
     transform-origin: top left;
-    width: calc(1 / v-bind('contentTransform') * 100%);
+    width: v-bind('contentWidth');
     &::before {
       @apply absolute top-0 left-0 w-full h-full z-behind bg-[var(--background)];
       content: '';
