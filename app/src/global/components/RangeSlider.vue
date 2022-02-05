@@ -10,6 +10,10 @@
   )
   const { onSet, valueMin, valueMax } = toRefs(props)
   const sliderValue = useVModel(props, 'value')
+  watchEffect(() => {
+    if (sliderValue.value < valueMin.value) sliderValue.value = valueMin.value
+    if (sliderValue.value > valueMax.value) sliderValue.value = valueMax.value
+  })
 </script>
 
 <template>
