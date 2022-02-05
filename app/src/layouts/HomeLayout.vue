@@ -5,6 +5,7 @@
   const contentWidth = computed(() =>
     contentTransform.value === 1 ? 'auto' : `calc(${100 / contentTransform.value}%)`
   )
+  const responsiveFixedTagTop = computed(() => `${useWindowScroll().y.value / contentTransform.value}px`)
   const strokeColor = '#808080'
 </script>
 <template>
@@ -39,5 +40,9 @@
       @apply absolute top-0 left-0 w-full h-full z-behind bg-[var(--background)];
       content: '';
     }
+  }
+  .responsive-fixed {
+    @apply absolute top-0 left-0 w-full h-screen;
+    margin-top: v-bind('responsiveFixedTagTop');
   }
 </style>
