@@ -7,12 +7,13 @@
   const { t } = useI18n()
   const bMenuActive = ref(false)
   const fnToggleMenu = () => (bMenuActive.value = !bMenuActive.value)
+  const menuXOffset = computed(() => `${bScreenXl.value || bMenuActive.value ? '0%' : '-200%'}`)
 </script>
 
 <template>
   <div class="responsive-fixed">
     <BurgerButton v-show="!bScreenXl" class="menu-button" :action="fnToggleMenu" :is-active="bMenuActive" />
-    <menu v-show="bScreenXl || bMenuActive">
+    <menu>
       <p class="p-4 text-6xl">FB</p>
       <nav
         w:flex="~ col"
@@ -46,7 +47,9 @@
     z-index: calc(theme('zIndex.fixed') + 1);
   }
   menu {
-    @apply relative h-full w-full m-0 p-0 z-fixed bg-[var(--background-stronger)] grid grid-rows-[1fr,auto,1fr];
+    @apply relative h-full w-full m-0 p-0 z-fixed bg-[var(--background-stronger)] grid grid-rows-[1fr,auto,1fr]
+      transition-all duration-300 ease-in-out;
     width: v-bind('responsiveMenuWidth');
+    transform: translateX(v-bind('menuXOffset'));
   }
 </style>
