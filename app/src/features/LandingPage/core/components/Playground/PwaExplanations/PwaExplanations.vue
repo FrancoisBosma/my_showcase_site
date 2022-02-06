@@ -1,28 +1,43 @@
 <script setup lang="ts">
   import Flicking from '@egjs/vue3-flicking'
   import { Arrow, Fade, Pagination } from '@egjs/flicking-plugins'
+  import { UseMousePressed } from '@vueuse/components'
 
+  const { t } = useI18n()
   const flickingOptions = {
-    align: 'prev',
-    bound: true,
+    align: 'center',
     deceleration: 0.01,
     easing: (x: number) => 1 - (1 - x) ** 3,
   }
   const flickingPlugins = [new Arrow({ parentEl: document.body }), new Fade(), new Pagination()]
-  const { t } = useI18n()
+  const slideTexts = [
+    t('What is a Progressive Web App ?'),
+    t('PWAs run in browsers like websites'),
+    t("They're also like native apps customized for your device"),
+    t('They can work offline, ...'),
+    t('be downloaded, ...'),
+    t('support push notifications, ...'),
+    t('access hardware features, etc'),
+    t('In short, PWA = cross-platform'),
+  ]
 </script>
 <template>
   <div id="pwa-explanations">
-    <Flicking :options="flickingOptions" :plugins="flickingPlugins">
-      <div class="card-panel">1</div>
-      <div class="card-panel">2</div>
-      <div class="card-panel">3</div>
-      <div class="card-panel">4</div>
-      <div class="card-panel">5</div>
-      <template #viewport>
-        <div class="flicking-pagination"></div>
-      </template>
-    </Flicking>
+    <UseMousePressed v-slot="{ pressed }">
+      <Flicking
+        :options="flickingOptions"
+        :plugins="flickingPlugins"
+        :style="{ cursor: pressed ? 'grabbing' : 'grab' }"
+      >
+        <div v-for="(text, index) in slideTexts" :key="index" class="card-panel">
+          <div>{{ index + 1 }}</div>
+          <div>{{ text }}</div>
+        </div>
+        <template #viewport>
+          <div class="flicking-pagination"></div>
+        </template>
+      </Flicking>
+    </UseMousePressed>
     <span class="flicking-arrow-prev is-outside"></span>
     <span class="flicking-arrow-next is-outside"></span>
   </div>
@@ -92,6 +107,13 @@
   }
   /* Custom */
   .card-panel {
-    @apply bg-[var(--foreground-contrast)] w-96 h-48 mr-2 p-4 rounded-md;
+    @apply bg-[var(--foreground-contrast)] w-96 h-48 mr-2 p-4 rounded-md
+      grid grid-rows-[2fr,3fr];
+    & > *:nth-child(1) {
+      @apply m-auto;
+    }
+    & > *:nth-child(2) {
+      @apply mx-auto text-xl text-center;
+    }
   }
 </style>
