@@ -4,6 +4,7 @@
 
   const flickingOptions = {
     align: 'prev',
+    bound: true,
     deceleration: 0.01,
     easing: (x: number) => 1 - (1 - x) ** 3,
   }
@@ -91,6 +92,6 @@
   }
   /* Custom */
   .card-panel {
-    @apply bg-[var(--foreground-contrast)] w-96 h-48;
+    @apply bg-[var(--foreground-contrast)] w-96 h-48 mr-2 p-4 rounded-md;
   }
 </style>
