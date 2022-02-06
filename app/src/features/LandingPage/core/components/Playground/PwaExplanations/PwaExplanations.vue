@@ -19,6 +19,7 @@
     t('support push notifications, ...'),
     t('access hardware features, etc'),
     t('In short, PWA = cross-platform'),
+    t('Right now, your browser quite likely supports it and gives you the ability to download this site as an app'),
   ]
 </script>
 <template>
