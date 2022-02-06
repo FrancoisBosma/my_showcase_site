@@ -9,7 +9,7 @@ h2 {
 }
 h3 {
   @apply text-19xl md:text-25xl lg:text-30xl absolute z-behind top-0 left-1/2 transform -translate-x-1/12 -translate-y-1/6;
-  /* white-space: nowrap;  */ /* TODO: make translate-y in regards of line-height or font-size */
+  white-space: nowrap; 
 }
 p {
   @apply tracking-1px text-sm md:(tracking-4px text-base) lg:text-lg;
