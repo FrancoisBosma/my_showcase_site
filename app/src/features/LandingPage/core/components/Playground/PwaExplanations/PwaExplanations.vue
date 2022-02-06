@@ -14,12 +14,12 @@
     t('What is a Progressive Web App ?'),
     t('PWAs run in browsers like websites'),
     t("They're also like native apps customized for your device"),
-    t('They can work offline, ...'),
-    t('be downloaded, ...'),
-    t('support push notifications, ...'),
-    t('access hardware features, etc'),
-    t('In short, PWA = cross-platform'),
-    t('Right now, your browser quite likely supports it and gives you the ability to download this site as an app'),
+    t('They can work offline,'),
+    t('... be downloaded,'),
+    t('... support push notifications,'),
+    t('... access hardware features, etc'),
+    t('In short PWA = cross-platform'),
+    t('Right now, your browser quite likely gives you the ability to download this site as an app'),
   ]
 </script>
 <template>
@@ -32,7 +32,7 @@
       >
         <div v-for="(text, index) in slideTexts" :key="index" class="card-panel">
           <div>{{ index + 1 }}</div>
-          <div>{{ text }}</div>
+          <div>{{ t(text) }}</div>
         </div>
         <template #viewport>
           <div class="flicking-pagination"></div>
