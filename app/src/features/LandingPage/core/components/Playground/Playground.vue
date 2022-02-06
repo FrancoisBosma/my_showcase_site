@@ -61,7 +61,7 @@
         @apply text-right border-r border-[var(--foreground)] hover-emphasis;
       }
       & > div:nth-child(2) {
-        @apply pl-12 text-left flex flex-col justify-center;
+        @apply px-16 text-left flex flex-col justify-center overflow-x-hidden;
       }
       &.incoming {
         @apply discreet italic;
