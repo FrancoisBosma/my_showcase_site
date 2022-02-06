@@ -20,7 +20,7 @@
       <nav
         w:flex="~ col"
         w:border="[var(--background)] t-1"
-        w:children="border-[var(--background)] border-b-1 leading-20 text-[var(--background-stronger-text)] text-xl"
+        w:children="border-[var(--background)] border-b-1 leading-20 text-[var(--foreground-for-stronger-background)] text-xl"
       >
         <a class="hover-emphasis" href="#playground" rel="" @click="fnToggleMenu()">{{ t('Playground') }}</a>
         <a class="hover-emphasis" href="#skills" rel="" @click="fnToggleMenu()">{{ t('Skills') }}</a>

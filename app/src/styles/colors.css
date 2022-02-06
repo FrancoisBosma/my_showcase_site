@@ -19,7 +19,7 @@
   --foreground: #1d1d1f; */
   --background: #F2EEE5;
   --background-stronger: #323230;
-  --background-stronger-text: var(--background-extreme);
+  --foreground-for-stronger-background: var(--background-extreme);
   --background-stronger-seethrough: #32323001;
   --background-stronger-seethrough-2: #32323030;
   --background-extreme: #FBFCF680;
@@ -34,7 +34,7 @@
   --info: #fcd34d;
   --background: #222;
   --background-stronger: #121212;
-  --background-stronger-text: #f8f8f880;
+  --foreground-for-stronger-background: #f8f8f880;
   --background-stronger-seethrough: #12121211;
   --background-stronger-seethrough-2: #12121233;
   --background-extreme: #1d1d1b;
