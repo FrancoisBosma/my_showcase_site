@@ -21,5 +21,14 @@
   "Go ahead click around": "Allez-y cliquez un peu partout",
   "Reset": "Réinitialiser",
   "Home": "Accueil",
-  "Back": "Retour"
+  "Back": "Retour",
+  "What is a Progressive Web App ?": "Qu'est-ce qu'une Application Web 'Progressive' ?",
+  "PWAs run in browsers like websites": "Une PWA tourne dans un navigateur comme un site classique",
+  "They're also like native apps customized for your device": "Elle est aussi comme une app native adaptée à votre appareil",
+  "They can work offline,": "Elle peut fonctionner en étant hors-ligne,",
+  "... be downloaded,": "... être téléchargée,",
+  "... support push notifications,": "... supporter les notifications 'push',",
+  "... access hardware features, etc": "... accéder au hardware, etc",
+  "In short PWA = cross-platform": "En somme PWA = multiplateforme",
+  "Right now, your browser quite likely gives you the ability to download this site as an app": "Là maintenant, votre navigateur vous donne probablement la possibilité de télécharger ce site comme une app"
 }
