@@ -18,7 +18,7 @@
     --popper-theme-border-width: 0px;
     --popper-theme-border-style: solid;
     --popper-theme-border-color: #eeeeee;
-    --popper-theme-border-radius: 6px;
+    --popper-theme-border-radius: 0.375rem;
     --popper-theme-padding: 0rem;
     --popper-theme-box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%),
       0 1px 10px 0 rgb(0 0 0 / 12%);
