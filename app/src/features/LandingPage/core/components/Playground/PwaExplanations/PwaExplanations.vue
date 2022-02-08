@@ -11,15 +11,16 @@
   }
   const flickingPlugins = [new Arrow({ parentEl: document.body }), new Fade(), new Pagination()]
   const slideTexts = [
-    t('What is a Progressive Web App ?'),
+    t('This site is a Progressive Web App (PWA)'),
+    t('"What is that ?" you may wonder'),
     t('PWAs run in browsers like websites'),
-    t("They're also like native apps customized for your device"),
+    t('They also act as native apps customized for your device'),
     t('They can work offline,'),
     t('... be downloaded,'),
     t('... support push notifications,'),
     t('... access hardware features, etc'),
     t('In short PWA = cross-platform'),
-    t('Right now, your browser quite likely gives you the ability to download this site as an app'),
+    t('Right now your browser probably allows you to download this site as an app'),
   ]
 </script>
 <template>
