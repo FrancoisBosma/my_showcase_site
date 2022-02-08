@@ -11,7 +11,6 @@
   "Pixel-Perfect Code": "Du Code Précis Au Pixel Près",
   "Made With Passion": "Fait Avec Passion",
   "Internationalization": "Internationalisation",
-  "Dark Mode": "Mode Sombre",
   "Responsive Design": "Design 'Responsive'",
   "Secret": "Secret",
   "Progressive Web App": "Application Web 'Progressive'",
@@ -30,5 +29,8 @@
   "... support push notifications,": "... supporter les notifications 'push',",
   "... access hardware features, etc": "... accéder au hardware, etc",
   "In short PWA = cross-platform": "En somme PWA = multiplateforme",
-  "Right now, your browser quite likely gives you the ability to download this site as an app": "Là maintenant, votre navigateur vous donne probablement la possibilité de télécharger ce site comme une app"
+  "Right now, your browser quite likely gives you the ability to download this site as an app": "Là maintenant, votre navigateur vous donne probablement la possibilité de télécharger ce site comme une app",
+  "Light/Dark Mode": "Mode claire/sombre",
+  "Choose a language": "Sélectionnez un langage",
+  "Choose between a dark and light theme mode": "Faîtes votre choix entre un thème clair et sombre"
 }
