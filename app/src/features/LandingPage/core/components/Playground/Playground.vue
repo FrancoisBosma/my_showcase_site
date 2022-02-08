@@ -8,85 +8,67 @@
     <h3>{{ t('Playground') }}</h3>
     <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
     <h2> {{ t('Go ahead click around') }} </h2>
-    <ul class="playground-tile">
-      <li>
-        <div>
-          {{ t('Internationalization') }}
-          <div class="sub-text">I18n</div>
-        </div>
-        <div>
-          <p>{{ t('Choose a language') }}</p>
-          <LanguageSelector />
-        </div>
-      </li>
-      <li>
-        <div>{{ t('Light/Dark Mode') }}</div>
-        <div>
-          <p>{{ t('Choose between a dark and a light theme mode') }}</p>
-          <DarkModeSwitcher />
-        </div>
-      </li>
-      <li>
-        <div>
-          <div>
-            {{ t('Screen Size') }}
-            <div class="sub-text">Responsive Design</div>
-          </div>
-        </div>
-        <div>
-          <p>
-            {{ t('The site design adapts to your screen size') }}<br />
-            {{ t('Try modifying it') }}
-          </p>
-          <PageWidthModifier />
-        </div>
-      </li>
-      <li>
-        <div>
-          {{ t('Cross-Platform App') }}
-          <div class="sub-text">PWA</div>
-        </div>
-        <div> <PwaExplanations /> </div>
-      </li>
-      <li class="incoming">
-        <div>{{ t('Navigation Guards') }}</div>
-        <div>
-          <span class="flex gap-x-2"> {{ t('Still brewing') }} <icon-park-outline-teapot /> </span>
-        </div>
-      </li>
-      <li class="incoming">
-        <div>{{ t('Secret') }}</div>
-        <div>
-          <span class="flex gap-x-2">{{ t('Still cooking') }} <icon-park-outline-hot-pot /></span>
-        </div>
-      </li>
-    </ul>
+    <div class="playground-tile">
+      <div>
+        {{ t('Internationalization') }}
+        <div class="sub-text">I18n</div>
+      </div>
+      <div>
+        <p>{{ t('Choose a language') }}</p>
+        <LanguageSelector />
+      </div>
+      <div>{{ t('Light/Dark Mode') }}</div>
+      <div>
+        <p>{{ t('Choose between a dark and a light theme mode') }}</p>
+        <DarkModeSwitcher />
+      </div>
+      <div>
+        {{ t('Screen Size') }}
+        <div class="sub-text">Responsive Design</div>
+      </div>
+      <div>
+        <p>
+          {{ t('The site design adapts to your screen size') }}<br />
+          {{ t('Try modifying it') }}
+        </p>
+        <PageWidthModifier />
+      </div>
+      <div>
+        {{ t('Cross-Platform App') }}
+        <div class="sub-text">PWA</div>
+      </div>
+      <div> <PwaExplanations /> </div>
+      <div class="incoming">{{ t('Navigation Guards') }}</div>
+      <div>
+        <span class="flex gap-x-2"> {{ t('Still brewing') }} <icon-park-outline-teapot /> </span>
+      </div>
+      <div class="incoming">{{ t('Secret') }}</div>
+      <div>
+        <span class="flex gap-x-2">{{ t('Still cooking') }} <icon-park-outline-hot-pot /></span>
+      </div>
+    </div>
   </section>
 </template>
 <style scoped lang="postcss">
   .playground-tile {
-    @apply text-2xl;
-    li {
-      @apply grid grid-cols-[1fr,2fr] grid-rows-1;
-
-      & > div {
-        @apply p-4;
-      }
-      & > div:nth-child(1) {
-        @apply text-right border-r border-[var(--foreground)] break-words;
-      }
-      & > div:nth-child(2) {
-        @apply px-16 flex flex-col gap-2 justify-center items-center overflow-x-hidden;
-      }
-      &.incoming {
-        @apply discreet italic;
-        & > div:nth-child(2) {
-          @apply items-start;
-        }
-      }
-      .sub-text {
-        @apply pt-2 text-sm italic discreet;
-      }
+    @apply text-2xl lg:(grid grid-cols-[auto,1fr]);
+    & > div {
+      @apply pb-6;
+    }
+    & > div:nth-child(2n + 1) {
+      @apply break-words lg:text-right;
+    }
+    & > div:nth-child(2n) {
+      @apply flex flex-col gap-2 mb-20 justify-center items-center overflow-x-hidden lg:px-16;
+    }
+    & > div.incoming {
+      @apply discreet italic;
+    }
+    & > div.incoming + div {
+      @apply discreet italic lg:items-start;
+    }
+    .sub-text {
+      @apply text-sm italic discreet;
     }
   }
 </style>
