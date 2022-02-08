@@ -15,12 +15,12 @@
 
 <template>
   <div>
-    <Popper placement="auto-start" arrow @open:popper="fnToggleSelector()" @close:popper="fnToggleSelector()">
+    <StyledPopper placement="auto-start" arrow @open:popper="fnToggleSelector()" @close:popper="fnToggleSelector()">
       <IconButton :is-active="bActive">
         <clarity-language-solid />
       </IconButton>
       <template #content>
-        <ul class="py-2 max-h-50 overflow-y-auto">
+        <ul class="p-2 max-h-50 overflow-y-auto">
           <li
             v-for="(language, localeName) in localeLanguages"
             :key="localeName"
@@ -34,7 +34,7 @@
           </li>
         </ul>
       </template>
-    </Popper>
+    </StyledPopper>
   </div>
 </template>
 <style scoped lang="postcss">
@@ -43,15 +43,13 @@
       @apply px-8 py-2 w-full text-left flex;
     }
     &[is-selected='true'] {
-      background-color: var(--background-stronger);
-      opacity: 60%;
-      color: var(--foreground);
+      @apply bg-[var(--background)] rounded-md text-[var(--emphasis)];
       button {
         cursor: default;
       }
     }
     &:hover[is-selected='false'] {
-      background-color: var(--background-stronger-seethrough-2);
+      @apply bg-[var(--background-stronger-seethrough-2)] rounded-md;
     }
   }
 </style>
