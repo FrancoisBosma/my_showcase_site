@@ -20,100 +20,73 @@
 </template>
 <style scoped lang="postcss">
   .hamburger {
-    @apply bg-[var(--background-stronger-seethrough)] overflow-hidden;
-    padding: 15px 10px;
-    border-radius: 10%;
+    @apply bg-[var(--background-stronger-seethrough)] overflow-hidden px-10px py-15px rounded-1/10;
     text-align: initial;
     .hamburger__container {
-      width: 36px;
-      height: 24px;
-      position: relative;
+      @apply relative w-9 h-6;
     }
     .hamburger__inner {
-      width: 100%;
-      height: 2px;
-      background-color: var(--foreground);
-      border-radius: 4px;
-      position: absolute;
+      @apply absolute top-1/2 w-full h-2px bg-[var(--foreground)] rounded-4px opacity-100;
       transition-property: transform, opacity;
       transition-timing-function: ease;
       transition-duration: 0.4s;
-      top: 50%;
       transform: translate(5px, -50%);
-      opacity: 1;
       &::before,
       &::after {
-        width: 100%;
-        height: 2px;
-        background-color: var(--foreground);
-        border-radius: 4px;
-        position: absolute;
+        @apply absolute w-full h-2px bg-[var(--foreground)] rounded-4px opacity-100;
+        content: '';
         transition-property: transform, opacity;
         transition-timing-function: ease;
         transition-duration: 0.4s;
-        content: '';
-        opacity: 1;
         transform: translate(-5px, 0);
       }
       &::before {
-        top: -13px;
+        @apply -top-13px;
       }
       &::after {
-        top: 13px;
+        @apply top-13px;
       }
     }
     .hamburger__hidden {
-      opacity: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--foreground);
-      border-radius: 4px;
-      position: absolute;
+      @apply absolute top-1/2 w-full h-2px bg-[var(--emphasis)] rounded-4px opacity-0;
       transition-property: transform, opacity;
       transition-timing-function: ease;
       transition-duration: 0.4s;
-      background-color: var(--emphasis);
-      top: 50%;
       transform: translate(51px, -50%);
       &::before,
       &::after {
-        width: 100%;
-        height: 2px;
-        background-color: var(--foreground);
-        border-radius: 4px;
-        position: absolute;
+        @apply absolute w-full h-2px bg-[var(--emphasis)] rounded-4px;
+        content: '';
         transition-property: transform, opacity;
         transition-timing-function: ease;
         transition-duration: 0.4s;
-        background-color: var(--emphasis);
-        content: '';
         transform: translate(102px, 0);
       }
       &::before {
-        top: -13px;
+        @apply -top-13px;
       }
       &::after {
-        top: 13px;
+        @apply top-13px;
       }
     }
 
     &:hover,
     &[is-active='true'] {
       .hamburger__inner {
+        @apply opacity-0;
         transform: translate(-51px, 50%);
-        opacity: 0;
         &::before,
         &::after {
+          @apply opacity-0;
           transform: translate(102px, 0);
-          opacity: 0;
         }
       }
       .hamburger__hidden {
-        opacity: 1;
+        @apply opacity-100;
         transform: translate(0, -50%);
         &::before,
         &::after {
-          opacity: 1;
+          @apply opacity-100;
           transform: translate(0, 0);
         }
       }
@@ -127,7 +100,7 @@
           transform: translate(0, 13px) rotate(90deg);
         }
         &::after {
-          opacity: 0;
+          @apply opacity-0;
           transform-origin: center;
           transform: translate(0, -13px) rotate(0);
         }
