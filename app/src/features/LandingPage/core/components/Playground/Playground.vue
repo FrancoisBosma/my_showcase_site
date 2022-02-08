@@ -30,7 +30,7 @@
         <div>
           <div>
             {{ t('Screen Size') }}
-            <div class="sub-text">{{ t('Responsive Design') }}</div>
+            <div class="sub-text">Responsive Design</div>
           </div>
         </div>
         <div>
