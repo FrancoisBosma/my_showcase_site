@@ -65,7 +65,7 @@
 </template>
 <style scoped lang="postcss">
   .playground-tile {
-    @apply text-4xl;
+    @apply text-2xl;
     li {
       @apply grid grid-cols-[1fr,2fr] grid-rows-1;
 
@@ -73,16 +73,13 @@
         @apply p-4;
       }
       & > div:nth-child(1) {
-        @apply text-right border-r border-[var(--foreground)] hover-emphasis;
+        @apply text-right border-r border-[var(--foreground)] break-words;
       }
       & > div:nth-child(2) {
-        @apply px-16 flex flex-col gap-8 justify-center items-center overflow-x-hidden;
+        @apply px-16 flex flex-col gap-2 justify-center items-center overflow-x-hidden;
       }
       &.incoming {
         @apply discreet italic;
-        & > div:nth-child(1) {
-          @apply hover:(text-[var(--foreground)] border-[var(--foreground)]);
-        }
         & > div:nth-child(2) {
           @apply items-start;
         }
