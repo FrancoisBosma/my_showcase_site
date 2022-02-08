@@ -10,7 +10,7 @@
   const { t } = useI18n()
 </script>
 <template>
-  <span> {{ sliderValue }}px </span>
+  <span> {{ `${t("Window's width:")} ${sliderValue}` }}px </span>
   <RangeSlider
     :value="sliderValue"
     :value-min="400"
