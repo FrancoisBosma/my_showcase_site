@@ -12,6 +12,6 @@ h3 {
   white-space: nowrap; 
 }
 p {
-  @apply tracking-1px text-sm md:(tracking-4px text-base) lg:text-lg;
+  @apply discreet tracking-1px text-sm md:(tracking-4px text-base) lg:text-lg;
 }
 
