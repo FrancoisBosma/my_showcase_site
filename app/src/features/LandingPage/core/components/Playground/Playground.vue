@@ -41,7 +41,7 @@
       </li>
       <li>
         <div>
-          {{ t('Progressive Web App') }}
+          {{ t('Cross-Platform App') }}
           <div class="sub-text">PWA</div>
         </div>
         <div> <PwaExplanations /> </div>
