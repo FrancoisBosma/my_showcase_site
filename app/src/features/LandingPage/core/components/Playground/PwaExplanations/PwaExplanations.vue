@@ -48,7 +48,7 @@
   @import '@egjs/flicking-plugins/dist/flicking-plugins.css';
 
   /* Imported from 'flicking' component's css (cf. index.html link tag)
-   * N.B: these classes has to be declared before, hence globally here
+   * N.B: these classes have to be declared before, hence globally here
   */
   .flicking-pagination-bullet {
     @apply bg-[var(--cta)];
