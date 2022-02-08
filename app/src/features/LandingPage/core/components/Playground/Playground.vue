@@ -86,7 +86,7 @@
         }
       }
       .sub-text {
-        @apply text-sm italic discreet;
+        @apply pt-2 text-sm italic discreet;
       }
     }
   }
