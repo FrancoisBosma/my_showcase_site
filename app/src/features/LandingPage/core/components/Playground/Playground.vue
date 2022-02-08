@@ -34,8 +34,10 @@
           </div>
         </div>
         <div>
-          <p>{{ t('The site design adapts to your screen size') }}</p>
-          <p>{{ t('Try modifying it') }}</p>
+          <p>
+            {{ t('The site design adapts to your screen size') }}<br />
+            {{ t('Try modifying it') }}
+          </p>
           <PageWidthModifier />
         </div>
       </li>
