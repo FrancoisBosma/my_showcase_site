@@ -22,20 +22,21 @@
       <li>
         <div>{{ t('Light/Dark Mode') }}</div>
         <div>
-          <p>{{ t('Choose between a dark and light theme mode') }}</p>
+          <p>{{ t('Choose between a dark and a light theme mode') }}</p>
           <DarkModeSwitcher />
         </div>
       </li>
       <li>
-        <div>{{ t('Responsive Design') }}</div>
         <div>
-          <PageWidthModifier />
+          <div>
+            {{ t('Screen Size') }}
+            <div class="sub-text">{{ t('Responsive Design') }}</div>
+          </div>
         </div>
-      </li>
-      <li class="incoming">
-        <div>{{ t('Navigation Guards') }}</div>
         <div>
-          <span class="flex gap-x-2"> {{ t('Still brewing') }} <icon-park-outline-teapot /> </span>
+          <p>{{ t('The site design adapts to your screen size') }}</p>
+          <p>{{ t('Try modifying it') }}</p>
+          <PageWidthModifier />
         </div>
       </li>
       <li>
@@ -44,6 +45,12 @@
           <div class="sub-text">PWA</div>
         </div>
         <div> <PwaExplanations /> </div>
+      </li>
+      <li class="incoming">
+        <div>{{ t('Navigation Guards') }}</div>
+        <div>
+          <span class="flex gap-x-2"> {{ t('Still brewing') }} <icon-park-outline-teapot /> </span>
+        </div>
       </li>
       <li class="incoming">
         <div>{{ t('Secret') }}</div>
@@ -79,7 +86,7 @@
         }
       }
       .sub-text {
-        @apply text-xs italic discreet;
+        @apply text-sm italic discreet;
       }
     }
   }
