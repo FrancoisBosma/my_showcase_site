@@ -11,14 +11,20 @@
     <ul class="playground-tile">
       <li>
         <div>
-          I18n
-          <div class="text-xs italic discreet">{{ t('Internationalization') }}</div>
+          {{ t('Internationalization') }}
+          <div class="sub-text">I18n</div>
         </div>
-        <div> <LanguageSelector /> </div>
+        <div>
+          <p>{{ t('Choose a language') }}</p>
+          <LanguageSelector />
+        </div>
       </li>
       <li>
-        <div>{{ t('Dark Mode') }}</div>
-        <div> <DarkModeSwitcher /> </div>
+        <div>{{ t('Light/Dark Mode') }}</div>
+        <div>
+          <p>{{ t('Choose between a dark and light theme mode') }}</p>
+          <DarkModeSwitcher />
+        </div>
       </li>
       <li>
         <div>{{ t('Responsive Design') }}</div>
@@ -34,8 +40,8 @@
       </li>
       <li>
         <div>
-          PWA
-          <div class="text-xs italic discreet">{{ t('Progressive Web App') }} </div>
+          {{ t('Progressive Web App') }}
+          <div class="sub-text">PWA</div>
         </div>
         <div> <PwaExplanations /> </div>
       </li>
@@ -61,13 +67,19 @@
         @apply text-right border-r border-[var(--foreground)] hover-emphasis;
       }
       & > div:nth-child(2) {
-        @apply px-16 text-left flex flex-col justify-center overflow-x-hidden;
+        @apply px-16 flex flex-col justify-center items-center overflow-x-hidden;
       }
       &.incoming {
         @apply discreet italic;
         & > div:nth-child(1) {
           @apply hover:(text-[var(--foreground)] border-[var(--foreground)]);
         }
+        & > div:nth-child(2) {
+          @apply items-start;
+        }
+      }
+      .sub-text {
+        @apply text-xs italic discreet;
       }
     }
   }
