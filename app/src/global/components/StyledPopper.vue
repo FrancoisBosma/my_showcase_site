@@ -12,9 +12,9 @@
 </template>
 <style lang="postcss">
   :root {
-    --popper-theme-background-color: var(--emphasis);
-    --popper-theme-background-color-hover: var(--emphasis);
-    --popper-theme-text-color: var(--background);
+    --popper-theme-background-color: var(--foreground-contrast);
+    --popper-theme-background-color-hover: var(--foreground-contrast);
+    --popper-theme-text-color: var(--foreground);
     --popper-theme-border-width: 0px;
     --popper-theme-border-style: solid;
     --popper-theme-border-color: #eeeeee;
