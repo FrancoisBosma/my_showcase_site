@@ -39,8 +39,8 @@
         </template>
       </Flicking>
     </UseMousePressed>
-    <span class="flicking-arrow-prev is-outside"></span>
-    <span class="flicking-arrow-next is-outside"></span>
+    <span class="flicking-arrow-prev is-inside"></span>
+    <span class="flicking-arrow-next is-inside"></span>
   </div>
 </template>
 <style lang="postcss">
@@ -58,8 +58,8 @@
   }
   /* Custom */
   #pwa-explanations {
-    @apply relative left-16;
-    width: min(66rem, calc(100% - 5rem));
+    @apply relative px-16;
+    width: min(66rem, calc(100%));
   }
 </style>
 <style scoped lang="postcss">
