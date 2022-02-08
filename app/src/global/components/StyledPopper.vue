@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <Popper placement="top" arrow>
+  <Popper>
     <slot />
     <template #content="{ close, isOpen }">
       <slot name="content" :close="close" :isOpen="isOpen" />
@@ -27,5 +27,8 @@
 <style scoped lang="postcss">
   :deep(.popper #arrow) {
     @apply z-behind;
+  }
+  :deep(.popper[data-popper-placement^='left'] > #arrow) {
+    @apply right-0;
   }
 </style>
