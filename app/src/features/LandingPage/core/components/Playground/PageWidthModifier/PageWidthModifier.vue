@@ -10,15 +10,17 @@
   const { t } = useI18n()
 </script>
 <template>
-  <span> {{ `${t("Window's width:")} ${sliderValue}` }}px </span>
-  <RangeSlider
-    :value="sliderValue"
-    :value-min="400"
-    :value-max="maxWidth"
-    :on-set="(v: number) => updateCWM(v)"
-    @update:value="sliderValue = Number($event)"
-  />
-  <div class="p-4">
-    <Button @click="resetSlider()"> {{ t('Reset') }} </Button>
+  <div class="flex flex-col items-center">
+    <span> {{ `${t("Window's width:")} ${sliderValue}` }}px </span>
+    <RangeSlider
+      :value="sliderValue"
+      :value-min="400"
+      :value-max="maxWidth"
+      :on-set="(v: number) => updateCWM(v)"
+      @update:value="sliderValue = Number($event)"
+    />
+    <div class="pt-2">
+      <Button @click="resetSlider()"> {{ t('Reset') }} </Button>
+    </div>
   </div>
 </template>
