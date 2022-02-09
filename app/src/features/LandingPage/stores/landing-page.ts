@@ -22,6 +22,7 @@ export const useLPStore = defineStore('landing-page', () => {
   const bScreenMd = computed(() => contentWidth.value >= 768)
   const bScreenLg = computed(() => contentWidth.value >= 1024)
   const bScreenXl = computed(() => contentWidth.value >= 1280)
+  const bScreen2Xl = computed(() => contentWidth.value >= 1536)
 
   return {
     windowWidth,
@@ -35,6 +36,7 @@ export const useLPStore = defineStore('landing-page', () => {
     bScreenMd,
     bScreenLg,
     bScreenXl,
+    bScreen2Xl,
   }
 })
 
