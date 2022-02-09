@@ -54,19 +54,19 @@
   .playground-tiles {
     @apply text-2xl lg:(grid grid-cols-[auto,1fr]);
     & > div {
-      @apply p-6 mb-4;
+      @apply relative p-6 mb-4;
       box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+      &:before {
+        @apply absolute top-0 left-0 w-full h-full z-behind bg-[var(--background)];
+        content: '';
+      }
     }
     & > div:nth-child(2n + 1) {
       @apply break-words lg:(text-right);
     }
     & > div:nth-child(2n) {
-      @apply relative flex flex-col gap-4 justify-center items-center overflow-y-visible overflow-x-hidden
+      @apply flex flex-col gap-8 justify-center items-center overflow-y-visible overflow-x-hidden
         border-[var(--info)] border-l-0 border-t-3 lg:(border-l-3 border-t-0);
-      &:before {
-        @apply absolute w-full h-full bg-[var(--background)];
-        content: '';
-      }
     }
     & > div.incoming {
       @apply discreet italic;
