@@ -1,7 +1,9 @@
 <script setup lang="ts">
+  import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
   import PageWidthModifier from './PageWidthModifier'
   import PwaExplanations from './PwaExplanations'
 
+  const { bScreenLg } = toRefs(useLPStore())
   const { t } = useI18n()
 </script>
 <template>
@@ -9,7 +11,7 @@
     <h3>{{ t('Playground') }}</h3>
     <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
     <h2> {{ t('Go ahead click around') }} </h2>
-    <div class="playground-tiles">
+    <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''}`">
       <div>
         {{ t('Internationalization') }}
         <div class="sub-text">I18n</div>
@@ -52,9 +54,9 @@
 </template>
 <style scoped lang="postcss">
   .playground-tiles {
-    @apply text-2xl lg:(grid grid-cols-[auto,1fr]);
+    @apply text-2xl;
     & > div {
-      @apply relative p-6 mb-4;
+      @apply relative p-6 mb-2;
       box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
       &:before {
         @apply absolute top-0 left-0 w-full h-full z-behind bg-[var(--background)];
@@ -62,11 +64,11 @@
       }
     }
     & > div:nth-child(2n + 1) {
-      @apply break-words lg:(text-right);
+      @apply mb-0 break-words;
     }
     & > div:nth-child(2n) {
       @apply flex flex-col gap-8 justify-center items-center overflow-y-visible overflow-x-hidden
-        border-[var(--info)] border-l-0 border-t-3 lg:(border-l-3 border-t-0);
+        border-[var(--info)] border-l-0 border-t-3;
     }
     & > div.incoming {
       @apply discreet italic;
@@ -76,6 +78,19 @@
     }
     .sub-text {
       @apply text-sm italic discreet;
+    }
+
+    &.screen-lg {
+      @apply grid grid-cols-[auto,1fr];
+      & > div:nth-child(2n + 1) {
+        @apply mb-2 text-right;
+      }
+      & > div:nth-child(2n) {
+        @apply border-l-3 border-t-0;
+      }
+      & > div.incoming + div {
+        @apply items-start;
+      }
     }
   }
 </style>
