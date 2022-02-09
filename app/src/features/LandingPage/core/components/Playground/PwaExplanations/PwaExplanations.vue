@@ -2,6 +2,9 @@
   import Flicking from '@egjs/vue3-flicking'
   import { Arrow, Fade, Pagination } from '@egjs/flicking-plugins'
   import { UseMousePressed } from '@vueuse/components'
+  import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
+
+  const { bScreen2Xl } = toRefs(useLPStore())
 
   const { t } = useI18n()
   const flickingOptions = {
@@ -24,7 +27,7 @@
   ]
 </script>
 <template>
-  <div id="pwa-explanations">
+  <div id="pwa-explanations" :class="`pwa-explanations ${bScreen2Xl ? 'screen-2xl' : ''}`">
     <UseMousePressed v-slot="{ pressed }">
       <Flicking
         :options="flickingOptions"
@@ -57,65 +60,72 @@
   .flicking-pagination-bullet-active {
     @apply bg-[var(--emphasis)];
   }
-  /* Custom */
-  #pwa-explanations {
-    @apply relative px-24;
-    width: min(66rem, calc(100%));
-  }
 </style>
 <style scoped lang="postcss">
-  /* Imported from 'flicking' component's css */
-  .flicking-viewport {
-    @apply overflow-hidden pb-12;
-  }
-  .flicking-pagination {
-    @apply -bottom-1;
-  }
-  .flicking-arrow-prev {
-    &:before {
-      @apply transform rotate-315 duration-500 ease-out;
+  /* N.B: 'flicking-*' classes were imported from external component's css */
+  .pwa-explanations {
+    @apply relative;
+    width: min(66rem, calc(100%));
+    .flicking-viewport {
+      @apply overflow-hidden pb-12;
     }
-    &:after {
-      @apply transform -rotate-315 duration-500 ease-out;
+    .flicking-pagination {
+      @apply -bottom-1;
     }
-  }
-  .flicking-arrow-next {
-    &:before {
-      @apply transform -rotate-315 duration-500 ease-out;
-    }
-    &:after {
-      @apply transform rotate-315 duration-500 ease-out;
-    }
-  }
-  .flicking-arrow-prev,
-  .flicking-arrow-next {
-    @apply transform -translate-y-[90%];
-    &.flicking-arrow-disabled {
-      &:before,
+    .flicking-arrow-prev {
+      &:before {
+        @apply transform rotate-315 duration-500 ease-out;
+      }
       &:after {
-        @apply bg-[var(--background-stronger)] opacity-0 transform rotate-0 duration-500 ease-in;
+        @apply transform -rotate-315 duration-500 ease-out;
       }
     }
-    &:not(.flicking-arrow-disabled) {
-      &:before,
+    .flicking-arrow-next {
+      &:before {
+        @apply transform -rotate-315 duration-500 ease-out;
+      }
       &:after {
-        @apply bg-[var(--cta)];
-      }
-      &:hover:before,
-      &:hover:after {
-        @apply bg-[var(--emphasis)];
+        @apply transform rotate-315 duration-500 ease-out;
       }
     }
-  }
-  /* Custom */
-  .card-panel {
-    @apply bg-[var(--foreground-contrast)] w-96 h-48 mr-2 p-4 rounded-md
-      grid grid-rows-[2fr,3fr];
-    & > *:nth-child(1) {
-      @apply m-auto;
+    .flicking-arrow-prev,
+    .flicking-arrow-next {
+      @apply transform translate-y-18 transition-transform duration-300 ease-in;
+      &.flicking-arrow-disabled {
+        &:before,
+        &:after {
+          @apply bg-[var(--background-stronger)] opacity-0 transform rotate-0 duration-500 ease-in;
+        }
+      }
+      &:not(.flicking-arrow-disabled) {
+        &:before,
+        &:after {
+          @apply bg-[var(--cta)];
+        }
+        &:hover:before,
+        &:hover:after {
+          @apply bg-[var(--emphasis)];
+        }
+      }
     }
-    & > *:nth-child(2) {
-      @apply mx-auto text-xl text-center;
+    /* Custom */
+    .card-panel {
+      @apply bg-[var(--foreground-contrast)] h-48 mr-2 p-4 rounded-md grid grid-rows-[2fr,3fr];
+      width: min(100%, 24rem);
+      & > *:nth-child(1) {
+        @apply m-auto;
+      }
+      & > *:nth-child(2) {
+        @apply mx-auto text-xl text-center;
+      }
+    }
+
+    &.screen-2xl {
+      @apply px-24;
+      .flicking-arrow-prev,
+      .flicking-arrow-next {
+        @apply -translate-y-[90%];
+      }
     }
   }
 </style>
