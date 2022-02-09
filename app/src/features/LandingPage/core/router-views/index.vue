@@ -8,8 +8,8 @@ meta:
   import { Contact, Introduction, Menu, Playground, Skills } from '../components'
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
-  const { contentXMargin, bScreenXl } = toRefs(useLPStore())
-  const responsiveContentPadding = computed(() => (bScreenXl.value ? `calc(13rem + ${contentXMargin.value})` : '0'))
+  const { bScreenXl } = toRefs(useLPStore())
+  const responsiveContentPadding = computed(() => (bScreenXl.value ? 'calc(13rem)' : '0'))
 </script>
 
 <template>
