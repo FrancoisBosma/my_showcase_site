@@ -33,7 +33,7 @@
     @apply flex flex-col items-center w-min relative;
     --bar-color: var(--info);
     .range {
-      @apply mt-6 w-100 h-4 bg-[var(--cta)] overflow-hidden rounded-2xl transition-all duration-250 ease-out;
+      @apply w-100 h-4 bg-[var(--cta)] overflow-hidden rounded-2xl transition-all duration-250 ease-out;
       appearance: none;
       -webkit-appearance: none;
       outline: none;
