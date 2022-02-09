@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import PageWidthModifier from './PageWidthModifier'
   import PwaExplanations from './PwaExplanations'
+
   const { t } = useI18n()
 </script>
 <template>
@@ -8,7 +9,7 @@
     <h3>{{ t('Playground') }}</h3>
     <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
     <h2> {{ t('Go ahead click around') }} </h2>
-    <div class="playground-tile">
+    <div class="playground-tiles">
       <div>
         {{ t('Internationalization') }}
         <div class="sub-text">I18n</div>
@@ -50,7 +51,7 @@
   </section>
 </template>
 <style scoped lang="postcss">
-  .playground-tile {
+  .playground-tiles {
     @apply text-2xl lg:(grid grid-cols-[auto,1fr]);
     & > div {
       @apply pb-6;
