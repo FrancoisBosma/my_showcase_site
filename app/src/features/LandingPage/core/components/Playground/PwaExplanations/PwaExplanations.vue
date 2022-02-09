@@ -52,14 +52,14 @@
    * N.B: these classes have to be declared before, hence globally here
   */
   .flicking-pagination-bullet {
-    @apply bg-[var(--cta)];
+    @apply bg-[var(--cta)] w-2 h-2;
   }
   .flicking-pagination-bullet-active {
     @apply bg-[var(--emphasis)];
   }
   /* Custom */
   #pwa-explanations {
-    @apply relative px-16;
+    @apply relative px-24;
     width: min(66rem, calc(100%));
   }
 </style>
@@ -69,7 +69,7 @@
     @apply overflow-hidden pb-12;
   }
   .flicking-pagination {
-    @apply -bottom-4;
+    @apply -bottom-1;
   }
   .flicking-arrow-prev {
     &:before {
