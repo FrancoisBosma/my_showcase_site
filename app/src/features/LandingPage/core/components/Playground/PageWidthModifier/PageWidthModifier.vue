@@ -12,7 +12,7 @@
 </script>
 <template>
   <div class="flex flex-col items-center">
-    <span> {{ `${t(windowWidthText)}: ${sliderValue}` }}px </span>
+    <span class="pb-2"> {{ `${t(windowWidthText)}: ${sliderValue}` }}px </span>
     <RangeSlider
       :value="sliderValue"
       :value-min="400"
