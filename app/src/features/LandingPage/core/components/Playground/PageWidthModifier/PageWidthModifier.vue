@@ -11,7 +11,7 @@
   const windowWidthText = t("Window's width")
 </script>
 <template>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center w-full">
     <span class="pb-2"> {{ `${t(windowWidthText)}: ${sliderValue}` }}px </span>
     <RangeSlider
       :value="sliderValue"
