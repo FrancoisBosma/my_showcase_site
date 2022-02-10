@@ -60,14 +60,19 @@
   .flicking-pagination-bullet-active {
     @apply bg-[var(--emphasis)];
   }
+  .flicking-camera {
+    @apply absolute;
+  }
 </style>
 <style scoped lang="postcss">
   /* N.B: 'flicking-*' classes were imported from external component's css */
   .pwa-explanations {
     @apply relative;
     width: min(66rem, calc(100%));
+    --card-height: 12rem;
+    --pagination-padding: 3rem;
     .flicking-viewport {
-      @apply overflow-hidden pb-12;
+      @apply pb-[var(--pagination-padding)] h-[calc(var(--card-height)+var(--pagination-padding))];
     }
     .flicking-pagination {
       @apply -bottom-1;
@@ -110,8 +115,9 @@
     }
     /* Custom */
     .card-panel {
-      @apply bg-[var(--foreground-contrast)] h-48 mr-2 p-4 rounded-md grid grid-rows-[2fr,3fr];
-      width: min(100%, 24rem);
+      @apply bg-[var(--foreground-contrast)] mr-2 p-4 rounded-md grid grid-rows-[2fr,3fr];
+      height: var(--card-height);
+      width: min(100%, 2 * var(--card-height));
       & > *:nth-child(1) {
         @apply m-auto;
       }
