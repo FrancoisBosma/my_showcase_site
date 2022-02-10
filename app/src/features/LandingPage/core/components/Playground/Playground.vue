@@ -67,7 +67,7 @@
       @apply mb-0 break-words;
     }
     & > div:nth-child(2n) {
-      @apply flex flex-col gap-8 justify-center items-center overflow-y-visible overflow-x-hidden
+      @apply flex flex-col gap-8 justify-center items-center overflow-y-visible
         border-[var(--info)] border-l-0 border-t-3;
     }
     & > div.incoming {
