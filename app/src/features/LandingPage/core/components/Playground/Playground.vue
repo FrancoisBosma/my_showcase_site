@@ -3,7 +3,7 @@
   import PageWidthModifier from './PageWidthModifier'
   import PwaExplanations from './PwaExplanations'
 
-  const { bScreenLg } = toRefs(useLPStore())
+  const { bScreenLg, bScreen2Xl } = toRefs(useLPStore())
   const { t } = useI18n()
 </script>
 <template>
@@ -11,8 +11,8 @@
     <h3>{{ t('Playground') }}</h3>
     <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
     <h2> {{ t('Go ahead click around') }} </h2>
-    <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''}`">
-      <div>
+    <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''} ${bScreen2Xl ? 'screen-2xl' : ''}`">
+      <div class="small-item">
         {{ t('Internationalization') }}
         <div class="sub-text">I18n</div>
       </div>
@@ -20,7 +20,7 @@
         <p>{{ t('Choose a language') }}</p>
         <LanguageSelector />
       </div>
-      <div>{{ t('Light/Dark Mode') }}</div>
+      <div class="small-item">{{ t('Light/Dark Mode') }}</div>
       <div>
         <p>{{ t('Choose between a dark and a light theme mode') }}</p>
         <DarkModeSwitcher />
@@ -90,6 +90,18 @@
       }
       & > div.incoming + div {
         @apply items-start;
+      }
+    }
+
+    &.screen-2xl {
+      @apply grid-cols-[auto,1fr,auto,1fr];
+      & > div:nth-child(2n + 1):not(.small-item) {
+        & + div {
+          @apply col-span-3;
+        }
+      }
+      div.small-item:nth-of-type(4n + 3) {
+        @apply ml-2;
       }
     }
   }
