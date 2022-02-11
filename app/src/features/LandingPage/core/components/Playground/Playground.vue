@@ -3,7 +3,7 @@
   import PageWidthModifier from './PageWidthModifier'
   import PwaExplanations from './PwaExplanations'
 
-  const { bScreenLg, bScreen2Xl } = toRefs(useLPStore())
+  const { bScreenLg } = toRefs(useLPStore())
   const { t } = useI18n()
 </script>
 <template>
@@ -11,7 +11,7 @@
     <h3>{{ t('Playground') }}</h3>
     <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
     <h2> {{ t('Go ahead click around') }} </h2>
-    <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''} ${bScreen2Xl ? 'screen-2xl' : ''}`">
+    <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''}`">
       <div class="small-item">
         {{ t('Internationalization') }}
         <div class="sub-text">I18n</div>
@@ -54,7 +54,8 @@
 </template>
 <style scoped lang="postcss">
   .playground-tiles {
-    @apply text-2xl;
+    @apply text-2xl mx-auto;
+    --tile-content-max-width: 66rem;
     & > div {
       @apply relative p-6 mb-2;
       box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
@@ -81,7 +82,9 @@
     }
 
     &.screen-lg {
-      @apply grid grid-cols-[auto,1fr];
+      @apply grid;
+      width: fit-content;
+      grid-template-columns: auto minmax(max-content, var(--tile-content-max-width));
       & > div:nth-child(2n + 1) {
         @apply mb-2 text-right;
       }
@@ -90,18 +93,6 @@
       }
       & > div.incoming + div {
         @apply items-start;
-      }
-    }
-
-    &.screen-2xl {
-      @apply grid-cols-[auto,1fr,auto,1fr];
-      & > div:nth-child(2n + 1):not(.small-item) {
-        & + div {
-          @apply col-span-3;
-        }
-      }
-      div.small-item:nth-of-type(4n + 3) {
-        @apply ml-2;
       }
     }
   }
