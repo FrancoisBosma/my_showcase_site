@@ -72,10 +72,10 @@
         border-[var(--info)] border-l-0 border-t-3;
     }
     & > div.incoming {
-      @apply discreet italic;
+      @apply opacity-20 italic;
     }
     & > div.incoming + div {
-      @apply discreet italic lg:items-start;
+      @apply opacity-20 italic lg:items-start;
     }
     .sub-text {
       @apply text-sm italic discreet;
