@@ -30,15 +30,11 @@
 </template>
 <style lang="postcss">
   main {
-    @apply relative transition-all duration-300 ease-in;
+    @apply relative transition-all duration-300 ease-in bg-[var(--background)];
     margin: 0 v-bind('contentXMargin');
     transform: scale(v-bind('contentTransform'));
     transform-origin: top left;
     width: v-bind('contentWidth');
-    &::before {
-      @apply absolute top-0 left-0 w-full h-full z-behind bg-[var(--background)];
-      content: '';
-    }
   }
   .responsive-fixed {
     @apply absolute top-0 left-0 w-full transition-all duration-300 ease-in;
