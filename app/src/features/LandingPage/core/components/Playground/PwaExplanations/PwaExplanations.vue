@@ -67,8 +67,7 @@
 <style scoped lang="postcss">
   /* N.B: 'flicking-*' classes were imported from external component's css */
   .pwa-explanations {
-    @apply relative;
-    width: min(66rem, calc(100%));
+    @apply relative w-full;
     --card-height: 12rem;
     --pagination-padding: 3rem;
     .flicking-viewport {
