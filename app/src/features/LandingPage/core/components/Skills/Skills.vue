@@ -1,35 +1,3 @@
-<!-- <script setup lang="ts">
-  const { t } = useI18n()
-</script>
-<template>
-  <section id="skills">
-    <h3>{{ t('Skills') }}</h3>
-    <ul class="checker-board grid grid-flow-col grid-cols-4 grid-rows-2">
-      <li><fa-diamond /></li>
-      <li>{{ t('World-Class Apps') }}</li>
-      <li>{{ t('Tailored To Your Needs') }}</li>
-      <li><ant-design-format-painter-outlined /></li>
-      <li><clarity-ruler-pencil-line /></li>
-      <li>{{ t('Pixel-Perfect Code') }}</li>
-      <li>{{ t('Made With Passion') }}</li>
-      <li><gg-heart /></li>
-    </ul>
-  </section>
-</template>
-<style scoped lang="postcss">
-  #skills {
-    @apply px-0;
-  }
-  .checker-board {
-    li {
-      @apply p-8 flex justify-center items-center aspect-square text-[var(--foreground)] text-4xl;
-    }
-    li:nth-child(4n),
-    li:nth-child(4n + 1) {
-      @apply bg-[var(--info)] text-[var(--background)] text-6xl;
-    }
-  }
-</style> -->
 <script setup lang="ts">
   const { t } = useI18n()
 </script>
@@ -40,13 +8,13 @@
       <ul>
         <li>
           <figure>
-            <fa-diamond />
+            <div><fa-diamond /></div>
             <figcaption>{{ t('World-Class Apps') }}</figcaption>
           </figure>
         </li>
         <li>
           <figure>
-            <ant-design-format-painter-outlined />
+            <div><ant-design-format-painter-outlined /></div>
             <figcaption>{{ t('Tailored To Your Needs') }}</figcaption>
           </figure>
         </li>
@@ -54,13 +22,13 @@
       <ul>
         <li>
           <figure>
-            <clarity-ruler-pencil-line />
+            <div><clarity-ruler-pencil-line /></div>
             <figcaption>{{ t('Pixel-Perfect Code') }}</figcaption>
           </figure>
         </li>
         <li>
           <figure>
-            <gg-heart />
+            <div><gg-heart /></div>
             <figcaption>{{ t('Made With Passion') }}</figcaption>
           </figure>
         </li>
@@ -72,13 +40,22 @@
   .skills {
     ul {
       @apply flex flex-wrap justify-center gap-10;
-      li figure {
-        @apply bg-[var(--info)] w-88 h-88 text-[var(--background)];
+      li > figure {
+        @apply w-88 h-68 overflow-hidden bg-[var(--foreground-contrast)] text-[var(--foreground)];
+        --figcaption-height: 6rem;
         & > *:nth-child(1) {
-          @apply w-full h-full;
+          @apply flex justify-center items-center p-8 w-full h-full text-8xl transition-all duration-300 ease-in-out;
         }
         & > *:nth-child(2) {
-          @apply bg-[var(--foreground-contrast)];
+          @apply flex flex-col justify-center h-[var(--figcaption-height)]
+            bg-[var(--info)] text-[var(--background-stronger)] text-2xl font-bold
+            transition-all duration-300 ease-in-out;
+        }
+        &:hover,
+        &:active {
+          & > *:nth-child(1) {
+            height: calc(100% - var(--figcaption-height));
+          }
         }
       }
     }
