@@ -48,7 +48,7 @@
         }
         & > *:nth-child(2) {
           @apply flex flex-col justify-center h-[var(--figcaption-height)]
-            bg-[var(--info)] text-[var(--background-stronger)] text-2xl font-bold
+            bg-[var(--info)] text-[var(--background-stronger)] text-2xl font-bold backface-hidden
             transition-all duration-300 ease-in-out;
         }
         &:hover,
@@ -66,7 +66,7 @@
             @apply ease-in;
           }
           & > *:nth-child(2) {
-            @apply absolute top-0 w-full transform origin-top rotate-x-90 backface-hidden ease-in;
+            @apply absolute top-0 w-full transform origin-top rotate-x-90 ease-in;
           }
           &:hover,
           &:active {
