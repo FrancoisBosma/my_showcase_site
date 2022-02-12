@@ -6,7 +6,7 @@
     <h3>{{ t('Skills') }}</h3>
     <ul>
       <ul>
-        <li>
+        <li class="info-fall">
           <figure>
             <div><fa-diamond /></div>
             <figcaption>{{ t('World-Class Apps') }}</figcaption>
@@ -55,6 +55,27 @@
         &:active {
           & > *:nth-child(1) {
             height: calc(100% - var(--figcaption-height));
+          }
+        }
+      }
+      .info-fall {
+        @apply perspect-5xl;
+        & > figure {
+          @apply relative overflow-visible preserve-3d;
+          & > *:nth-child(1) {
+            @apply ease-in;
+          }
+          & > *:nth-child(2) {
+            @apply absolute top-0 w-full transform origin-top rotate-x-90 backface-hidden ease-in;
+          }
+          &:hover,
+          &:active {
+            & > *:nth-child(1) {
+              @apply transform translate-y-[var(--figcaption-height)];
+            }
+            & > *:nth-child(2) {
+              @apply rotate-x-0;
+            }
           }
         }
       }
