@@ -58,7 +58,7 @@
           }
         }
       }
-      .info-fall {
+      li.info-fall {
         @apply perspect-5xl;
         & > figure {
           @apply relative overflow-visible preserve-3d;
