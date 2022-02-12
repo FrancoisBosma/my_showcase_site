@@ -5,7 +5,7 @@
 <template>
   <section id="contact">
     <h3> {{ t('Contact') }} </h3>
-    <h2> {{ t('Contact me') }} </h2>
+    <h2> {{ t('To contact me') }} </h2>
     <Location />
   </section>
 </template>
