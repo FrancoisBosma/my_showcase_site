@@ -38,6 +38,7 @@
     "@vueuse/core": "^6.9.2",
     "@vueuse/head": "^0.6.0",
     "axios": "^0.24.0",
+    "cobe": "^0.4.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.9",
     "prism-theme-vars": "^0.2.2",

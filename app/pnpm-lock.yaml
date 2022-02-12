@@ -29,6 +29,7 @@ specifiers:
   '@vueuse/core': ^6.9.2
   '@vueuse/head': ^0.6.0
   axios: ^0.24.0
+  cobe: ^0.4.1
   critters: ^0.0.14
   cross-env: ^7.0.3
   cypress: ^9.2.0
@@ -92,6 +93,7 @@ dependencies:
   '@vueuse/core': 6.9.2_vue@3.2.26
   '@vueuse/head': 0.6.0_vue@3.2.26
   axios: 0.24.0
+  cobe: 0.4.1
   nprogress: 0.2.0
   pinia: 2.0.9_typescript@4.5.4+vue@3.2.26
   prism-theme-vars: 0.2.2
@@ -3292,6 +3294,12 @@ packages:
     dependencies:
       is-regexp: 2.1.0
     dev: true
+
+  /cobe/0.4.1:
+    resolution: {integrity: sha512-hXVsSFXUisSQONxkBD5YC+z73ucBCbI/0Jw1h7OOwjo001X93HpSSGkYfoidCruxbNYYss/tpT40RZ8N1VIwhw==}
+    dependencies:
+      phenomenon: 1.6.0
+    dev: false
 
   /code-point-at/1.1.0:
     resolution: {integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=}
@@ -7471,6 +7479,10 @@ packages:
   /performance-now/2.1.0:
     resolution: {integrity: sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=}
     dev: true
+
+  /phenomenon/1.6.0:
+    resolution: {integrity: sha512-7h9/fjPD3qNlgggzm88cY58l9sudZ6Ey+UmZsizfhtawO6E3srZQXywaNm2lBwT72TbpHYRPy7ytIHeBUD/G0A==}
+    dev: false
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
