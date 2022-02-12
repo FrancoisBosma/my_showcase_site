@@ -20,7 +20,7 @@
         </li>
       </ul>
       <ul>
-        <li>
+        <li class="info-overlay">
           <figure>
             <div><clarity-ruler-pencil-line /></div>
             <figcaption>{{ t('Pixel-Perfect Code') }}</figcaption>
@@ -76,6 +76,21 @@
             & > *:nth-child(2) {
               @apply rotate-x-0;
             }
+          }
+        }
+      }
+      li.info-overlay > figure {
+        @apply relative overflow-visible;
+        & > *:nth-child(2) {
+          @apply absolute top-0 w-full h-full opacity-0 ease-in;
+        }
+        &:hover,
+        &:active {
+          & > *:nth-child(1) {
+            @apply h-full;
+          }
+          & > *:nth-child(2) {
+            @apply transform translate-x-5 translate-y-5 opacity-100 ease-out;
           }
         }
       }
