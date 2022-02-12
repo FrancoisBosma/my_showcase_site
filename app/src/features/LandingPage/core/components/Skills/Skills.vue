@@ -26,7 +26,7 @@
             <figcaption>{{ t('Pixel-Perfect Code') }}</figcaption>
           </figure>
         </li>
-        <li>
+        <li class="info-around">
           <figure>
             <div><gg-heart /></div>
             <figcaption>{{ t('Made With Passion') }}</figcaption>
@@ -44,10 +44,10 @@
         @apply w-88 h-68 overflow-hidden bg-[var(--foreground-contrast)] text-[var(--foreground)];
         --figcaption-height: 6rem;
         & > *:nth-child(1) {
-          @apply flex justify-center items-center p-8 w-full h-full text-8xl transition-all duration-300 ease-in-out;
+          @apply flex justify-center items-center p-5 w-full h-full text-8xl transition-all duration-300 ease-in-out;
         }
         & > *:nth-child(2) {
-          @apply flex flex-col justify-center h-[var(--figcaption-height)]
+          @apply flex flex-col p-5 justify-center h-[var(--figcaption-height)]
             bg-[var(--info)] text-[var(--background-stronger)] text-2xl font-bold backface-hidden
             transition-all duration-300 ease-in-out;
         }
@@ -91,6 +91,23 @@
           }
           & > *:nth-child(2) {
             @apply transform translate-x-5 translate-y-5 opacity-100 ease-out;
+          }
+        }
+      }
+      li.info-around > figure {
+        @apply relative overflow-visible;
+        & > *:nth-child(2) {
+          @apply absolute top-0 w-full h-full opacity-0 z-behind transform;
+        }
+        &:hover,
+        &:active {
+          & > *:nth-child(1) {
+            @apply h-full;
+          }
+          & > *:nth-child(2) {
+            @apply opacity-100 -translate-x-5 -translate-y-5 justify-end;
+            width: calc(100% + 2.5rem);
+            height: calc(100% + var(--figcaption-height));
           }
         }
       }
