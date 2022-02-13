@@ -25,7 +25,7 @@ meta:
   .main-content {
     padding-left: v-bind('responsiveContentPadding');
     & > * {
-      @apply relative px-12 py-28 h-max overflow-y-visible flex flex-col justify-center items-center;
+      @apply relative px-12 py-56 h-max overflow-y-visible flex flex-col justify-center items-center;
       overflow-x: clip;
     }
   }
