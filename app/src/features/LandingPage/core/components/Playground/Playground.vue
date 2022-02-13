@@ -10,7 +10,8 @@
   <section id="playground">
     <h3>{{ t('Playground') }}</h3>
     <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
-    <h2> {{ t('Go ahead click around') }} </h2>
+    <h2> {{ t('Have fun customizing this site to your liking') }} </h2>
+    <h4> {{ t('Go ahead click around') }} </h4>
     <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''}`">
       <div class="small-item">
         {{ t('Internationalization') }}
