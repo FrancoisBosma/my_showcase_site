@@ -11,13 +11,13 @@
 </template>
 <style scoped lang="postcss">
   .trapdoor {
-    @apply relative w-auto h-auto p-4 text-[var(--foreground)] transition-all duration-350 ease-in-out;
+    @apply relative w-auto h-auto p-4 text-[var(--foreground)] transition-all duration-350 ease-in;
     box-shadow: inset -7px 0px 12px -8px rgba(0, 0, 0, 0.3), inset 7px 0px 12px -8px rgba(0, 0, 0, 0.3);
     background: rgba(0, 0, 0, 0.3);
     .door {
       @apply absolute left-0 w-full h-1/2 overflow-hidden
         bg-[var(--background)] text-[var(--cta)]
-        transition-all duration-300 ease-in-out z-2
+        transition-all duration-300 ease-in z-2
         children:(absolute left-1/2 transform -translate-x-1/2 text-4xl);
     }
     .top {
