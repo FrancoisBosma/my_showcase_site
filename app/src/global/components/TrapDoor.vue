@@ -17,7 +17,7 @@
     .door {
       @apply absolute left-0 w-full h-1/2 overflow-hidden
         bg-[var(--background)] text-[var(--cta)]
-        transition-all duration-300 ease-in-out
+        transition-all duration-300 ease-in-out z-2
         children:(absolute left-1/2 transform -translate-x-1/2 text-4xl);
     }
     .top {
