@@ -3,6 +3,7 @@
 </script>
 <template>
   <section id="skills" class="skills">
+    <h2> {{ t('What I offer in a nutshell') }} </h2>
     <h3>{{ t('Skills') }}</h3>
     <ul>
       <ul>
