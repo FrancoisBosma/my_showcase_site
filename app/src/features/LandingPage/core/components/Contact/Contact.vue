@@ -9,7 +9,7 @@
     <div class="flex flex-wrap">
       <div class="flex flex-col gap-8">
         <div>
-          <p> {{ t('The best is to reach me') }} </p>
+          <p> {{ t('The best way to reach me is') }} </p>
           <p> {{ t('via ...') }} </p>
           <TrapDoor>fbosma.pro@gmail.com</TrapDoor>
           <p> {{ t('or ...') }} </p>
