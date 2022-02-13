@@ -7,7 +7,7 @@
   const { t } = useI18n()
 </script>
 <template>
-  <section id="playground" class="!block">
+  <section id="playground">
     <h3>{{ t('Playground') }}</h3>
     <!-- <h2> {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </h2> -->
     <h2> {{ t('Go ahead click around') }} </h2>
