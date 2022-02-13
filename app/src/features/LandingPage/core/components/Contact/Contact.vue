@@ -11,7 +11,12 @@
         <div>
           <p> {{ t('The best way to reach me is') }} </p>
           <p> {{ t('via ...') }} </p>
-          <TrapDoor>fbosma.pro@gmail.com</TrapDoor>
+          <TrapDoor>
+            <template #upperContent>
+              <mdi-email />
+            </template>
+            fbosma.pro@gmail.com
+          </TrapDoor>
           <p> {{ t('or ...') }} </p>
         </div>
         <div>

@@ -1,11 +1,11 @@
 <template>
   <div class="trapdoor">
     <div class="door top">
-      <mdi-email />
+      <slot name="upperContent" />
     </div>
     <slot />
     <div class="door bottom">
-      <mdi-email />
+      <slot name="upperContent" />
     </div>
   </div>
 </template>
