@@ -1,23 +1,45 @@
 <template>
   <div class="trapdoor">
-    <mdi-email class="door top" />
+    <div class="door top">
+      <mdi-email />
+    </div>
     <slot />
-    <mdi-email class="door bottom" />
+    <div class="door bottom">
+      <mdi-email />
+    </div>
   </div>
 </template>
 <style scoped lang="postcss">
   .trapdoor {
-    @apply relative w-auto h-auto p-4 text-[var(--foreground)];
+    @apply relative w-auto h-auto p-4 text-[var(--foreground)] transition-all duration-350 ease-in-out;
+    box-shadow: inset -7px 0px 12px -8px rgba(0, 0, 0, 0.3), inset 7px 0px 12px -8px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
     .door {
-      @apply absolute top-0 left-0 w-full h-full overflow-hidden
-        bg-[var(--background)] text-[var(--cta)] text-2xl
-        transition-all duration-300 ease-in-out z-2;
+      @apply absolute left-0 w-full h-1/2 overflow-hidden
+        bg-[var(--background)] text-[var(--cta)]
+        transition-all duration-300 ease-in-out
+        children:(absolute left-1/2 transform -translate-x-1/2 text-4xl);
     }
     .top {
-      /* @apply transform translate-y-1/2; */
+      @apply top-0 children:(bottom-0 translate-y-1/2);
     }
     .bottom {
-      /* @apply transform -translate-y-1/2; */
+      @apply bottom-0 children:(top-0 -translate-y-1/2);
+    }
+
+    &:hover,
+    &:active {
+      @apply bg-[var(--background)];
+      .door {
+        @apply transform scale-110;
+        box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.4);
+      }
+      .top {
+        @apply -translate-y-1/1;
+      }
+      .bottom {
+        @apply translate-y-1/1;
+      }
     }
   }
 </style>
