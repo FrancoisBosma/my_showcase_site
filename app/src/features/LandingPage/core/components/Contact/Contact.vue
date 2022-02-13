@@ -11,6 +11,7 @@
         <div>
           <p> {{ t('The best is to reach me') }} </p>
           <p> {{ t('via ...') }} </p>
+          <TrapDoor />
           <p> {{ t('or ...') }} </p>
         </div>
         <div>
