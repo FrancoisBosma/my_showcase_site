@@ -7,9 +7,21 @@
     <h3> {{ t('Contact') }} </h3>
     <h2> {{ t('To contact me') }} </h2>
     <div class="flex flex-wrap">
-      <div></div>
+      <div class="flex flex-col gap-8">
+        <div>
+          <p> {{ t('The best is to reach me') }} </p>
+          <p> {{ t('via ...') }} </p>
+          <p> {{ t('or ...') }} </p>
+        </div>
+        <div>
+          <p> {{ t('You can also check out') }} </p>
+          <p> {{ t('more of my work on GitHub') }} </p>
+        </div>
+      </div>
       <div>
-        <p> {{ t('I live in Paris') }} </p>
+        <p>
+          {{ t('I live in') }} <span class="text-[#d41413] font-semibold"> {{ t('Paris') }} </span>
+        </p>
         <p> CET+0 // UTC+1 </p>
         <Location />
       </div>
