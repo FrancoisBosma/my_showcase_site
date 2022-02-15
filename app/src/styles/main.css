@@ -26,9 +26,3 @@ body,
     hover:(opacity-100);
   font-size: 0.9em;
 }
-
-.background-title {
-  @apply  absolute z-behind text-19xl md:text-25xl lg:text-30xl text-[var(--background-extreme)]
-    top-0 left-1/2 transform -translate-x-1/12 -translate-y-1/11;
-  white-space: nowrap; 
-}

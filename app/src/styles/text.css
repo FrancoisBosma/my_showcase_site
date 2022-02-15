@@ -7,7 +7,11 @@ h1 {
 h2 {
   @apply text-6xl pb-28 text-left;
 }
-
+.background-title {
+  @apply  absolute z-behind text-19xl md:text-25xl lg:text-30xl text-[var(--background-extreme)]
+    top-0 left-1/2 transform -translate-x-1/12 -translate-y-1/11;
+  white-space: nowrap; 
+}
 p {
   @apply discreet tracking-1px text-sm md:(tracking-4px text-base) lg:text-lg;
 }
