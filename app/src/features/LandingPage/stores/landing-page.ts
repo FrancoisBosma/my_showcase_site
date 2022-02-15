@@ -18,7 +18,11 @@ export const useLPStore = defineStore('landing-page', () => {
   const resetCWM = () => (contentWidthModifier.value = 0)
 
   // Using default windicss values
-  // cf. https://windicss.org/utilities/general/variants.html#screen-variants
+  // (cf. https://windicss.org/utilities/general/variants.html#screen-variants)
+  // + custom values (cf. windi config file)
+  const bScreen3Xs = computed(() => contentWidth.value >= 360)
+  const bScreen2Xs = computed(() => contentWidth.value >= 450)
+  const bScreenXs = computed(() => contentWidth.value >= 520)
   const bScreenMd = computed(() => contentWidth.value >= 768)
   const bScreenLg = computed(() => contentWidth.value >= 1024)
   const bScreenXl = computed(() => contentWidth.value >= 1280)
@@ -33,6 +37,9 @@ export const useLPStore = defineStore('landing-page', () => {
     contentTransform,
     updateCWM,
     resetCWM,
+    bScreen3Xs,
+    bScreen2Xs,
+    bScreenXs,
     bScreenMd,
     bScreenLg,
     bScreenXl,
