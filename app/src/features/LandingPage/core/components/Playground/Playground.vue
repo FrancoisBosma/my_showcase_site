@@ -8,10 +8,9 @@
 </script>
 <template>
   <section id="playground">
-    <h2> {{ t('Have fun customizing this site to your liking') }} </h2>
-    <h4 class="absolute transform -translate-y-20"> {{ t('Go ahead click around') }} </h4>
+    <h2> {{ t('Have fun playing with this site') }} </h2>
+    <h3 class="absolute transform -translate-y-25"> {{ t('Go ahead click around') }} </h3>
     <div class="background-title">{{ t('Playground') }}</div>
-    <!-- <div > {{ t('Go ahead click around') }} <whh-commentsmiley class="absolute top-20 text-[80%]" /> </div> -->
     <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''}`">
       <div class="small-item">
         {{ t('Internationalization') }}
