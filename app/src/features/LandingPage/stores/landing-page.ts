@@ -23,6 +23,7 @@ export const useLPStore = defineStore('landing-page', () => {
   const bScreen3Xs = computed(() => contentWidth.value >= 360)
   const bScreen2Xs = computed(() => contentWidth.value >= 450)
   const bScreenXs = computed(() => contentWidth.value >= 520)
+  const bScreenSm = computed(() => contentWidth.value >= 640)
   const bScreenMd = computed(() => contentWidth.value >= 768)
   const bScreenLg = computed(() => contentWidth.value >= 1024)
   const bScreenXl = computed(() => contentWidth.value >= 1280)
@@ -33,6 +34,7 @@ export const useLPStore = defineStore('landing-page', () => {
     if (bScreenXl) return 'xl'
     if (bScreenLg) return 'lg'
     if (bScreenMd) return 'md'
+    if (bScreenSm) return 'sm'
     if (bScreenXs) return 'xs'
     if (bScreen2Xs) return '2xs'
     if (bScreen3Xs) return '3xs'
@@ -51,6 +53,7 @@ export const useLPStore = defineStore('landing-page', () => {
     bScreen3Xs,
     bScreen2Xs,
     bScreenXs,
+    bScreenSm,
     bScreenMd,
     bScreenLg,
     bScreenXl,
