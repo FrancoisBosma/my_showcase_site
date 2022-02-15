@@ -30,26 +30,26 @@ export const useLPStore = defineStore('landing-page', () => {
   const bScreen2Xl = computed(() => contentWidth.value >= 1536)
 
   const screenSizeLevel = computed(() => {
-    if (bScreen2Xl) return '2xl'
-    if (bScreenXl) return 'xl'
-    if (bScreenLg) return 'lg'
-    if (bScreenMd) return 'md'
-    if (bScreenSm) return 'sm'
-    if (bScreenXs) return 'xs'
-    if (bScreen2Xs) return '2xs'
-    if (bScreen3Xs) return '3xs'
+    if (bScreen2Xl.value) return '2xl'
+    if (bScreenXl.value) return 'xl'
+    if (bScreenLg.value) return 'lg'
+    if (bScreenMd.value) return 'md'
+    if (bScreenSm.value) return 'sm'
+    if (bScreenXs.value) return 'xs'
+    if (bScreen2Xs.value) return '2xs'
+    if (bScreen3Xs.value) return '3xs'
     return 'lowest'
   })
   const screenSizeLevels = computed(() => {
     let output = 'lowest'
-    if (bScreen3Xs) output += ' 3xs'
-    if (bScreen2Xs) output += ' 2xs'
-    if (bScreenXs) output += ' xs'
-    if (bScreenSm) output += ' sm'
-    if (bScreenMd) output += ' md'
-    if (bScreenLg) output += ' lg'
-    if (bScreenXl) output += ' xl'
-    if (bScreen2Xl) output += ' 2xl'
+    if (bScreen3Xs.value) output += ' 3xs'
+    if (bScreen2Xs.value) output += ' 2xs'
+    if (bScreenXs.value) output += ' xs'
+    if (bScreenSm.value) output += ' sm'
+    if (bScreenMd.value) output += ' md'
+    if (bScreenLg.value) output += ' lg'
+    if (bScreenXl.value) output += ' xl'
+    if (bScreen2Xl.value) output += ' 2xl'
     return output
   })
 
