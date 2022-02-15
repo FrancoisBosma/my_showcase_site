@@ -15,6 +15,11 @@ export default defineConfig({
         'bounce-left': 'bounceLeft 1s infinite',
         'bounce-right': 'bounceRight 1s infinite',
       },
+      screens: {
+        '3xs': { min: '360px' },
+        '2xs': { min: '450px' },
+        xs: { min: '520px' },
+      },
       zIndex: {
         behind: -1,
         fixed: 5000,
