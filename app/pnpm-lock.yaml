@@ -16,7 +16,6 @@ specifiers:
   '@iconify-json/gg': ^1.0.1
   '@iconify-json/icon-park-outline': ^1.0.2
   '@iconify-json/mdi': ^1.0.12
-  '@iconify-json/whh': ^1.0.1
   '@iconify-json/zmdi': ^1.0.1
   '@intlify/vite-plugin-vue-i18n': ^2.5.0
   '@types/markdown-it-link-attributes': ^3.0.1
@@ -117,7 +116,6 @@ devDependencies:
   '@iconify-json/gg': 1.0.1
   '@iconify-json/icon-park-outline': 1.0.2
   '@iconify-json/mdi': 1.0.12
-  '@iconify-json/whh': 1.0.1
   '@iconify-json/zmdi': 1.0.1
   '@intlify/vite-plugin-vue-i18n': 2.5.0
   '@types/markdown-it-link-attributes': 3.0.1
@@ -1802,12 +1800,6 @@ packages:
 
   /@iconify-json/mdi/1.0.12:
     resolution: {integrity: sha512-smYQpxDqSCUdySFSYZpH0BAEVbgFnU4IE/Hb36zavseOl3zFlKDvGOEFPC7djkEabrIWi9KDAUdbtIREcgVE8A==}
-    dependencies:
-      '@iconify/types': 1.0.12
-    dev: true
-
-  /@iconify-json/whh/1.0.1:
-    resolution: {integrity: sha512-s03Xs8hXzEES3KSGHMtBRm8Es2EwWr8KAjuA3pHOWfh58HZduRA/atEHEzM4NwYMgHRq8hitDmFFbmclFsa8rA==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: true
