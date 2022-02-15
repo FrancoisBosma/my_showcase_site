@@ -1,11 +1,14 @@
 html {
-  @apply text-center;
+  @apply text-center text-xs 3xs:text-sm 2xs:text-base;
 }
 h1 {
-  @apply text-5xl md:text-7xl lg:text-8xl;
+  @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl;
 }
 h2 {
-  @apply text-6xl pb-28 text-left;
+  @apply pb-28 text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+}
+h3 {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
 }
 .background-title {
   @apply  absolute z-behind text-19xl md:text-25xl lg:text-30xl text-[var(--background-extreme)]
