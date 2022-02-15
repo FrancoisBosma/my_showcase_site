@@ -28,6 +28,17 @@ export const useLPStore = defineStore('landing-page', () => {
   const bScreenXl = computed(() => contentWidth.value >= 1280)
   const bScreen2Xl = computed(() => contentWidth.value >= 1536)
 
+  const screenSizeLevel = computed(() => {
+    if (bScreen2Xl) return '2xl'
+    if (bScreenXl) return 'xl'
+    if (bScreenLg) return 'lg'
+    if (bScreenMd) return 'md'
+    if (bScreenXs) return 'xs'
+    if (bScreen2Xs) return '2xs'
+    if (bScreen3Xs) return '3xs'
+    return 'lowest'
+  })
+
   return {
     windowWidth,
     maxWidth,
@@ -44,6 +55,7 @@ export const useLPStore = defineStore('landing-page', () => {
     bScreenLg,
     bScreenXl,
     bScreen2Xl,
+    screenSizeLevel,
   }
 })
 
