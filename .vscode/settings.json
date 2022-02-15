@@ -15,6 +15,7 @@
     "nprogress",
     "pinia",
     "pnpm",
+    "postcss",
     "preinstall",
     "reactified",
     "stylelint",
