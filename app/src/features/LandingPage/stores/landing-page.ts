@@ -40,7 +40,7 @@ export const useLPStore = defineStore('landing-page', () => {
     if (bScreen3Xs) return '3xs'
     return 'lowest'
   })
-  const ScreenSizeLevels = computed(() => {
+  const screenSizeLevels = computed(() => {
     let output = 'lowest'
     if (bScreen3Xs) output += '3xs'
     if (bScreen2Xs) output += '2xs'
@@ -71,7 +71,7 @@ export const useLPStore = defineStore('landing-page', () => {
     bScreenXl,
     bScreen2Xl,
     screenSizeLevel,
-    ScreenSizeLevels,
+    screenSizeLevels,
   }
 })
 
