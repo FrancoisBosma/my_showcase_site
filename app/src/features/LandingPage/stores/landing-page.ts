@@ -42,14 +42,14 @@ export const useLPStore = defineStore('landing-page', () => {
   })
   const screenSizeLevels = computed(() => {
     let output = 'lowest'
-    if (bScreen3Xs) output += '3xs'
-    if (bScreen2Xs) output += '2xs'
-    if (bScreenXs) output += 'xs'
-    if (bScreenSm) output += 'sm'
-    if (bScreenMd) output += 'md'
-    if (bScreenLg) output += 'lg'
-    if (bScreenXl) output += 'xl'
-    if (bScreen2Xl) output += '2xl'
+    if (bScreen3Xs) output += ' 3xs'
+    if (bScreen2Xs) output += ' 2xs'
+    if (bScreenXs) output += ' xs'
+    if (bScreenSm) output += ' sm'
+    if (bScreenMd) output += ' md'
+    if (bScreenLg) output += ' lg'
+    if (bScreenXl) output += ' xl'
+    if (bScreen2Xl) output += ' 2xl'
     return output
   })
 
