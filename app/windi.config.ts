@@ -16,7 +16,7 @@ export default defineConfig({
         'bounce-right': 'bounceRight 1s infinite',
       },
       screens: {
-        '3xs': { min: '360px' },
+        '3xs': { min: '400px' },
         '2xs': { min: '450px' },
         xs: { min: '520px' },
       },

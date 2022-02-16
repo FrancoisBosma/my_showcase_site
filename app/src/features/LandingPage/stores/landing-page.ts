@@ -20,7 +20,7 @@ export const useLPStore = defineStore('landing-page', () => {
   // Using default windicss values
   // (cf. https://windicss.org/utilities/general/variants.html#screen-variants)
   // + custom values (cf. windi config file)
-  const bScreen3Xs = computed(() => contentWidth.value >= 360)
+  const bScreen3Xs = computed(() => contentWidth.value >= 400)
   const bScreen2Xs = computed(() => contentWidth.value >= 450)
   const bScreenXs = computed(() => contentWidth.value >= 520)
   const bScreenSm = computed(() => contentWidth.value >= 640)
