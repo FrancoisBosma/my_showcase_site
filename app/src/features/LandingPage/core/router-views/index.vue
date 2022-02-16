@@ -9,12 +9,13 @@ meta:
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
   const { screenSizeLevels, bScreenXl } = toRefs(useLPStore())
+  watchEffect(() => document.documentElement.setAttribute('screen-size-levels', screenSizeLevels.value))
   const responsiveContentPadding = computed(() => (bScreenXl.value ? 'calc(13rem)' : '0'))
 </script>
 
 <template>
   <Menu />
-  <div class="main-content" :screen-size-levels="screenSizeLevels">
+  <div class="main-content">
     <Introduction />
     <Playground />
     <Skills />
@@ -31,112 +32,82 @@ meta:
   }
 </style>
 <style lang="postcss">
-  /* html .main-content[screen-size-levels*='lowest'] {
-    @apply text-xs;
+  html[screen-size-levels*='lowest'] {
+    @apply text-0.625rem;
     h1 {
       @apply text-5xl;
     }
-  }
-  html .main-content[screen-size-levels*='3xs'] {
-    @apply text-sm;
-  }
-  html .main-content[screen-size-levels*='2xs'] {
-    @apply text-base;
-  }
-  html .main-content[screen-size-levels*='sm'] {
-    h1 {
-      @apply text-6xl;
-    }
-  }
-  html .main-content[screen-size-levels*='md'] {
-    h1 {
-      @apply text-7xl;
-    }
-  }
-  html .main-content[screen-size-levels*='lg'] {
-    h1 {
-      @apply text-8xl;
-    }
-  } */
-  /* html .main-content {
-    &[screen-size-levels*='lowest'] {
-      @apply text-xs;
-    }
-    &[screen-size-levels*='3xs'] {
-      @apply text-sm;
-    }
-    &[screen-size-levels*='2xs'] {
-      @apply text-base;
-    }
-  } */
-  /* h1 {
-    &[screen-size-levels*='lowest'] {
-      @apply text-5xl;
-    }
-    &[screen-size-levels*='sm'] {
-      @apply text-6xl;
-    }
-    &[screen-size-levels*='md'] {
-      @apply text-7xl;
-    }
-    &[screen-size-levels*='lg'] {
-      @apply text-8xl;
-    }
-  }
-  h2 {
-    &[screen-size-levels*='lowest'] {
+    h2 {
       @apply text-3xl;
     }
-    &[screen-size-levels*='sm'] {
-      @apply text-4xl;
-    }
-    &[screen-size-levels*='md'] {
-      @apply text-5xl;
-    }
-    &[screen-size-levels*='lg'] {
-      @apply text-6xl;
-    }
-  }
-  h3 {
-    &[screen-size-levels*='lowest'] {
+    h3 {
       @apply text-xl;
     }
-    &[screen-size-levels*='sm'] {
-      @apply text-2xl;
-    }
-    &[screen-size-levels*='md'] {
-      @apply text-3xl;
-    }
-    &[screen-size-levels*='lg'] {
-      @apply text-4xl;
-    }
-  }
-  .background-title {
-    &[screen-size-levels*='lowest'] {
+    .background-title {
       @apply text-15xl;
     }
-    &[screen-size-levels*='sm'] {
-      @apply text-20xl;
-    }
-    &[screen-size-levels*='md'] {
-      @apply text-25xl;
-    }
-    &[screen-size-levels*='lg'] {
-      @apply text-30xl;
+    p {
+      @apply tracking-1px;
     }
   }
-  p {
-    &[screen-size-levels*='lowest'] {
-      @apply text-xs tracking-1px;
+  html[screen-size-levels*='3xs'] {
+    @apply text-xs;
+  }
+  html[screen-size-levels*='2xs'] {
+    @apply text-sm;
+  }
+  html[screen-size-levels*=' xs'] {
+    @apply text-base;
+  }
+  html[screen-size-levels*='sm'] {
+    h1 {
+      @apply text-6xl;
     }
-    &[screen-size-levels*='sm'] {
+    h2 {
+      @apply text-4xl;
+    }
+    h3 {
+      @apply text-2xl;
+    }
+    .background-title {
+      @apply text-20xl;
+    }
+    p {
       @apply text-sm tracking-2px;
     }
-    &[screen-size-levels*='md'] {
+  }
+  html[screen-size-levels*='md'] {
+    h1 {
+      @apply text-7xl;
+    }
+    h2 {
+      @apply text-5xl;
+    }
+    h3 {
+      @apply text-3xl;
+    }
+    .background-title {
+      @apply text-25xl;
+    }
+    p {
       @apply text-base tracking-4px;
     }
-    &[screen-size-levels*='lg'] {
+  }
+  html[screen-size-levels*='lg'] {
+    h1 {
+      @apply text-8xl;
+    }
+    h2 {
+      @apply text-6xl;
+    }
+    h3 {
+      @apply text-4xl;
+    }
+    .background-title {
+      @apply text-30xl;
+    }
+    p {
       @apply text-lg;
     }
-  } */
+  }
 </style>
