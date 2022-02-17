@@ -41,7 +41,6 @@
   }
   const init = ref(5)
   const len = ref(5)
-  const stopped = ref(false)
   watch([init, len], () => f.start())
   onMounted(async () => {
     // @ts-expect-error
@@ -52,18 +51,18 @@
     let steps: Function[] = []
     let prevSteps: Function[] = []
     let iterations = 0
-    const step = (x: number, y: number, rad: number) => {
+    const addStep = (x: number, y: number, rad: number) => {
       const length = random() * len.value
-      const [nx, ny] = polar2cart(x, y, length, rad)
+      const [newX, newY] = polar2cart(x, y, length, rad)
       ctx.beginPath()
       ctx.moveTo(x, y)
-      ctx.lineTo(nx, ny)
+      ctx.lineTo(newX, newY)
       ctx.stroke()
       const rad1 = rad + random() * r15
       const rad2 = rad - random() * r15
-      if (nx < -100 || nx > 500 || ny < -100 || ny > 500) return
-      if (iterations <= init.value || random() > 0.5) steps.push(() => step(nx, ny, rad1))
-      if (iterations <= init.value || random() > 0.5) steps.push(() => step(nx, ny, rad2))
+      if (newX < -100 || newX > canvasWidth + 100 || newY < -100 || newY > canvasHeight + 100) return
+      if (iterations <= init.value || random() > 0.5) steps.push(() => addStep(newX, newY, rad1))
+      if (iterations <= init.value || random() > 0.5) steps.push(() => addStep(newX, newY, rad2))
     }
     const controls = useRafFn(
       () => {
@@ -72,7 +71,6 @@
         steps = []
         if (!prevSteps.length) {
           controls.pause()
-          stopped.value = true
         }
         prevSteps.forEach((i) => i())
       },
@@ -81,16 +79,19 @@
     f.start = () => {
       controls.pause()
       iterations = 0
+      console.log(canvasWidth)
+      console.log(canvasHeight)
       ctx.clearRect(0, 0, canvasWidth, canvasHeight)
       ctx.lineWidth = 1
       ctx.strokeStyle = '#00000040'
       prevSteps = []
       steps =
         random() < 0.5
-          ? [() => step(0, random() * 400, 0), () => step(400, random() * 400, r180)]
-          : [() => step(random() * 400, 0, r90), () => step(random() * 400, 400, -r90)]
+          ? // starts = left + right
+            [() => addStep(0, random() * canvasHeight, 0), () => addStep(canvasWidth, random() * canvasHeight, r180)]
+          : // starts = top + bottom
+            [() => addStep(random() * canvasWidth, 0, r90), () => addStep(random() * canvasWidth, canvasHeight, -r90)]
       controls.resume()
-      stopped.value = false
     }
     f.start()
   })
