@@ -49,8 +49,9 @@
     const { ctx } = initCanvas(canvas, sectionWidth, sectionHeight)
     const { width: canvasWidth, height: canvasHeight } = canvas
     let steps: Function[] = []
-    let prevSteps: Function[] = []
+    let parentSteps: Function[] = []
     let iterations = 0
+    let ticks = 0
     const addStep = (x: number, y: number, rad: number) => {
       const length = random() * len.value
       const [newX, newY] = polar2cart(x, y, length, rad)
@@ -61,36 +62,37 @@
       const rad1 = rad + random() * r15
       const rad2 = rad - random() * r15
       if (newX < -100 || newX > canvasWidth + 100 || newY < -100 || newY > canvasHeight + 100) return
-      if (iterations <= init.value || random() > 0.5) steps.push(() => addStep(newX, newY, rad1))
-      if (iterations <= init.value || random() > 0.5) steps.push(() => addStep(newX, newY, rad2))
+      if (iterations < init.value || random() >= 0.5) steps.push(() => addStep(newX, newY, rad1))
+      if (iterations < init.value || random() >= 0.5) steps.push(() => addStep(newX, newY, rad2))
     }
     const controls = useRafFn(
       () => {
-        iterations += 1
-        prevSteps = steps
-        steps = []
-        if (!prevSteps.length) {
-          controls.pause()
+        if (ticks % 3 === 0) {
+          parentSteps = steps
+          steps = []
+          if (!parentSteps.length) {
+            controls.pause()
+          }
+          parentSteps.forEach((i) => i())
+          iterations += 1
         }
-        prevSteps.forEach((i) => i())
+        ticks += 1
       },
       { immediate: false }
     )
     f.start = () => {
       controls.pause()
       iterations = 0
-      console.log(canvasWidth)
-      console.log(canvasHeight)
+      ticks = 0
       ctx.clearRect(0, 0, canvasWidth, canvasHeight)
       ctx.lineWidth = 1
       ctx.strokeStyle = '#00000040'
-      prevSteps = []
-      steps =
-        random() < 0.5
-          ? // starts = left + right
-            [() => addStep(0, random() * canvasHeight, 0), () => addStep(canvasWidth, random() * canvasHeight, r180)]
-          : // starts = top + bottom
-            [() => addStep(random() * canvasWidth, 0, r90), () => addStep(random() * canvasWidth, canvasHeight, -r90)]
+      parentSteps = []
+      steps = [
+        () => addStep(0, 0.5 * canvasHeight, 0), // starts from the middle of LEFT
+        () => addStep(0.5 * canvasWidth, 0, r90), // starts from the middle of TOP
+        () => addStep(canvasWidth, 0.5 * canvasHeight, r180), // starts from the middle of RIGHT
+      ]
       controls.resume()
     }
     f.start()
