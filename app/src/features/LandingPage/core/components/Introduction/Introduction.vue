@@ -86,7 +86,7 @@
       ticks = 0
       ctx.clearRect(0, 0, canvasWidth, canvasHeight)
       ctx.lineWidth = 1
-      ctx.strokeStyle = '#00000040'
+      ctx.strokeStyle = '#00000030'
       parentSteps = []
       steps = [
         () => addStep(0, 0.5 * canvasHeight, 0), // starts from the middle of LEFT
