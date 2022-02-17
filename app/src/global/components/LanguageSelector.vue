@@ -49,7 +49,7 @@
       }
     }
     &:hover[is-selected='false'] {
-      @apply bg-[var(--background-stronger-seethrough-2)] rounded-md;
+      @apply bg-[var(--background-seethrough-2)] rounded-md;
     }
   }
 </style>
