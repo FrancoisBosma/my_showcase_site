@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { polar2cart, r15, r180, r90, setCanvas } from './utils'
   import { isDark } from '@GLOBAL/functions/reactified'
+  import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
+  const { contentWidth } = toRefs(useLPStore())
 
   const { t } = useI18n()
   const tinkeringsTranslation = t('Tinkerings')
@@ -39,17 +41,19 @@
   const { random } = Math
   const f = {
     start: () => {},
+    // update: () => {
+
+    // },
   }
   const init = ref(5)
   const len = ref(10)
 
-  watch([init, len], () => f.start())
+  throttledWatch([init, len, contentWidth], () => f.start(), { throttle: 250 })
+  // watch([init, len, contentWidth], () => f.start())
 
   onMounted(async () => {
     const { clientWidth: sectionWidth, clientHeight: sectionHeight } = sectionElement.value!
-    const canvas = bgFractalsElement.value!
-    const { ctx } = setCanvas(canvas, sectionWidth)
-    const { width: canvasWidth, height: canvasHeight } = canvas
+    const { ctx, width: canvasWidth, height: canvasHeight } = setCanvas(bgFractalsElement.value!, sectionWidth)
     let steps: Function[] = []
     let parentSteps: Function[] = []
     let iterations = 0
