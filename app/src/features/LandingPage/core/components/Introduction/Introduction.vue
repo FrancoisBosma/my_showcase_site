@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { initCanvas, polar2cart, r15, r180, r90 } from './utils'
+  import { polar2cart, r15, r180, r90, setCanvas } from './utils'
   import { isDark } from '@GLOBAL/functions/reactified'
 
   const { t } = useI18n()
@@ -42,11 +42,13 @@
   }
   const init = ref(5)
   const len = ref(10)
+
   watch([init, len], () => f.start())
+
   onMounted(async () => {
     const { clientWidth: sectionWidth, clientHeight: sectionHeight } = sectionElement.value!
     const canvas = bgFractalsElement.value!
-    const { ctx } = initCanvas(canvas, sectionWidth, document.documentElement.scrollHeight)
+    const { ctx } = setCanvas(canvas, sectionWidth)
     const { width: canvasWidth, height: canvasHeight } = canvas
     let steps: Function[] = []
     let parentSteps: Function[] = []
