@@ -44,8 +44,7 @@
   const len = ref(10)
   watch([init, len], () => f.start())
   onMounted(async () => {
-    // @ts-expect-error
-    const { clientWidth: sectionWidth, clientHeight: sectionHeight } = sectionElement.value
+    const { clientWidth: sectionWidth, clientHeight: sectionHeight } = sectionElement.value!
     const canvas = bgFractalsElement.value!
     const { ctx } = initCanvas(canvas, sectionWidth, document.documentElement.scrollHeight)
     const { width: canvasWidth, height: canvasHeight } = canvas
