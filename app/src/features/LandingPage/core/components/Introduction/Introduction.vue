@@ -47,7 +47,7 @@
     // @ts-expect-error
     const { clientWidth: sectionWidth, clientHeight: sectionHeight } = sectionElement.value
     const canvas = bgFractalsElement.value!
-    const { ctx } = initCanvas(canvas, sectionWidth, sectionHeight)
+    const { ctx } = initCanvas(canvas, sectionWidth, document.documentElement.scrollHeight)
     const { width: canvasWidth, height: canvasHeight } = canvas
     let steps: Function[] = []
     let parentSteps: Function[] = []
@@ -90,9 +90,9 @@
       ctx.strokeStyle = isDark.value ? '#00000040' : '#ffffffc0'
       parentSteps = []
       steps = [
-        () => addStep(0, 0.5 * canvasHeight, 0), // starts from the middle of LEFT
+        () => addStep(0, 0.5 * sectionHeight, 0), // starts from the middle of LEFT
         () => addStep(0.5 * canvasWidth, 0, r90), // starts from the middle of TOP
-        () => addStep(canvasWidth, 0.5 * canvasHeight, r180), // starts from the middle of RIGHT
+        () => addStep(canvasWidth, 0.5 * sectionHeight, r180), // starts from the middle of RIGHT
       ]
       controls.resume()
     }
