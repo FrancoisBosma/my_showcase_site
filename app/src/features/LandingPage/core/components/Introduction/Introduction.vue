@@ -34,7 +34,7 @@
   }, 75)
 
   // BG FRACTALS
-  const sectionElement = ref<HTMLCanvasElement | null>(null)
+  const sectionElement = ref<HTMLElement | null>(null)
   const bgFractalsElement = ref<HTMLCanvasElement | null>(null)
   const { random } = Math
   const f = {
