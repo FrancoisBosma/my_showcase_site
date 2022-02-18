@@ -68,7 +68,7 @@
     }
     const controls = useRafFn(
       () => {
-        if (ticks % 3 === 0) {
+        if (ticks % 6 === 0) {
           parentSteps = steps
           steps = []
           if (!parentSteps.length) {
