@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { initCanvas, polar2cart, r15, r180, r90 } from './utils'
+  import { isDark } from '@GLOBAL/functions/reactified'
 
   const { t } = useI18n()
   const tinkeringsTranslation = t('Tinkerings')
@@ -40,7 +41,7 @@
     start: () => {},
   }
   const init = ref(5)
-  const len = ref(5)
+  const len = ref(10)
   watch([init, len], () => f.start())
   onMounted(async () => {
     // @ts-expect-error
@@ -86,7 +87,7 @@
       ticks = 0
       ctx.clearRect(0, 0, canvasWidth, canvasHeight)
       ctx.lineWidth = 1
-      ctx.strokeStyle = '#00000030'
+      ctx.strokeStyle = isDark.value ? '#00000040' : '#ffffffc0'
       parentSteps = []
       steps = [
         () => addStep(0, 0.5 * canvasHeight, 0), // starts from the middle of LEFT
