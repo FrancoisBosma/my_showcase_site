@@ -10,8 +10,8 @@
   --background-seethrough: #f2eee510;
   --background-seethrough-2: #f2eee530;
   --background-stronger: #323230;
-  --foreground-for-stronger-background: var(--background-extreme);
   --background-extreme: #f7f5ed;
+  --foreground-for-stronger-background: var(--background-extreme);
   --foreground-contrast: #b7b7b7;
   --foreground: #181410;
 }
@@ -25,8 +25,8 @@
   --background-seethrough: #12121210;
   --background-seethrough-2: #12121230;
   --background-stronger: #121212;
-  --foreground-for-stronger-background: #f8f8f880;
   --background-extreme: #1d1d1b;
+  --foreground-for-stronger-background: #f8f8f880;
   --foreground-contrast: #484848;
   --foreground: #f8f8f8;
 }
