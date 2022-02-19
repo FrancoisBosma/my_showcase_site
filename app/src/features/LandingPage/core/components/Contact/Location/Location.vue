@@ -2,10 +2,10 @@
   import createGlobe from 'cobe'
   import { translateColorHex2Dec } from '@GLOBAL/functions/colors'
 
-  const canvasElement = ref()
+  const canvasElement = ref(null)
   const phi = ref(4.5)
 
-  const rawMarkerColor = ref('#d41413')
+  const rawMarkerColor = useCssVar('--important', canvasElement)
   const rawBaseColor = ref('#f8f8f8')
   const markerColor = computed(() => {
     const tColor = translateColorHex2Dec(rawMarkerColor.value)

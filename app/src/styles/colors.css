@@ -1,8 +1,9 @@
 :root {
   --typed-text: #8d8d8d;
+  --red: #d41413;
 }
 :root {
-  --important: #c07dbb;
+  --important: var(--red);
   --cta: #b10dc9;
   --emphasis: #2997fe;
   --info: #7fdbff;
@@ -17,7 +18,7 @@
 }
 
 :root.dark {
-  --important: #d41413;
+  --important: var(--red);
   --cta: #50f148;
   --emphasis: #d97706;
   --info: #fcd34d;

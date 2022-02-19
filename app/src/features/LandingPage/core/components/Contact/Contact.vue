@@ -37,7 +37,7 @@
       </div>
       <div>
         <p>
-          {{ t('I live in') }} <span class="text-[#d41413] font-semibold"> {{ t('Paris') }} </span>
+          {{ t('I live in') }} <span class="text-[var(--important)] font-semibold"> {{ t('Paris') }} </span>
         </p>
         <p> CET+0 // UTC+1 </p>
         <Location />
