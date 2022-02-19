@@ -2,8 +2,8 @@
   import { polar2cart, r15, r180, r90, setCanvas } from './utils'
   import { isDark } from '@GLOBAL/functions/reactified'
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
-  const { contentWidth } = toRefs(useLPStore())
 
+  const { contentWidth } = toRefs(useLPStore())
   const props = withDefaults(defineProps<{ containerElement: HTMLElement | null }>(), { containerElement: null })
   const containerElement = toRef(props, 'containerElement')
 
@@ -17,6 +17,10 @@
   }
   const init = ref(5)
   const len = ref(10)
+  const beforeIconColor = computed(() =>
+    isDark.value ? useCssVar('--background-stronger', fractalsTreeElement).value : '#fdfdff'
+  )
+  const isActive = ref(false)
 
   throttledWatch([init, len, contentWidth], () => f.start(), { throttle: 250 })
   onMounted(async () => {
@@ -76,7 +80,8 @@
   })
 </script>
 <template>
-  <button class="bg-fractals-toggle-button">
+  <button class="bg-fractals-toggle-button" :is-active="isActive" @click="isActive = !isActive">
+    <icon-park-outline-add-one class="icon before" />
     <!-- Credit: logo found on vecteezy.com -->
     <svg
       id="eKgfo5k6qWH1"
@@ -85,6 +90,7 @@
       viewBox="0 0 1400 1400"
       shape-rendering="geometricPrecision"
       text-rendering="geometricPrecision"
+      class="tree-icon"
     >
       <defs>
         <linearGradient
@@ -112,12 +118,41 @@
         fill="url(#eKgfo5k6qWH2-fill)"
       />
     </svg>
+    <icon-park-outline-forbid class="icon after" />
   </button>
   <canvas ref="fractalsTreeElement" class="bg-fractals"></canvas>
 </template>
 <style scoped lang="postcss">
   .bg-fractals-toggle-button {
     @apply absolute bottom-1/8 right-1/8 w-18 h-18;
+    &:before {
+      @apply content-[''] absolute w-full h-full rounded-full top-0 left-0 transition-all duration-300 ease-in-out;
+      box-shadow: 0 0 15px #5eead4;
+    }
+    .tree-icon {
+      @apply transition-all duration-300 ease-in-out;
+    }
+    .icon {
+      @apply absolute w-113/100 h-113/100 -top-1 -left-1 transform transition-all duration-300 ease-in-out;
+      color: v-bind('beforeIconColor');
+    }
+    .before {
+      @apply z-behind opacity-0;
+    }
+    .after {
+      @apply z-1 text-[var(--important)] translate-x-full;
+    }
+    &[is-active='true'] {
+      &:before {
+        @apply opacity-0 transform translate-x-full;
+      }
+      .tree-icon {
+        @apply transform translate-x-115/100 rotate-90 opacity-75;
+      }
+      .before {
+        @apply opacity-100;
+      }
+    }
   }
   .bg-fractals {
     @apply absolute top-0 left-0 pointer-events-none z-behind;
