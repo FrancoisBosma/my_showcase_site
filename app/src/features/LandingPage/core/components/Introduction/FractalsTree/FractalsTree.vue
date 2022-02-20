@@ -27,8 +27,8 @@
     await nextTick()
     // Now prop 'containerElement' has been passed
     // Let's proceed to canvas init
-    const { clientWidth: sectionWidth, clientHeight: sectionHeight } = containerElement.value!
-    const { ctx, width: canvasWidth, height: canvasHeight } = setCanvas(fractalsTreeElement.value!, sectionWidth)
+    const { clientWidth: containerWidth, clientHeight: containerHeight } = containerElement.value!
+    const { ctx, width: canvasWidth, height: canvasHeight } = setCanvas(fractalsTreeElement.value!, containerWidth)
     let steps: Function[] = []
     let parentSteps: Function[] = []
     let iterations = 0
@@ -70,9 +70,9 @@
       ctx.strokeStyle = isDark.value ? '#00000040' : '#ffffffc0'
       parentSteps = []
       steps = [
-        () => addStep(0, 0.5 * sectionHeight, 0), // starts from the middle of LEFT
+        () => addStep(0, 0.5 * containerHeight, 0), // starts from the middle of LEFT
         () => addStep(0.5 * canvasWidth, 0, r90), // starts from the middle of TOP
-        () => addStep(canvasWidth, 0.5 * sectionHeight, r180), // starts from the middle of RIGHT
+        () => addStep(canvasWidth, 0.5 * containerHeight, r180), // starts from the middle of RIGHT
       ]
       controls.resume()
     }
