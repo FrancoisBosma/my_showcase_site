@@ -7,6 +7,7 @@
   const textTypingDirection = ref(1)
   const textColors = ['--typed-text', '--info']
   const textColorSelector = ref(0)
+  const textColor = computed(() => textColors[textColorSelector.value])
   const textType = useIntervalFn(() => {
     dynamicText.value = text.value.substring(0, dynamicText.value.length + textTypingDirection.value)
     if (dynamicText.value.length === text.value.length || dynamicText.value.length === 0)
@@ -28,8 +29,12 @@
   }, 75)
 </script>
 <template>
-  <span :class="`text-[var(${textColors[textColorSelector]})]`">
-    {{ '$ ' + dynamicText
-    }}<span v-show="bShowCursor" :class="`bg-[var(${textColors[textColorSelector]})]`">&#95;</span>
+  <span :class="`relative text-[var(${textColor})]`">
+    {{ '$ ' + dynamicText }}<span v-show="bShowCursor" :class="`cursor bg-[var(${textColor})]`">&#95;</span>
   </span>
 </template>
+<style scoped lang="postcss">
+  .cursor {
+    @apply absolute bottom-1 text-transparent;
+  }
+</style>
