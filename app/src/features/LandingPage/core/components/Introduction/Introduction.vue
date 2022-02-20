@@ -10,7 +10,7 @@
   <section id="introduction" ref="sectionElement" class="!h-screen flex flex-col justify-center items-start text-left">
     <FractalsTree ref="fractalsElement" :container-element="sectionElement" />
     <h1>{{ t('Hi') }},<br />{{ t("I'm Francois") }},<br />{{ t('web developer') }}</h1>
-    <p class="py-4">
+    <p class="typed py-4">
       <AnimatedTypedText :text="`Vue.js | Full-stack | ${t(tinkeringsTranslation)}`" />
     </p>
     <a href="#contact">

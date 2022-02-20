@@ -38,7 +38,7 @@ meta:
       @apply text-5xl;
     }
     h2 {
-      @apply text-3xl;
+      @apply text-3xl tracking-1px;
     }
     h3 {
       @apply text-xl;
@@ -47,7 +47,9 @@ meta:
       @apply text-15xl;
     }
     p {
-      @apply tracking-1px;
+      &.typed {
+        @apply tracking-1px;
+      }
     }
   }
   html[screen-size-levels*='3xs'] {
@@ -64,7 +66,7 @@ meta:
       @apply text-6xl;
     }
     h2 {
-      @apply text-4xl;
+      @apply text-4xl tracking-2px;
     }
     h3 {
       @apply text-2xl;
@@ -73,7 +75,10 @@ meta:
       @apply text-20xl;
     }
     p {
-      @apply text-sm tracking-2px;
+      @apply text-sm;
+      &.typed {
+        @apply tracking-2px;
+      }
     }
   }
   html[screen-size-levels*='md'] {
@@ -90,7 +95,10 @@ meta:
       @apply text-25xl;
     }
     p {
-      @apply text-base tracking-4px;
+      @apply text-base;
+      &.typed {
+        @apply tracking-4px;
+      }
     }
   }
   html[screen-size-levels*='lg'] {
