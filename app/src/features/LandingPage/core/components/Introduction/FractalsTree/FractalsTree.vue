@@ -18,10 +18,10 @@
   const beforeIconColor = computed(() =>
     isDark.value ? useCssVar('--background-stronger', fractalsTreeElement).value : '#fdfdff'
   )
-  const isActive = ref(false)
+  const isActive = ref(true)
 
   const drawing = {
-    start: () => {},
+    clear: () => {},
     set: () => {
       containerWidth.value = containerElement.value!.clientWidth
       containerHeight.value = containerElement.value!.clientHeight
@@ -30,11 +30,27 @@
       canvasHeight.value = height
       return ctx
     },
+    start: () => {},
+    stop: () => {},
+    updatedRestart: () => {
+      if (isActive.value) {
+        drawing.set()
+        drawing.start()
+      }
+    },
   }
-  throttledWatch([init, len, windowWidth], () => drawing.set() && drawing.start(), {
+  watch(isActive, (isActive) => {
+    if (!isActive) {
+      drawing.stop()
+      drawing.clear()
+    } else {
+      drawing.updatedRestart()
+    }
+  })
+  throttledWatch([init, len, windowWidth], () => drawing.updatedRestart(), {
     throttle: 250,
   })
-  debouncedWatch(contentWidth, () => drawing.set() && drawing.start(), {
+  debouncedWatch(contentWidth, () => drawing.updatedRestart(), {
     // must be more than the artificial window resize animation time
     // so that the reference element has finished resizing
     debounce: 350,
@@ -42,7 +58,7 @@
   onMounted(async () => {
     await nextTick()
     // Now prop 'containerElement' has been passed
-    // Let's proceed to canvas init
+    // Let's proceed to initialization
     const ctx = drawing.set()
     let steps: Function[] = []
     let parentSteps: Function[] = []
@@ -76,8 +92,9 @@
       },
       { immediate: false }
     )
+    drawing.clear = () => ctx.clearRect(0, 0, canvasWidth.value, canvasHeight.value)
     drawing.start = () => {
-      ctx.clearRect(0, 0, canvasWidth.value, canvasHeight.value)
+      drawing.clear()
       iterations = 0
       ticks = 0
       ctx.lineWidth = 1
@@ -90,7 +107,8 @@
       ]
       controls.resume()
     }
-    drawing.start()
+    drawing.stop = () => controls.pause()
+    if (isActive.value) drawing.start()
   })
 </script>
 <template>
@@ -156,7 +174,7 @@
     .after {
       @apply z-1 text-[var(--important)] translate-x-full;
     }
-    &[is-active='true'] {
+    &[is-active='false'] {
       &:before {
         @apply opacity-0 transform translate-x-full;
       }
