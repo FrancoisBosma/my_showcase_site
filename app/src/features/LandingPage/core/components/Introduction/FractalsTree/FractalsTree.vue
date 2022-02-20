@@ -47,7 +47,7 @@
       drawing.updatedRestart()
     }
   })
-  throttledWatch([init, len, windowWidth], () => drawing.updatedRestart(), {
+  throttledWatch([init, len, windowWidth, isDark], () => drawing.updatedRestart(), {
     throttle: 250,
   })
   debouncedWatch(contentWidth, () => drawing.updatedRestart(), {
