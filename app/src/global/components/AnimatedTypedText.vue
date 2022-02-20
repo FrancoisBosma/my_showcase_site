@@ -1,23 +1,15 @@
 <script setup lang="ts">
-  withDefaults(defineProps<{ text: string }>(), { text: '' })
+  const props = withDefaults(defineProps<{ text: string }>(), { text: '' })
+  const text = toRef(props, 'text')
+  const dynamicText = ref(' ')
   const bShowCursor = ref(true)
-  const cursorClink = useIntervalFn(() => {
-    bShowCursor.value = !bShowCursor.value
-  }, 750)
-  cursorClink.pause()
-  const subTitle = ref('')
-  const placeholderText = ' '
-  const dynamicSubTitle = ref(placeholderText)
-  const setSubTitle = (text: string) => {
-    subTitle.value = text
-    return dynamicSubTitle.value
-  }
-  const subTitleTypingDirection = ref(1)
+  const cursorClink = useIntervalFn(() => (bShowCursor.value = !bShowCursor.value), 750, { immediate: false })
+  const textTypingDirection = ref(1)
   const textType = useIntervalFn(() => {
-    dynamicSubTitle.value = subTitle.value.substring(0, dynamicSubTitle.value.length + subTitleTypingDirection.value)
-    if (dynamicSubTitle.value.length === subTitle.value.length || dynamicSubTitle.value.length === 0)
-      subTitleTypingDirection.value *= -1
-    if (dynamicSubTitle.value.length === subTitle.value.length) {
+    dynamicText.value = text.value.substring(0, dynamicText.value.length + textTypingDirection.value)
+    if (dynamicText.value.length === text.value.length || dynamicText.value.length === 0)
+      textTypingDirection.value *= -1
+    if (dynamicText.value.length === text.value.length) {
       textType.pause()
       cursorClink.resume()
       bShowCursor.value = true
@@ -29,6 +21,4 @@
     }
   }, 75)
 </script>
-<template>
-  {{ '$ ' + setSubTitle(text) }}<span v-show="bShowCursor" class="bg-[var(--typed-text)]">&#95;</span>
-</template>
+<template> {{ '$ ' + dynamicText }}<span v-show="bShowCursor" class="bg-[var(--typed-text)]">&#95;</span> </template>
