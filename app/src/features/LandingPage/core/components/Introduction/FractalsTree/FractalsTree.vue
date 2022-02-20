@@ -23,7 +23,6 @@
   const f = {
     start: () => {},
     set: () => {
-      console.log(`rr${containerWidth.value}-${containerElement.value!.clientWidth}`)
       containerWidth.value = containerElement.value!.clientWidth
       containerHeight.value = containerElement.value!.clientHeight
       const { ctx, width, height } = setCanvas(fractalsTreeElement.value!, containerWidth.value)
