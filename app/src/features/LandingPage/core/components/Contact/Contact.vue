@@ -4,7 +4,7 @@
 </script>
 <template>
   <section id="contact">
-    <h2> {{ t('To contact me') }} </h2>
+    <h2> <AnimatedTypedText :text="t('To contact me')" /> </h2>
     <div class="background-title"> {{ t('Contact') }} </div>
     <div class="flex flex-wrap justify-center gap-32">
       <div class="flex flex-col gap-8">

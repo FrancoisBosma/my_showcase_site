@@ -3,7 +3,7 @@
 </script>
 <template>
   <section id="skills" class="skills">
-    <h2> {{ t('What I offer in a nutshell') }} </h2>
+    <h2> <AnimatedTypedText :text="t('What I offer in a nutshell')" /> </h2>
     <div class="background-title">{{ t('Skills') }}</div>
     <ul>
       <ul>

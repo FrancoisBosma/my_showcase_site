@@ -8,7 +8,7 @@
 </script>
 <template>
   <section id="playground">
-    <h2> {{ t('Have fun playing with this site') }} </h2>
+    <h2> <AnimatedTypedText :text="t('Have fun playing with this site')" /> </h2>
     <h3 class="absolute transform -translate-y-25"> {{ t('Go ahead click around') }} </h3>
     <div class="background-title">{{ t('Playground') }}</div>
     <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''}`">
