@@ -3,32 +3,48 @@
   import { isDark } from '@GLOBAL/functions/reactified'
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
-  const { contentWidth } = toRefs(useLPStore())
+  const { random } = Math
+  const { contentWidth, windowWidth } = toRefs(useLPStore())
   const props = withDefaults(defineProps<{ containerElement: HTMLElement | null }>(), { containerElement: null })
   const containerElement = toRef(props, 'containerElement')
 
   const fractalsTreeElement = ref<HTMLCanvasElement | null>(null)
-  const { random } = Math
-  const f = {
-    start: () => {},
-    // update: () => {
-
-    // },
-  }
   const init = ref(5)
   const len = ref(10)
+  const containerWidth = ref(0)
+  const containerHeight = ref(0)
+  const canvasWidth = ref(0)
+  const canvasHeight = ref(0)
   const beforeIconColor = computed(() =>
     isDark.value ? useCssVar('--background-stronger', fractalsTreeElement).value : '#fdfdff'
   )
   const isActive = ref(false)
 
-  throttledWatch([init, len, contentWidth], () => f.start(), { throttle: 250 })
+  const f = {
+    start: () => {},
+    set: () => {
+      console.log(`rr${containerWidth.value}-${containerElement.value!.clientWidth}`)
+      containerWidth.value = containerElement.value!.clientWidth
+      containerHeight.value = containerElement.value!.clientHeight
+      const { ctx, width, height } = setCanvas(fractalsTreeElement.value!, containerWidth.value)
+      canvasWidth.value = width
+      canvasHeight.value = height
+      return ctx
+    },
+  }
+  throttledWatch([init, len, windowWidth], () => f.set() && f.start(), {
+    throttle: 250,
+  })
+  debouncedWatch(contentWidth, () => f.set() && f.start(), {
+    // must be more than the artificial window resize animation time
+    // so that the reference element has finished resizing
+    debounce: 350,
+  })
   onMounted(async () => {
     await nextTick()
     // Now prop 'containerElement' has been passed
     // Let's proceed to canvas init
-    const { clientWidth: containerWidth, clientHeight: containerHeight } = containerElement.value!
-    const { ctx, width: canvasWidth, height: canvasHeight } = setCanvas(fractalsTreeElement.value!, containerWidth)
+    const ctx = f.set()
     let steps: Function[] = []
     let parentSteps: Function[] = []
     let iterations = 0
@@ -42,7 +58,7 @@
       ctx.stroke()
       const rad1 = rad + random() * r15
       const rad2 = rad - random() * r15
-      if (newX < -100 || newX > canvasWidth + 100 || newY < -100 || newY > canvasHeight + 100) return
+      if (newX < -100 || newX > canvasWidth.value + 100 || newY < -100 || newY > canvasHeight.value + 100) return
       if (iterations < init.value || random() >= 0.5) steps.push(() => addStep(newX, newY, rad1))
       if (iterations < init.value || random() >= 0.5) steps.push(() => addStep(newX, newY, rad2))
     }
@@ -62,17 +78,16 @@
       { immediate: false }
     )
     f.start = () => {
-      controls.pause()
+      ctx.clearRect(0, 0, canvasWidth.value, canvasHeight.value)
       iterations = 0
       ticks = 0
-      ctx.clearRect(0, 0, canvasWidth, canvasHeight)
       ctx.lineWidth = 1
       ctx.strokeStyle = isDark.value ? '#00000040' : '#ffffffc0'
       parentSteps = []
       steps = [
-        () => addStep(0, 0.5 * containerHeight, 0), // starts from the middle of LEFT
-        () => addStep(0.5 * canvasWidth, 0, r90), // starts from the middle of TOP
-        () => addStep(canvasWidth, 0.5 * containerHeight, r180), // starts from the middle of RIGHT
+        () => addStep(0, 0.5 * containerHeight.value, 0), // starts from the middle of LEFT
+        () => addStep(0.5 * canvasWidth.value, 0, r90), // starts from the middle of TOP
+        () => addStep(canvasWidth.value, 0.5 * containerHeight.value, r180), // starts from the middle of RIGHT
       ]
       controls.resume()
     }
