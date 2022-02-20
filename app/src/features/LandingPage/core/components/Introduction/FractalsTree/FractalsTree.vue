@@ -20,7 +20,7 @@
   )
   const isActive = ref(false)
 
-  const f = {
+  const drawing = {
     start: () => {},
     set: () => {
       containerWidth.value = containerElement.value!.clientWidth
@@ -31,10 +31,10 @@
       return ctx
     },
   }
-  throttledWatch([init, len, windowWidth], () => f.set() && f.start(), {
+  throttledWatch([init, len, windowWidth], () => drawing.set() && drawing.start(), {
     throttle: 250,
   })
-  debouncedWatch(contentWidth, () => f.set() && f.start(), {
+  debouncedWatch(contentWidth, () => drawing.set() && drawing.start(), {
     // must be more than the artificial window resize animation time
     // so that the reference element has finished resizing
     debounce: 350,
@@ -43,7 +43,7 @@
     await nextTick()
     // Now prop 'containerElement' has been passed
     // Let's proceed to canvas init
-    const ctx = f.set()
+    const ctx = drawing.set()
     let steps: Function[] = []
     let parentSteps: Function[] = []
     let iterations = 0
@@ -76,7 +76,7 @@
       },
       { immediate: false }
     )
-    f.start = () => {
+    drawing.start = () => {
       ctx.clearRect(0, 0, canvasWidth.value, canvasHeight.value)
       iterations = 0
       ticks = 0
@@ -90,7 +90,7 @@
       ]
       controls.resume()
     }
-    f.start()
+    drawing.start()
   })
 </script>
 <template>
