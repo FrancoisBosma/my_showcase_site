@@ -39,7 +39,7 @@
     <FractalsTree ref="fractalsElement" :container-element="sectionElement" />
     <h1>{{ t('Hi') }},<br />{{ t("I'm Francois") }},<br />{{ t('web developer') }}</h1>
     <p class="py-4">
-      {{ '$ ' + setSubTitle(`Vue.js | Full-stack | ${tinkeringsTranslation}`)
+      {{ '$ ' + setSubTitle(`Vue.js | Full-stack | ${t(tinkeringsTranslation)}`)
       }}<span v-show="bShowCursor" class="bg-[var(--typed-text)]">&#95;</span>
     </p>
     <a href="#contact">
