@@ -29,12 +29,12 @@
   }, 75)
 </script>
 <template>
-  <span :class="`relative text-[var(${textColor})]`">
+  <div :class="`relative text-[var(${textColor})]`">
     {{ '$ ' + dynamicText }}<span v-show="bShowCursor" :class="`cursor bg-[var(${textColor})]`">&#95;</span>
-  </span>
+  </div>
 </template>
 <style scoped lang="postcss">
   .cursor {
-    @apply absolute bottom-1 text-transparent;
+    @apply absolute bottom-0 text-transparent h-90/100;
   }
 </style>
