@@ -1,14 +1,19 @@
 <script setup lang="ts">
   const props = withDefaults(defineProps<{ text: string }>(), { text: '' })
   const text = toRef(props, 'text')
-  const dynamicText = ref(' ')
+  const placeholderText = ' '
+  const dynamicText = ref(placeholderText)
   const bShowCursor = ref(true)
-  const cursorClink = useIntervalFn(() => (bShowCursor.value = !bShowCursor.value), 750, { immediate: false })
   const textTypingDirection = ref(1)
   const textColors = ['--typed-text', '--info']
   const textColorSelector = ref(0)
   const textColor = computed(() => textColors[textColorSelector.value])
-  const textType = useIntervalFn(() => {
+  const cursorBlinking = useIntervalFn(() => (bShowCursor.value = !bShowCursor.value), 750, { immediate: false })
+  let endCursorBlinking = {
+    start: () => {},
+    stop: () => {},
+  }
+  const textTyping = useIntervalFn(() => {
     dynamicText.value = text.value.substring(0, dynamicText.value.length + textTypingDirection.value)
     if (dynamicText.value.length === text.value.length || dynamicText.value.length === 0)
       textTypingDirection.value *= -1
@@ -17,16 +22,35 @@
       if (textColorSelector.value >= textColors.length) textColorSelector.value = 0
     }
     if (dynamicText.value.length === text.value.length) {
-      textType.pause()
-      cursorClink.resume()
+      textTyping.pause()
+      cursorBlinking.resume()
       bShowCursor.value = true
-      useTimeoutFn(() => {
-        textType.resume()
-        cursorClink.pause()
-        bShowCursor.value = true
-      }, 3000)
+      endCursorBlinking.start()
     }
   }, 75)
+  const reset = () => {
+    textTyping.pause()
+    cursorBlinking.pause()
+    endCursorBlinking.stop()
+    dynamicText.value = placeholderText
+    bShowCursor.value = true
+    textTyping.resume()
+  }
+  watch(text, () => {
+    reset()
+  })
+
+  onMounted(() => {
+    endCursorBlinking = useTimeoutFn(
+      () => {
+        textTyping.resume()
+        cursorBlinking.pause()
+        bShowCursor.value = true
+      },
+      3000,
+      { immediate: false }
+    )
+  })
 </script>
 <template>
   <div :class="`relative text-[var(${textColor})]`">
