@@ -114,7 +114,11 @@
 <template>
   <button class="bg-fractals-toggle-button" :is-active="isActive" @click="isActive = !isActive">
     <icon-park-outline-add-one class="icon before" />
-    <!-- Credit: logo found on vecteezy.com -->
+    <!-- 
+      Credit:
+      Logo found on vecteezy.com
+      Created by pumashoeme: https://www.vecteezy.com/members/pumashoeme
+     -->
     <svg
       id="eKgfo5k6qWH1"
       xmlns="http://www.w3.org/2000/svg"
