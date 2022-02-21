@@ -55,4 +55,10 @@
     transform: translateX(v-bind('menuXOffset'));
     opacity: v-bind('menuOpacity');
   }
+  .icon-link {
+    @apply hover-emphasis inline-block cursor-pointer select-none opacity-75 text-[var(--cta)]
+      transition duration-200 ease-in-out
+      hover:(opacity-100);
+    font-size: 0.9em;
+  }
 </style>

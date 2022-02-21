@@ -20,9 +20,8 @@ body,
   @apply bg-[var(--info)] opacity-75 fixed z-fixed top-0 left-0 w-full h-2px;
 }
 
-.icon-link {
-  @apply hover-emphasis inline-block cursor-pointer select-none opacity-75 text-[var(--cta)]
+.ext-link {
+  @apply hover-emphasis inline-block cursor-pointer select-none text-[var(--cta)]
     transition duration-200 ease-in-out
-    hover:(opacity-100);
-  font-size: 0.9em;
+    hover:(text-[var(--emphasis)]);
 }

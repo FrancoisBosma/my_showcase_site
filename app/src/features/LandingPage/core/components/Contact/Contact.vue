@@ -24,14 +24,14 @@
             rel="noopener noreferrer"
             class="mt-4"
           >
-            <fontisto-linkedin class="icon-link opacity-100 text-2xl" />
+            <fontisto-linkedin class="ext-link text-2xl" />
           </a>
         </div>
         <div class="flex flex-col">
           <p> {{ t('You can also check out') }} </p>
           <p> {{ t('more of my work on GitHub') }} </p>
           <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer" class="mt-4">
-            <zmdi-github-alt class="icon-link opacity-100 text-2xl" />
+            <zmdi-github-alt class="ext-link text-2xl" />
           </a>
         </div>
       </div>
