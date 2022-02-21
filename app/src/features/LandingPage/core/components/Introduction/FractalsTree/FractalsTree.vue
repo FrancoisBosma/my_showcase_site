@@ -156,7 +156,7 @@
 </template>
 <style scoped lang="postcss">
   .bg-fractals-toggle-button {
-    @apply absolute bottom-1/8 right-1/8 w-18 h-18;
+    @apply absolute bottom-1/8 right-1/8 mr-16 w-18 h-18;
     &:before {
       @apply content-[''] absolute w-full h-full rounded-full top-0 left-0 transition-all duration-300 ease-in-out;
       box-shadow: 0 0 15px #5eead4;
