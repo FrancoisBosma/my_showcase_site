@@ -2,7 +2,7 @@
   import FractalsTree from './FractalsTree'
 
   const { t } = useI18n()
-  const tinkeringsTranslation = t('Tinkerings')
+  const tinkererTranslation = t('Tinkerer')
 
   const sectionElement = ref<HTMLElement | null>(null)
 </script>
@@ -11,7 +11,7 @@
     <FractalsTree ref="fractalsElement" :container-element="sectionElement" />
     <h1>{{ t('Hi') }},<br />{{ t("I'm Francois") }},<br />{{ t('web developer') }}</h1>
     <p class="typed py-4">
-      <AnimatedTypedText :text="`Vue.js | Full-stack | ${t(tinkeringsTranslation)}`" />
+      <AnimatedTypedText :text="`Vue.js | Full-stack | ${t(tinkererTranslation)}`" />
     </p>
     <a href="#contact">
       <Button> {{ t('Contact') }} </Button>
