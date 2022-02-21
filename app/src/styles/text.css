@@ -5,7 +5,7 @@ h1 {
   @apply transition-all duration-300 ease-in-out;
 }
 h2 {
-  @apply pb-28 text-left transition-all duration-300 ease-in-out;
+  @apply mb-28 text-left transition-all duration-300 ease-in-out;
 }
 h3 {
   @apply transition-all duration-300 ease-in-out;
