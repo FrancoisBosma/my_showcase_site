@@ -59,6 +59,6 @@
 </template>
 <style scoped lang="postcss">
   .cursor {
-    @apply absolute bottom-0 text-transparent h-90/100;
+    @apply absolute bottom-0 text-transparent;
   }
 </style>
