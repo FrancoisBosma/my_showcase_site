@@ -20,6 +20,7 @@ meta:
     <Playground />
     <Skills />
     <Contact />
+    <Footer />
   </div>
 </template>
 <style scoped lang="postcss">
