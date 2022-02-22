@@ -13,7 +13,7 @@
     const newAnimationReset = useTimeoutFn(() => (letterAnimations[index].value = ''), 1000, { immediate: false })
     letterAnimationResets.push(newAnimationReset)
   })
-  const toto = (index: number) => {
+  const triggerAnimation = (index: number) => {
     letterAnimations[index].value = 'animate-animated animate-wobble text-[var(--emphasis)]'
     letterAnimationResets[index].start()
   }
@@ -25,9 +25,8 @@
       :key="index"
       ref="letterElements"
       :class="`inline-block ${letterAnimations[index].value}`"
-      @mouseenter="toto(index)"
+      @mouseenter="triggerAnimation(index)"
     >
-      <!-- w:hover="text-[var(--emphasis)]" -->
       {{ c === ' ' ? '&nbsp;' : c }}
     </span>
   </h1>
