@@ -9,7 +9,9 @@
 <template>
   <section id="introduction" ref="sectionElement" class="!h-screen flex flex-col justify-center items-start text-left">
     <FractalsTree ref="fractalsElement" :container-element="sectionElement" />
-    <h1>{{ t('Hi') }},<br />{{ t("I'm Francois") }},<br />{{ t('web developer') }}</h1>
+    <Title :text="`${t('Hi')},`" />
+    <Title :text="`${t('I\'m Francois')},`" />
+    <Title :text="`${t('web developer')}`" />
     <p class="typed py-4">
       <AnimatedTypedText :text="t(subTitle)" />
     </p>
