@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
-  const { contentXMargin, contentTransform } = toRefs(useLPStore())
+  const { contentXMargin, contentTransform, windowWidth, windowHeight } = toRefs(useLPStore())
   const contentWidth = computed(() => (contentTransform.value === 1 ? 'auto' : `${100 / contentTransform.value}%`))
   const responsiveFixedTagHeight = computed(() => `${100 / contentTransform.value}vh`)
   const responsiveFixedTagTop = computed(() => `${useWindowScroll().y.value / contentTransform.value}px`)
@@ -22,7 +22,7 @@
         <rect width="16" height="16" rx="0" ry="0" transform="translate(16 16)" :fill="strokeColor" stroke-width="0" />
       </pattern>
     </defs>
-    <rect fill="url(#checker-bg)" class="relative w-full h-full" />
+    <rect fill="url(#checker-bg)" class="responsive-rect" />
   </svg>
   <main>
     <router-view />
@@ -40,5 +40,9 @@
     @apply absolute top-0 left-0 w-full transition-all duration-300 ease-in;
     margin-top: v-bind('responsiveFixedTagTop');
     height: v-bind('responsiveFixedTagHeight');
+  }
+  .responsive-rect {
+    width: v-bind('`${windowWidth}px`');
+    height: v-bind('`${windowHeight}px`');
   }
 </style>

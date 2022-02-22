@@ -1,7 +1,7 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
 export const useLPStore = defineStore('landing-page', () => {
-  const { width: windowWidth } = useWindowSize()
+  const { width: windowWidth, height: windowHeight } = useWindowSize()
   const maxWidth = computed(() => windowWidth.value * 2)
   const contentWidthModifier = ref(0)
   const contentXMargin = computed(() => {
@@ -55,6 +55,7 @@ export const useLPStore = defineStore('landing-page', () => {
 
   return {
     windowWidth,
+    windowHeight,
     maxWidth,
     contentWidthModifier,
     contentXMargin,
