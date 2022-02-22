@@ -27,6 +27,7 @@ specifiers:
   '@vueuse/components': ^7.5.5
   '@vueuse/core': ^6.9.2
   '@vueuse/head': ^0.6.0
+  '@windicss/plugin-animations': ^1.0.9
   axios: ^0.24.0
   cobe: 0.4.0
   critters: ^0.0.14
@@ -124,6 +125,7 @@ devDependencies:
   '@vue/compiler-sfc': 3.2.26
   '@vue/server-renderer': 3.2.26_vue@3.2.26
   '@vue/test-utils': 1.3.0_vue@3.2.26
+  '@windicss/plugin-animations': 1.0.9
   critters: 0.0.14
   cross-env: 7.0.3
   cypress: 9.2.0
@@ -2488,6 +2490,10 @@ packages:
       windicss: 3.4.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@windicss/plugin-animations/1.0.9:
+    resolution: {integrity: sha512-9WsQsPzLurkwV5zaMCwmylxfSHlQ1pPmzud4ysvMkMBRB7obub9ESmqlHefcCjEhatz/ZROi1U1XOuOPPUO1nA==}
     dev: true
 
   /@windicss/plugin-utils/1.6.1:

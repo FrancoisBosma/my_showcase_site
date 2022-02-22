@@ -8,7 +8,7 @@ export default defineConfig({
     prefix: 'w:',
   },
   safelist: [range(20, 2).map((i) => `w-1/${i}`)],
-  plugins: [require('windicss/plugin/aspect-ratio')],
+  plugins: [require('@windicss/plugin-animations')],
   theme: {
     extend: {
       animation: {
