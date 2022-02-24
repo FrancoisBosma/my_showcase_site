@@ -10,7 +10,7 @@
 <template>
   <section id="introduction" ref="sectionElement" class="!h-screen flex flex-col justify-center items-start text-left">
     <FractalsTree ref="fractalsElement" :container-element="sectionElement" />
-    <Title :text="t('Hi') + ','" />
+    <Title :text="t('Hello') + ','" />
     <Title :text="t(problematicText) + ','" />
     <Title :text="t('web developer')" />
     <p class="typed py-4">
