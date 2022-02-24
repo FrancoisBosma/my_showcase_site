@@ -58,6 +58,9 @@
   </div>
 </template>
 <style scoped lang="postcss">
+  * {
+    font-family: 'Modeseven', sans-serif;
+  }
   .cursor {
     @apply absolute bottom-0 text-transparent;
   }

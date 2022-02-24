@@ -8,11 +8,11 @@
 </script>
 <template>
   <section id="playground">
-    <h2> <AnimatedTypedText :text="t('Have fun playing with this site')" /> </h2>
+    <h2> {{ t('Have fun playing with this site') }} </h2>
     <h3 class="absolute transform -translate-y-25"> {{ t('Go ahead click around') }} </h3>
     <div class="background-title">{{ t('Playground') }}</div>
     <div :class="`playground-tiles ${bScreenLg ? 'screen-lg' : ''}`">
-      <div class="small-item">
+      <div class="label">
         {{ t('Internationalization') }}
         <div class="sub-text">I18n</div>
       </div>
@@ -20,12 +20,12 @@
         <p>{{ t('Choose a language') }}</p>
         <LanguageSelector />
       </div>
-      <div class="small-item">{{ t('Light/Dark Mode') }}</div>
+      <div class="label">{{ t('Light/Dark Mode') }}</div>
       <div>
         <p>{{ t('Choose between a dark and a light theme mode') }}</p>
         <DarkModeSwitcher />
       </div>
-      <div>
+      <div class="label">
         {{ t('Screen Size') }}
         <div class="sub-text">Responsive Design</div>
       </div>
@@ -36,16 +36,16 @@
         </p>
         <PageWidthModifier />
       </div>
-      <div>
+      <div class="label">
         {{ t('Cross-Platform App') }}
         <div class="sub-text">PWA</div>
       </div>
       <div> <PwaExplanations /> </div>
-      <div class="incoming">{{ t('Navigation Guards') }}</div>
+      <div class="label incoming">{{ t('Navigation Guards') }}</div>
       <div>
         <span class="flex gap-x-2"> {{ t('Still brewing') }} <icon-park-outline-teapot /> </span>
       </div>
-      <div class="incoming">{{ t('Secret') }}</div>
+      <div class="label incoming">{{ t('Secret') }}</div>
       <div>
         <span class="flex gap-x-2">{{ t('Still cooking') }} <icon-park-outline-hot-pot /></span>
       </div>

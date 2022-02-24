@@ -4,7 +4,7 @@
 </script>
 <template>
   <section id="contact">
-    <h2> <AnimatedTypedText :text="t('To contact me')" /> </h2>
+    <h2> {{ t('To contact me') }} </h2>
     <div class="background-title"> {{ t('Contact') }} </div>
     <div class="flex flex-wrap justify-center gap-32">
       <div class="flex flex-col gap-8">
@@ -39,7 +39,7 @@
         <p>
           {{ t('I live in') }} <span class="text-[var(--important)] font-semibold"> {{ t('Paris') }} </span>
         </p>
-        <p> CET+0 // UTC+1 </p>
+        <p> CET+0 | UTC+1 </p>
         <Location />
       </div>
     </div>

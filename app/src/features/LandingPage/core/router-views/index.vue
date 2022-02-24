@@ -47,10 +47,8 @@ meta:
     .background-title {
       @apply text-15xl;
     }
-    p {
-      &.typed {
-        @apply tracking-1px;
-      }
+    .typed {
+      @apply tracking-1px;
     }
   }
   html[screen-size-levels*='3xs'] {
@@ -67,7 +65,7 @@ meta:
       @apply text-6xl;
     }
     h2 {
-      @apply text-4xl tracking-2px;
+      @apply text-4xl;
     }
     h3 {
       @apply text-2xl;
@@ -77,9 +75,6 @@ meta:
     }
     p {
       @apply text-sm;
-      &.typed {
-        @apply tracking-2px;
-      }
     }
   }
   html[screen-size-levels*='md'] {
@@ -97,9 +92,6 @@ meta:
     }
     p {
       @apply text-base;
-      &.typed {
-        @apply tracking-4px;
-      }
     }
   }
   html[screen-size-levels*='lg'] {

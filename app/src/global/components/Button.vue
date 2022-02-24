@@ -12,7 +12,8 @@
     @apply flex items-center relative m-6 pr-8 text-2xl;
     transition: all 0.2s ease;
     span {
-      @apply relative left-3.5 flex items-center gap-x-1 relative font-extrabold tracking-[0.2em] uppercase;
+      @apply relative left-3.5 flex items-center gap-x-1 relative font-black tracking-[0.2em] uppercase;
+      font-family: Avenir, sans-serif;
     }
     svg {
       @apply relative left-3.5 ml-1 fill-none stroke-[var(--foreground)] stroke-width-2

@@ -1,20 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+@font-face {
+  font-family: 'Modeseven';
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local('Modeseven'), url('/fonts/Modeseven.ttf') format('truetype');
+}
+
 html {
-  @apply text-center;
+    @apply text-center;
+  font-family: 'Lato', 'League Gothic', 'Open Sans', sans-serif;
 }
 h1 {
-  @apply transition-all duration-300 ease-in-out;
+  @apply transition-all duration-300 ease-in-out font-bold;
 }
 h2 {
-  @apply mb-28 text-left transition-all duration-300 ease-in-out;
+  @apply mb-28 text-left transition-all duration-300 ease-in-out font-semibold;
 }
 h3 {
-  @apply transition-all duration-300 ease-in-out;
-}
-.background-title {
-  @apply  absolute z-behind text-[var(--background-extreme)] top-0 left-1/4 transform -translate-y-1/11
-    transition-all duration-300 ease-in-out;
-  white-space: nowrap; 
+  @apply transition-all duration-300 ease-in-out font-semibold;
+  /* @apply transition-all duration-300 ease-in-out font-semibold text-[var(--typed-text)]; */
+  /* font-family: 'Modeseven', sans-serif; */
 }
 p {
   @apply text-[var(--typed-text)] transition-all duration-300 ease-in-out;
+  /* font-family: Merriweather; */
+}
+.background-title {
+  @apply  absolute z-behind text-[var(--background-extreme)] top-0 left-1/4 transform translate-y-1/70
+    transition-all duration-300 ease-in-out font-semibold;
+  white-space: nowrap;
+  font-family: 'Spectral', serif;
+}
+.label {
+  font-family: 'Spectral', serif;
 }
