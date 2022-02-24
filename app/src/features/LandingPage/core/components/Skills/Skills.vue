@@ -10,7 +10,7 @@
         <li class="info-fall">
           <figure>
             <div><fa-diamond /></div>
-            <figcaption>{{ t('World-Class Apps') }}</figcaption>
+            <figcaption>{{ t('Great Quality Apps') }}</figcaption>
           </figure>
         </li>
         <li>
@@ -24,7 +24,7 @@
         <li class="info-overlay">
           <figure>
             <div><clarity-ruler-pencil-line /></div>
-            <figcaption>{{ t('Pixel-Perfect Code') }}</figcaption>
+            <figcaption>{{ t('Meticulous Code') }}</figcaption>
           </figure>
         </li>
         <li class="info-around">
