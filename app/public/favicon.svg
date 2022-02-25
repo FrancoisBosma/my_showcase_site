@@ -5,12 +5,12 @@
       tspan { fill: #fff; }
     }
   </style>
-  <text dx="0" dy="0" font-family="&quot;esAzjGhm7Hf1:::Spectral&quot;" font-size="1.6" font-weight="400" transform="matrix(29.3319 0 0 26.6539-1.70374 31.9912)" fill="#222" stroke-width="0">
+  <text dx="0" dy="0" font-family="&quot;esAzjGhm7Hf1:::Spectral&quot;" font-size="1.6" font-weight="400" transform="matrix(29.3319 0 0 26.6539-1.70374 31.9912)" stroke-width="0">
     <tspan y="0" font-weight="400" stroke-width="0">
-      <![CDATA[f ]]>
+      <![CDATA[f]]>
     </tspan>
   </text>
-  <text dx="0" dy="0" font-family="&quot;esAzjGhm7Hf1:::Spectral&quot;" font-size="1.6" font-weight="400" transform="matrix(27.2113 0 0 21.0408 9.75666 31.681953)" fill="#222" stroke-width="0">
+  <text dx="0" dy="0" font-family="&quot;esAzjGhm7Hf1:::Spectral&quot;" font-size="1.6" font-weight="400" transform="matrix(27.2113 0 0 21.0408 9.75666 31.681953)" stroke-width="0">
     <tspan y="0" font-weight="400" stroke-width="0">
       <![CDATA[b]]>
     </tspan>
