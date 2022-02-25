@@ -1,9 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<svg id="esAzjGhm7Hf1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
   <style>
-    path { fill: #222; }
+    tspan { fill: #222; }
     @media (prefers-color-scheme: dark) {
-      path { fill: #ffffff; }
+      tspan { fill: #fff; }
     }
   </style>
-  <path d="M27.562 26L17.17 8.928l2.366-3.888L17.828 4L16 7.005L14.17 4l-1.708 1.04l2.366 3.888L4.438 26H2v2h28v-2zM16 10.85L25.22 26H17v-8h-2v8H6.78z" />
+  <text dx="0" dy="0" font-family="&quot;esAzjGhm7Hf1:::Spectral&quot;" font-size="1.6" font-weight="400" transform="matrix(29.3319 0 0 26.6539-1.70374 31.9912)" fill="#222" stroke-width="0">
+    <tspan y="0" font-weight="400" stroke-width="0">
+      <![CDATA[f ]]>
+    </tspan>
+  </text>
+  <text dx="0" dy="0" font-family="&quot;esAzjGhm7Hf1:::Spectral&quot;" font-size="1.6" font-weight="400" transform="matrix(27.2113 0 0 21.0408 9.75666 31.681953)" fill="#222" stroke-width="0">
+    <tspan y="0" font-weight="400" stroke-width="0">
+      <![CDATA[b]]>
+    </tspan>
+  </text>
 </svg>
