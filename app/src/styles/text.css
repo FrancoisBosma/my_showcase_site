@@ -21,12 +21,9 @@ h2 {
 }
 h3 {
   @apply transition-all duration-300 ease-in-out font-semibold;
-  /* @apply transition-all duration-300 ease-in-out font-semibold text-[var(--typed-text)]; */
-  /* font-family: 'Modeseven', sans-serif; */
 }
 p {
   @apply text-[var(--typed-text)] transition-all duration-300 ease-in-out;
-  /* font-family: Merriweather; */
 }
 .background-title {
   @apply  absolute z-behind text-[var(--background-extreme)] top-0 left-1/4 transform translate-y-1/70
