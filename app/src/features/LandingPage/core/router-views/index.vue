@@ -61,7 +61,7 @@ meta:
   html[screen-size-levels*='2xs'] {
     @apply text-sm;
   }
-  html[screen-size-levels*=' xs'] {
+  html[screen-size-levels*='-xs'] {
     @apply text-base;
   }
   html[screen-size-levels*='sm'] {
