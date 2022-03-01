@@ -49,9 +49,9 @@
 <template>
   <div class="typed pt-4 pb-12">
     <div class="absolute">{{ '$ ' + text }}</div>
-    <p :class="`absolute text-[var(${textColor})]`">
+    <div :class="`absolute text-[var(${textColor})]`">
       {{ '$ ' + dynamicText }}<span v-show="bShowCursor" :class="`cursor bg-[var(${textColor})]`">&#95;</span>
-    </p>
+    </div>
   </div>
 </template>
 <style scoped lang="postcss">
