@@ -1,6 +1,5 @@
-export function setCanvas(canvas: HTMLCanvasElement, width = 400, _dpi?: number) {
+export function setCanvas(canvas: HTMLCanvasElement, width = 400, height = 400, _dpi?: number) {
   const ctx = canvas.getContext('2d')!
-  const height = document.documentElement.scrollHeight
 
   const dpr = window.devicePixelRatio || 1
   const bsr =

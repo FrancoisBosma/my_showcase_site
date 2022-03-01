@@ -4,7 +4,7 @@
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
   const { random } = Math
-  const { contentWidth, windowWidth } = toRefs(useLPStore())
+  const { pageHeight, contentWidth, windowWidth } = toRefs(useLPStore())
   const props = withDefaults(defineProps<{ containerElement: HTMLElement | null }>(), { containerElement: null })
   const containerElement = toRef(props, 'containerElement')
 
@@ -25,7 +25,7 @@
     set: () => {
       containerWidth.value = containerElement.value!.clientWidth
       containerHeight.value = containerElement.value!.clientHeight
-      const { ctx, width, height } = setCanvas(fractalsTreeElement.value!, containerWidth.value)
+      const { ctx, width, height } = setCanvas(fractalsTreeElement.value!, containerWidth.value, pageHeight.value)
       canvasWidth.value = width
       canvasHeight.value = height
       return ctx
@@ -47,7 +47,7 @@
       drawing.updatedRestart()
     }
   })
-  throttledWatch([init, len, windowWidth, isDark], () => drawing.updatedRestart(), { throttle: 250 })
+  throttledWatch([init, len, windowWidth, pageHeight, isDark], () => drawing.updatedRestart(), { throttle: 250 })
   debouncedWatch(contentWidth, () => drawing.updatedRestart(), {
     // must be more than the artificial window resize animation time
     // so that the reference element has finished resizing

@@ -8,14 +8,18 @@ meta:
   import { Contact, Introduction, Menu, Playground, Skills } from '../components'
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
-  const { screenSizeLevels, bScreenXl } = toRefs(useLPStore())
+  const { setPageHeight, screenSizeLevels, bScreenXl } = toRefs(useLPStore())
   watchEffect(() => document.documentElement.setAttribute('screen-size-levels', screenSizeLevels.value))
   const responsiveContentPadding = computed(() => (bScreenXl.value ? 'calc(13rem)' : '0'))
+
+  const mainContentElement = ref(null)
+  const { height: mainContentHeight } = useElementSize(mainContentElement)
+  watch(mainContentHeight, () => setPageHeight.value(mainContentHeight.value))
 </script>
 
 <template>
   <Menu />
-  <div class="main-content">
+  <div ref="mainContentElement" class="main-content">
     <Introduction />
     <Playground />
     <Skills />
