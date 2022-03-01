@@ -5,7 +5,6 @@
   const dynamicText = ref(placeholderText)
   const bShowCursor = ref(true)
   const textTypingDirection = ref(1)
-  const textColor = ref('--info')
   const cursorBlinking = useIntervalFn(() => (bShowCursor.value = !bShowCursor.value), 750, { immediate: false })
   let endCursorBlinking = {
     start: () => {},
@@ -49,8 +48,8 @@
 <template>
   <div class="typed pt-4 pb-12">
     <div class="absolute">{{ '$ ' + text }}</div>
-    <div :class="`absolute text-[var(${textColor})]`">
-      {{ '$ ' + dynamicText }}<span v-show="bShowCursor" :class="`cursor bg-[var(${textColor})]`">&#95;</span>
+    <div class="absolute text-[var(--info)]">
+      {{ '$ ' + dynamicText }}<span v-show="bShowCursor" class="cursor bg-[var(--info)]">&#95;</span>
     </div>
   </div>
 </template>
