@@ -47,9 +47,7 @@
       drawing.updatedRestart()
     }
   })
-  throttledWatch([init, len, windowWidth, isDark], () => drawing.updatedRestart(), {
-    throttle: 250,
-  })
+  throttledWatch([init, len, windowWidth, isDark], () => drawing.updatedRestart(), { throttle: 250 })
   debouncedWatch(contentWidth, () => drawing.updatedRestart(), {
     // must be more than the artificial window resize animation time
     // so that the reference element has finished resizing
