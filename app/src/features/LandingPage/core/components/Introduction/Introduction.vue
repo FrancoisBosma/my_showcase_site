@@ -13,9 +13,7 @@
     <Title :text="t('Hello') + ','" />
     <Title :text="t(problematicText) + ','" />
     <Title :text="t('web developer')" />
-    <p class="typed py-4">
-      <AnimatedTypedText :text="t(subTitle)" />
-    </p>
+    <AnimatedTypedText :text="t(subTitle)" />
     <a href="#contact">
       <Button> {{ t('Contact') }} </Button>
     </a>

@@ -47,9 +47,11 @@
   })
 </script>
 <template>
-  <div class="absolute">{{ '$ ' + text }}</div>
-  <div :class="`relative text-[var(${textColor})]`">
-    {{ '$ ' + dynamicText }}<span v-show="bShowCursor" :class="`cursor bg-[var(${textColor})]`">&#95;</span>
+  <div class="typed pt-4 pb-12">
+    <div class="absolute">{{ '$ ' + text }}</div>
+    <p :class="`absolute text-[var(${textColor})]`">
+      {{ '$ ' + dynamicText }}<span v-show="bShowCursor" :class="`cursor bg-[var(${textColor})]`">&#95;</span>
+    </p>
   </div>
 </template>
 <style scoped lang="postcss">

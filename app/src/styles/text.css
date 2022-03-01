@@ -22,7 +22,7 @@ h2 {
 h3 {
   @apply transition-all duration-300 ease-in-out font-semibold;
 }
-p {
+p, .typed {
   @apply text-[var(--typed-text)] transition-all duration-300 ease-in-out;
 }
 .background-title {
