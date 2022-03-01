@@ -24,7 +24,7 @@
           viewBox="0 0 32 32"
           shape-rendering="geometricPrecision"
           text-rendering="geometricPrecision"
-          class="h-1/2"
+          class="h-[min(13rem,50%)] p-4"
         >
           <text
             dx="0"
