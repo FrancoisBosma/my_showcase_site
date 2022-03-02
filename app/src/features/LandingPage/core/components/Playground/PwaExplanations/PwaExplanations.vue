@@ -13,7 +13,7 @@
     easing: (x: number) => 1 - (1 - x) ** 3,
   }
   const flickingPlugins = [new Arrow({ parentEl: document.body }), new Fade(), new Pagination()]
-  const slideTexts = [
+  const slideTexts = computed(() => [
     t('This site is a Progressive Web App (PWA)'),
     t('"What is that ?" you may wonder'),
     t('PWAs run in browsers like websites'),
@@ -24,7 +24,7 @@
     t('... access hardware features, etc'),
     t('In short PWA = cross-platform'),
     t('Right now your browser probably allows you to download this site as an app'),
-  ]
+  ])
 </script>
 <template>
   <div id="pwa-explanations" :class="`pwa-explanations ${bScreen2Xl ? 'screen-2xl' : ''}`">
@@ -36,7 +36,7 @@
       >
         <div v-for="(text, index) in slideTexts" :key="index" class="card-panel">
           <div>{{ index + 1 }}</div>
-          <div>{{ t(text) }}</div>
+          <div>{{ text }}</div>
         </div>
         <template #viewport>
           <div class="flicking-pagination"></div>

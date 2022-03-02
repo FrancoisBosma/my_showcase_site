@@ -8,11 +8,11 @@
   }
   watch(windowWidth, () => resetSlider())
   const { t } = useI18n()
-  const windowWidthText = t("Window's width")
+  const windowWidthText = computed(() => t("Window's width"))
 </script>
 <template>
   <div class="flex flex-col items-center w-full">
-    <span class="pb-2"> {{ `${t(windowWidthText)}: ${sliderValue}` }}px </span>
+    <span class="pb-2"> {{ `${windowWidthText}: ${sliderValue}` }}px </span>
     <RangeSlider
       :value="sliderValue"
       :value-min="400"
