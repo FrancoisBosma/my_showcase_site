@@ -2,7 +2,9 @@
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
   const { contentXMargin, contentTransform, windowWidth, windowHeight } = toRefs(useLPStore())
-  const contentWidth = computed(() => (contentTransform.value === 1 ? 'auto' : `${100 / contentTransform.value}%`))
+  const contentWidth = computed(
+    () => `calc(${100 / contentTransform.value}% - ${contentXMargin.value} - ${contentXMargin.value})`
+  )
   const responsiveFixedTagHeight = computed(() => `${100 / contentTransform.value}vh`)
   const responsiveFixedTagTop = computed(() => `${useWindowScroll().y.value / contentTransform.value}px`)
   const strokeColor = '#808080'
