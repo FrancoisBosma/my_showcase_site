@@ -10,7 +10,7 @@ meta:
 
   const { setPageHeight, screenSizeLevels, bScreenXl } = toRefs(useLPStore())
   watchEffect(() => document.documentElement.setAttribute('screen-size-levels', screenSizeLevels.value))
-  const responsiveContentPadding = computed(() => (bScreenXl.value ? 'calc(13rem)' : '0'))
+  const responsiveContentPadding = computed(() => (bScreenXl.value ? '13rem' : '0'))
 
   const mainContentElement = ref(null)
   const { height: mainContentHeight } = useElementSize(mainContentElement)
@@ -29,7 +29,7 @@ meta:
 </template>
 <style scoped lang="postcss">
   .main-content {
-    padding-left: v-bind('responsiveContentPadding');
+    border-left: v-bind('`${responsiveContentPadding} solid var(--background-stronger)`');
     & > * {
       @apply relative px-12 py-56 h-max overflow-y-visible;
       overflow-x: clip;
