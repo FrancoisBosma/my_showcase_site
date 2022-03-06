@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import FractalsTree from './FractalsTree'
+  import FractalTrees from './FractalTrees'
 
   const { t } = useI18n()
   const subTitle = computed(() => t('Mainly looking for Vue.js missions / Open to anything'))
@@ -9,7 +9,7 @@
 </script>
 <template>
   <section id="introduction" ref="sectionElement" class="!h-screen flex flex-col justify-center items-start text-left">
-    <FractalsTree ref="fractalsElement" :container-element="sectionElement" />
+    <FractalTrees ref="fractalsElement" :container-element="sectionElement" />
     <Title :text="t('Hello') + ','" />
     <Title :text="problematicText + ','" />
     <Title :text="t('web developer')" />
