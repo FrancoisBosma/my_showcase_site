@@ -114,7 +114,7 @@
 </script>
 <template>
   <div class="fractals-tree">
-    <p class="mb-3">{{ t('Background Fractal Trees') }}</p>
+    <p class="mb-3">{{ t('Fractal Trees') }}</p>
     <div class="bg-fractals-toggle-buttons" :is-active="isActive" @click="isActive = !isActive">
       <icon-park-outline-add-one class="icon add" />
       <!-- 
