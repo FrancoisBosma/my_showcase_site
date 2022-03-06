@@ -81,7 +81,7 @@
   }
   menu {
     @apply relative h-full w-full m-0 p-0 z-fixed bg-[var(--background-stronger)] grid grid-rows-[33%,33%,33%]
-      transition-all duration-300 ease-in-out;
+      transition-all duration-500 ease-in-out;
     width: v-bind('responsiveMenuWidth');
     transform: translateX(v-bind('menuXOffset'));
     opacity: v-bind('menuOpacity');
