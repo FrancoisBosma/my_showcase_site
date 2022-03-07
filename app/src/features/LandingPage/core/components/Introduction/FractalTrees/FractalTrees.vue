@@ -2,6 +2,7 @@
   import { polar2cart, r15, r180, r90, setCanvas } from './utils'
   import { isDark } from '@GLOBAL/functions/reactified'
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
+  import nProgress from 'nprogress'
 
   const { t } = useI18n()
   const { random } = Math
@@ -29,6 +30,11 @@
   const isActive = ref(true)
   const isDrawing = ref(isActive.value)
   const treeButtonPulseAnimation = computed(() => (isDrawing.value ? 'lightPulse 2s infinite' : 'none'))
+  const toggleFractalTrees = () => {
+    nProgress.start()
+    isActive.value = !isActive.value
+    nProgress.done()
+  }
 
   const drawing = {
     clear: () => {},
@@ -127,7 +133,7 @@
 <template>
   <div class="fractals-tree">
     <p class="mb-2">{{ t('Fractal Trees') }}</p>
-    <div class="bg-fractals-toggle-buttons" :is-active="isActive" @click="isActive = !isActive">
+    <div class="bg-fractals-toggle-buttons" :is-active="isActive" @click="toggleFractalTrees()">
       <div class="toggle-button">
         <icon-park-outline-add-one class="icon add" />
         <p :class="`${isActive ? 'text-[#01AEED]' : 'text-[' + iconColor + ']'}`">ON</p>
