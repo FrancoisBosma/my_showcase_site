@@ -27,6 +27,8 @@
 
   const isMounted = ref(false)
   const isActive = ref(true)
+  const isDrawing = ref(isActive.value)
+  const treeButtonPulseAnimation = computed(() => (isDrawing.value ? 'lightPulse 2s infinite' : 'none'))
 
   const drawing = {
     clear: () => {},
@@ -90,7 +92,7 @@
           parentSteps = steps
           steps = []
           if (!parentSteps.length) {
-            controls.pause()
+            drawing.stop()
           }
           parentSteps.forEach((i) => i())
           iterations += 1
@@ -101,6 +103,7 @@
     )
     drawing.clear = () => ctx.clearRect(0, 0, canvasWidth.value, canvasHeight.value)
     drawing.start = () => {
+      isDrawing.value = true
       drawing.clear()
       iterations = 0
       ticks = 0
@@ -114,7 +117,10 @@
       ]
       controls.resume()
     }
-    drawing.stop = () => controls.pause()
+    drawing.stop = () => {
+      isDrawing.value = false
+      controls.pause()
+    }
     if (isActive.value) drawing.start()
   })
 </script>
@@ -188,6 +194,10 @@
       }
       .tree-icon {
         @apply absolute left-1 w-18 h-18 cursor-pointer transition-all duration-300 ease-in-out;
+        &:before {
+          @apply content-[''] absolute w-full h-full rounded-full top-0 left-0 transition-all duration-300 ease-in-out;
+          animation: v-bind('treeButtonPulseAnimation');
+        }
       }
       .icon {
         @apply relative w-[calc(18rem*1.13/4)] h-[calc(18rem*1.13/4)] -top-1 cursor-pointer

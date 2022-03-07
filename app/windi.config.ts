@@ -14,6 +14,7 @@ export default defineConfig({
       animation: {
         'bounce-left': 'bounceLeft 1s infinite',
         'bounce-right': 'bounceRight 1s infinite',
+        'light-pulse': 'lightPulse 2s infinite',
       },
       screens: {
         '3xs': { min: '400px' },
