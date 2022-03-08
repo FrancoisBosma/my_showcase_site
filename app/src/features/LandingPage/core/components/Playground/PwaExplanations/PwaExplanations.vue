@@ -4,7 +4,7 @@
   import { UseMousePressed } from '@vueuse/components'
   import { useLPStore } from '@FEATURES/LandingPage/stores/landing-page'
 
-  const { bScreen2Xl } = toRefs(useLPStore())
+  const { bScreen3Xs, bScreen2Xs, bScreenXs, bScreen2Xl } = toRefs(useLPStore())
 
   const { t } = useI18n()
   const flickingOptions = {
@@ -45,6 +45,8 @@
     </UseMousePressed>
     <span class="flicking-arrow-prev is-inside"></span>
     <span class="flicking-arrow-next is-inside"></span>
+    <!-- <span class="flicking-arrow-prev is-outside"></span>
+    <span class="flicking-arrow-next is-outside"></span> -->
   </div>
 </template>
 <style lang="postcss">
@@ -94,7 +96,8 @@
     }
     .flicking-arrow-prev,
     .flicking-arrow-next {
-      @apply transform translate-y-18 transition-transform duration-300 ease-in;
+      @apply transform transition-transform duration-300 ease-in;
+      --tw-translate-y: v-bind('`${bScreenXs ? 4.5 : bScreen2Xs ? 4.25 : bScreen3Xs ? 3.75 : 3.25}rem`');
       &.flicking-arrow-disabled {
         &:before,
         &:after {
