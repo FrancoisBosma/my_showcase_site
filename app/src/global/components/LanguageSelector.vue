@@ -11,6 +11,10 @@
     nProgress.done()
   }
   const fnIsSelectedLocale = (localeName: string) => locale.value === localeName
+  const handleLocaleChange = (localeName: string, fn: Function) => {
+    fnChangeLocale(localeName)
+    fn()
+  }
 </script>
 
 <template>
@@ -19,7 +23,7 @@
       <IconButton :is-active="bActive">
         <clarity-language-solid />
       </IconButton>
-      <template #content>
+      <template #content="{ close }">
         <ul class="p-2 max-h-50 overflow-y-auto">
           <li
             v-for="(language, localeName) in localeLanguages"
@@ -27,7 +31,7 @@
             :is-selected="fnIsSelectedLocale(localeName)"
             class="selector-line"
           >
-            <button @click="!fnIsSelectedLocale(localeName) && fnChangeLocale(localeName)">
+            <button @click="!fnIsSelectedLocale(localeName) && handleLocaleChange(localeName, close)">
               <mdi-check v-if="fnIsSelectedLocale(localeName)" />
               {{ language }}
             </button>
