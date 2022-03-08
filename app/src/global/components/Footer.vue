@@ -3,18 +3,27 @@
 </script>
 <template>
   <footer>
-    <p>{{ t('This site is') }} &#60;open source&#62;</p>
     <p>
-      {{ t('You can find its code') }}
+      {{ t('This site is') }}
       <a
         href="https://github.com/FrancoisBosma/my_showcase_site"
         target="_blank"
         rel="noopener noreferrer"
         class="ext-link font-semibold"
       >
-        {{ t('there') }}
+        &#60;open source&#62;
+      </a>
+      {{ t('under the') }}
+      <a
+        href="https://opensource.org/licenses/MIT"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ext-link font-semibold"
+      >
+        {{ t('MIT License') }}
       </a>
     </p>
+    <p>Copyright © 2020-present Francois Bosma</p>
   </footer>
 </template>
 <style scoped lang="postcss">
