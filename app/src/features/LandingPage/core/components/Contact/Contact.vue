@@ -16,7 +16,7 @@
             <template #upperContent>
               <mdi-email />
             </template>
-            <div class="relative w-full h-full flex gap-4 items-center">
+            <div class="relative w-full h-full flex gap-4 justify-center items-center">
               fbosma.pro@gmail.com
               <mdi-content-copy class="icon-clickable animate-bounce-right" @click="copy('fbosma.pro@gmail.com')" />
               <div
