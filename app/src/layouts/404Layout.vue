@@ -4,10 +4,15 @@
 </script>
 
 <template>
-  <main class="px-4 py-10">
-    <carbon-warning class="inline-block text-4xl" />
+  <main class="relative h-screen px-4 py-10">
     <router-view />
-    <Button @click="router.push('/')"> {{ t('Home') }} </Button>
-    <Button @click="router.push('/')"> {{ t('Back') }} </Button>
+    <ul class="absolute top-0 z-2 w-min h-full flex flex-col justify-center ml-1/2 transform -translate-x-1/2">
+      <li>
+        <Button @click="router.push('/')"> {{ t('Home') }} </Button>
+      </li>
+      <li>
+        <Button @click="router.push('/')"> {{ t('Back') }} </Button>
+      </li>
+    </ul>
   </main>
 </template>

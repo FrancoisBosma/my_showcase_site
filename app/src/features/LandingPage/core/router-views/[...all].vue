@@ -9,7 +9,7 @@ meta:
 </script>
 
 <template>
-  <div>
-    {{ t('Page not found') }}
+  <div class="p-4">
+    <div class="text-15xl text-[var(--important)]"> 40<div class="inline-block transform rotate-y-180">4</div> </div>
   </div>
 </template>
