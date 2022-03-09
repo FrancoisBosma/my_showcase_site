@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import Location from './Location'
   const { t } = useI18n()
+  const { copy, copied, isSupported } = useClipboard()
 </script>
 <template>
   <section id="contact">
@@ -15,7 +16,19 @@
             <template #upperContent>
               <mdi-email />
             </template>
-            fbosma.pro@gmail.com
+            <div class="relative w-full h-full flex gap-4 items-center">
+              fbosma.pro@gmail.com
+              <mdi-content-copy class="icon-clickable animate-bounce-right" @click="copy('fbosma.pro@gmail.com')" />
+              <div
+                v-if="copied"
+                :class="`absolute z-fixed flex justify-center items-center right-6 px-4 pb-1\
+                rounded-md text-[var(--foreground-for-stronger-background)] bg-[var(--background-stronger)]`"
+              >
+                {{ isSupported ? t('copied') : t('unsupported') }}
+                <mdi-check v-if="isSupported" />
+                <mdi-close v-else />
+              </div>
+            </div>
           </TrapDoor>
           <p> {{ t('or ...') }} </p>
           <a
