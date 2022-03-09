@@ -16,17 +16,19 @@
             <template #upperContent>
               <mdi-email />
             </template>
-            <div class="relative w-full h-full flex gap-4 justify-center items-center">
+            <div class="w-full h-full flex gap-4 justify-center items-center">
               fbosma.pro@gmail.com
-              <mdi-content-copy class="icon-clickable animate-bounce-right" @click="copy('fbosma.pro@gmail.com')" />
-              <div
-                v-if="copied"
-                :class="`absolute z-fixed flex justify-center items-center right-6 px-4 pb-1\
-                rounded-md text-[var(--foreground-for-stronger-background)] bg-[var(--background-stronger)]`"
-              >
-                {{ isSupported ? t('copied') : t('unsupported') }}
-                <mdi-check v-if="isSupported" />
-                <mdi-close v-else />
+              <div class="relative">
+                <mdi-content-copy class="icon-clickable animate-bounce-right" @click="copy('fbosma.pro@gmail.com')" />
+                <div
+                  v-if="copied"
+                  :class="`absolute z-fixed flex justify-center items-center right-full px-4 pb-1\
+                  rounded-md text-[var(--foreground-for-stronger-background)] bg-[var(--background-stronger)]`"
+                >
+                  {{ isSupported ? t('copied') : t('unsupported') }}
+                  <mdi-check v-if="isSupported" />
+                  <mdi-close v-else />
+                </div>
               </div>
             </div>
           </TrapDoor>
