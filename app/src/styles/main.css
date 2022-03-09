@@ -17,9 +17,8 @@
 }
 
 .icon-clickable {
-  @apply hover-emphasis inline-block cursor-pointer select-none opacity-75 text-[var(--cta)]
-    transition duration-200 ease-in-out
-    hover:(opacity-100);
+  @apply hover-emphasis inline-block cursor-pointer select-none text-[var(--cta)]
+    transition duration-200 ease-in-out;
 }
 
 .ext-link {
