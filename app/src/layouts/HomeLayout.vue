@@ -6,7 +6,13 @@
     () => `calc(${100 / contentTransform.value}% - ${contentXMargin.value} - ${contentXMargin.value})`
   )
   const responsiveFixedTagHeight = computed(() => `${100 / contentTransform.value}vh`)
-  const responsiveFixedTagTop = computed(() => `${useWindowScroll().y.value / contentTransform.value}px`)
+  const mainElement = ref(null)
+  const { height: contentHeight } = useElementSize(mainElement)
+  const responsiveFixedTagTop = computed(() => {
+    const outputRaw = useWindowScroll().y.value / contentTransform.value
+    const output = Math.min(outputRaw, contentHeight.value * contentTransform.value)
+    return `${output}px`
+  })
   const strokeColor = '#808080'
 </script>
 <template>
@@ -26,7 +32,7 @@
     </defs>
     <rect fill="url(#checker-bg)" class="responsive-rect" />
   </svg>
-  <main>
+  <main ref="mainElement">
     <router-view />
   </main>
 </template>
