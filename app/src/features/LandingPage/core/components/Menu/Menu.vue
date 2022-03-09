@@ -61,12 +61,12 @@
         <ul class="flex justify-center gap-x-2 py-4 children:children:cursor-default">
           <li>
             <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer">
-              <zmdi-github-alt class="icon-link animate-bounce-left" />
+              <zmdi-github-alt class="icon-clickable animate-bounce-left" />
             </a>
           </li>
           <li>
             <a href="https://linkedin.com/in/francois-bosma-1051849b/" target="_blank" rel="noopener noreferrer">
-              <fontisto-linkedin class="icon-link animate-bounce-right" />
+              <fontisto-linkedin class="icon-clickable animate-bounce-right" />
             </a>
           </li>
         </ul>
@@ -98,10 +98,5 @@
     tspan {
       fill: var(--background);
     }
-  }
-  .icon-link {
-    @apply hover-emphasis inline-block cursor-pointer select-none opacity-75 text-[var(--cta)]
-      transition duration-200 ease-in-out
-      hover:(opacity-100);
   }
 </style>
