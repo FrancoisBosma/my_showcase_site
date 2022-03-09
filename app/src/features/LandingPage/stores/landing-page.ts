@@ -4,7 +4,7 @@ export const useLPStore = defineStore('landing-page', () => {
   const pageHeight = ref(0)
   const setPageHeight = (h: number) => (pageHeight.value = h)
   const { width: windowWidth, height: windowHeight } = useWindowSize()
-  const maxWidth = computed(() => windowWidth.value * 2)
+  const maxWidth = computed(() => Math.max(windowWidth.value * 2, 1920))
   const contentWidthModifier = ref(0)
   const contentXMargin = computed(() => {
     if (contentWidthModifier.value >= 0) return '0px'
